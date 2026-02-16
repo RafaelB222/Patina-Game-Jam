@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bmixo81k0pcmn"]
+
+[ext_resource type="PackedScene" uid="uid://h30c6cijwugy" path="res://Player/player.tscn" id="1_ge4kj"]
+[ext_resource type="PackedScene" uid="uid://cjt730l5vmqjw" path="res://Level/level_container.tscn" id="2_aq3js"]
+[ext_resource type="PackedScene" uid="uid://b8d6nki3fog73" path="res://UI/UIContainer.tscn" id="3_aq3js"]
+
+[node name="GameContainer" type="Node" unique_id=1169836255]
+
+[node name="Player" parent="." unique_id=1613558614 instance=ExtResource("1_ge4kj")]
+
+[node name="LevelContainer" parent="." unique_id=1143750569 instance=ExtResource("2_aq3js")]
+
+[node name="UiContainer" parent="." unique_id=1599856749 instance=ExtResource("3_aq3js")]
