@@ -1,5 +1,63 @@
 [gd_scene format=3 uid="uid://88fj3ydsx3xe"]
 
+[ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="1_icon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wide"]
+size = Vector2(384, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(128, 128)
+
 [node name="Level1" type="Node2D" unique_id=1658232712]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1526707815]
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=787574001]
+position = Vector2(512, 600)
+
+[node name="Sprite1" type="Sprite2D" parent="Floor" unique_id=146031824]
+modulate = Color(0.55, 0.35, 0.15, 1)
+position = Vector2(-128, 0)
+texture = ExtResource("1_icon")
+
+[node name="Sprite2" type="Sprite2D" parent="Floor" unique_id=524922003]
+modulate = Color(0.55, 0.35, 0.15, 1)
+texture = ExtResource("1_icon")
+
+[node name="Sprite3" type="Sprite2D" parent="Floor" unique_id=1424782870]
+modulate = Color(0.55, 0.35, 0.15, 1)
+position = Vector2(128, 0)
+texture = ExtResource("1_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=302850759]
+shape = SubResource("RectangleShape2D_wide")
+
+[node name="PlatformLeft" type="StaticBody2D" parent="." unique_id=2064735443]
+position = Vector2(200, 400)
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformLeft" unique_id=205456969]
+modulate = Color(0.55, 0.35, 0.15, 1)
+texture = ExtResource("1_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformLeft" unique_id=1077065366]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="PlatformRight" type="StaticBody2D" parent="." unique_id=703757933]
+position = Vector2(700, 300)
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformRight" unique_id=1351398964]
+modulate = Color(0.55, 0.35, 0.15, 1)
+texture = ExtResource("1_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformRight" unique_id=53141903]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="PlatformTop" type="StaticBody2D" parent="." unique_id=1965456796]
+position = Vector2(450, 150)
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformTop" unique_id=1803533247]
+modulate = Color(0.55, 0.35, 0.15, 1)
+texture = ExtResource("1_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformTop" unique_id=457585598]
+shape = SubResource("RectangleShape2D_1")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlayerStats" format=3 uid="uid://ceoc227akgwo6"]
+
+[ext_resource type="Script" uid="uid://c1h8o1gpjyljq" path="res://Player/player_stats.gd" id="1_ghvkk"]
+
+[resource]
+script = ExtResource("1_ghvkk")
+double_jump_height = 120.0
+metadata/_custom_type_script = "uid://c1h8o1gpjyljq"

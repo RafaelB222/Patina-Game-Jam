@@ -7,6 +7,7 @@
 [node name="GameContainer" type="Node" unique_id=1169836255]
 
 [node name="Player" parent="." unique_id=1613558614 instance=ExtResource("1_ge4kj")]
+position = Vector2(184, 58)
 
 [node name="LevelContainer" parent="." unique_id=1143750569 instance=ExtResource("2_aq3js")]
 
