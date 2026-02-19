@@ -9,8 +9,8 @@ class_name PlayerStats
 @export var air_acceleration: float = 800.0
 @export var air_friction: float = 200.0
 @export var dash_speed: float = 3.0
-@export var dash_duration: float = 0.15
-@export var dash_cooldown: float = 0.5
+@export var dash_duration: float = 0.25
+@export var dash_cooldown: float = 0.0
 
 ## Jumping
 @export var jump_height: float = 120.0

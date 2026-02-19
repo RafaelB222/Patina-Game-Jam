@@ -1,11 +1,16 @@
 extends Node
 
+var use_center_gravity: bool = false
+var level_center: Vector2 = Vector2.ZERO
+var gravity_direction: Vector2 = Vector2.DOWN
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func get_gravity_dir(world_pos: Vector2) -> Vector2:
+	if use_center_gravity:
+		var to_center = level_center - world_pos
+		if to_center.length_squared() < 1.0:
+			return gravity_direction
+		return to_center.normalized()
+	return gravity_direction
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func invert_gravity() -> void:
+	gravity_direction *= -1.0

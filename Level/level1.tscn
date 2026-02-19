@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://88fj3ydsx3xe"]
 
+[ext_resource type="Script" uid="uid://cspur5vqhbtmj" path="res://Level/level_1.gd" id="1_b1hmd"]
 [ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="1_icon"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wide"]
@@ -9,6 +10,8 @@ size = Vector2(384, 128)
 size = Vector2(128, 128)
 
 [node name="Level1" type="Node2D" unique_id=1658232712]
+script = ExtResource("1_b1hmd")
+level_center = Vector2(500, 323)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1526707815]
 

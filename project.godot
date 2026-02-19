@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 PhysicsManager="*uid://cn63djm6d4ree"
+TransitionManager="*uid://bus5hbna8ehwd"
 
 [editor_plugins]
 

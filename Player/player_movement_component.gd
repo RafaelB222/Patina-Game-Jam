@@ -8,9 +8,9 @@ var move_direction: Vector2 = Vector2.ZERO
 var has_double_jump: bool = false
 var has_air_dash: bool = false
 var is_dashing: bool = false
-var pre_dash_velocity_y: float = 0.0
-var gravity_dir: float = 1.0
+
 @onready var dash_timer: Timer = Timer.new()
+@onready var dash_cooldown_timer: Timer = Timer.new()
 #var jump_held: bool = false # Used by charge jump approach
 #var jump_hold_timer: float = 0.0 # Used by charge jump approach
 #var is_jumping: bool = false # Used by variable_jump_cut approach
@@ -19,6 +19,8 @@ func _ready() -> void:
 	dash_timer.one_shot = true
 	dash_timer.timeout.connect(dash_end)
 	add_child(dash_timer)
+	dash_cooldown_timer.one_shot = true
+	add_child(dash_cooldown_timer)
 	if input_component:
 		input_component.move_command.connect(move)
 		input_component.jump.connect(jump)
@@ -31,29 +33,30 @@ func move(direction):
 	move_direction = direction
 
 func invert_gravity():
-	gravity_dir *= -1.0
-	player.up_direction.y *= -1.0
+	PhysicsManager.invert_gravity()
+	player.up_direction = -PhysicsManager.gravity_direction
 
 func dash():
 	var on_floor = player.is_on_floor()
-	if !dash_timer.is_stopped():
+	if !dash_cooldown_timer.is_stopped():
 		return
 	if !on_floor and !has_air_dash:
 		return
 	is_dashing = true
-	pre_dash_velocity_y = player.velocity.y
 	if !on_floor:
-		has_air_dash = false
-	var dash_dir = signf(player.facing.x) if player.facing.x != 0 else 1.0
-	player.velocity.x = dash_dir * player.player_stats.dash_speed * player.player_stats.move_speed
-	player.velocity.y = 0
+		has_air_dash = true
+	if PhysicsManager.use_center_gravity:
+		player.velocity = player.facing * player.player_stats.dash_speed * player.player_stats.move_speed
+	else:
+		var dash_dir = signf(player.facing.x) if player.facing.x != 0 else 1.0
+		player.velocity.x = dash_dir * player.player_stats.dash_speed * player.player_stats.move_speed
+		player.velocity.y = 0
 	dash_timer.start(player.player_stats.dash_duration)
+	dash_cooldown_timer.start(player.player_stats.dash_cooldown)
 
 func dash_end():
 	if is_dashing:
 		is_dashing = false
-		player.velocity.y = pre_dash_velocity_y
-		dash_timer.start(player.player_stats.dash_cooldown)
 
 	
 
@@ -85,12 +88,16 @@ func dash_end():
 
 ## Double jump approach (jump on press, second jump available in air)
 func jump():
+	var grav_dir = PhysicsManager.get_gravity_dir(player.global_position)
 	if player.is_on_floor():
-		player.velocity.y = player.player_stats.jump_velocity * gravity_dir
+		var lateral_vel = player.velocity - player.velocity.dot(grav_dir) * grav_dir
+		player.velocity = lateral_vel + (-grav_dir) * abs(player.player_stats.jump_velocity)
 		has_double_jump = true
 	elif has_double_jump:
-		player.velocity.y = -2.0 * player.player_stats.double_jump_height / player.player_stats.jump_time_to_peak * gravity_dir
-		has_double_jump = false
+		var double_jump_speed = 2.0 * player.player_stats.double_jump_height / player.player_stats.jump_time_to_peak
+		var lateral_vel = player.velocity - player.velocity.dot(grav_dir) * grav_dir
+		player.velocity = lateral_vel + (-grav_dir) * double_jump_speed
+		has_double_jump = true
 
 func jump_released():
 	pass
@@ -107,29 +114,49 @@ func get_cardinal_direction(direction: Vector2) -> Vector2:
 			return Vector2.DOWN
 		else: 
 			return Vector2.UP
-func apply_gravity(delta: float) -> void:
-	if not player.is_on_floor():
-		var is_falling = player.velocity.y * gravity_dir > 0
-		var gravity = player.player_stats.fall_gravity if is_falling else player.player_stats.jump_gravity
-		player.velocity.y += gravity * gravity_dir * delta
-		player.velocity.y = clampf(player.velocity.y, -player.player_stats.max_fall_speed, player.player_stats.max_fall_speed)
-
-func _physics_process(delta: float) -> void:
-	if player.is_on_floor():
-		has_double_jump = true
-		has_air_dash = true
-	if !is_dashing:
-		apply_gravity(delta)
-	if player.can_move:
-		var stats = player.player_stats
-		var on_floor = player.is_on_floor()
-		var accel = stats.acceleration if on_floor else stats.air_acceleration
-		var decel = stats.friction if on_floor else stats.air_friction
-
+func apply_movement(delta: float, grav_dir: Vector2) -> void:
+	var stats = player.player_stats
+	var on_floor = player.is_on_floor()
+	var accel = stats.acceleration if on_floor else stats.air_acceleration
+	var decel = stats.friction if on_floor else stats.air_friction
+	if PhysicsManager.use_center_gravity:
+		var tangent = Vector2(-grav_dir.y, grav_dir.x)
+		var tangent_input = move_direction.dot(tangent)
+		var tangent_speed = player.velocity.dot(tangent)
+		if tangent_input != 0:
+			tangent_speed = move_toward(tangent_speed, tangent_input * stats.move_speed, accel * delta)
+			player.facing = get_cardinal_direction(move_direction)
+		else:
+			tangent_speed = move_toward(tangent_speed, 0, decel * delta)
+		var grav_speed = player.velocity.dot(grav_dir)
+		player.velocity = grav_dir * grav_speed + tangent * tangent_speed
+	else:
 		if move_direction.x != 0:
 			player.velocity.x = move_toward(player.velocity.x, move_direction.x * stats.move_speed, accel * delta)
 			player.facing = get_cardinal_direction(move_direction)
 		else:
 			player.velocity.x = move_toward(player.velocity.x, 0, decel * delta)
+
+func apply_gravity(delta: float, grav_dir: Vector2) -> void:
+	if not player.is_on_floor():
+		var fall_component = player.velocity.dot(grav_dir)
+		var is_falling = fall_component > 0
+		var gravity_strength = player.player_stats.fall_gravity if is_falling else player.player_stats.jump_gravity
+		player.velocity += grav_dir * gravity_strength * delta
+		fall_component = player.velocity.dot(grav_dir)
+		if fall_component > player.player_stats.max_fall_speed:
+			player.velocity -= grav_dir * (fall_component - player.player_stats.max_fall_speed)
+
+func _physics_process(delta: float) -> void:
+	var grav_dir = PhysicsManager.get_gravity_dir(player.global_position)
+	if PhysicsManager.use_center_gravity:
+		player.up_direction = -grav_dir
+	if player.is_on_floor():
+		has_double_jump = true
+		has_air_dash = true
+	if !is_dashing:
+		apply_gravity(delta, grav_dir)
+	if player.can_move:
+		apply_movement(delta, grav_dir)
 
 	
