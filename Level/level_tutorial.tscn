@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://dy7np3x0q8q3l"]
+
+[ext_resource type="Texture2D" uid="uid://uv38ayqlqbb5" path="res://Graphics/RetroWindowsGUI/Window_Header_Resizable.png" id="1_7pe3o"]
+[ext_resource type="PackedScene" uid="uid://h30c6cijwugy" path="res://Player/player.tscn" id="2_jh7ln"]
+[ext_resource type="Texture2D" uid="uid://fx5ulq8k2bd3" path="res://Graphics/RetroWindowsGUI/Windows_Ratio_Selected.png" id="3_83x32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pe3o"]
+size = Vector2(291, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jh7ln"]
+size = Vector2(153, 19)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jh7ln"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxso3"]
+radius = 56.008926
+
+[node name="LevelTutorial" type="Node2D" unique_id=817616158]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1098530799]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D" unique_id=1823281657]
+offset_left = -576.0
+offset_top = -325.0
+offset_right = 577.0
+offset_bottom = 324.0
+texture = ExtResource("1_7pe3o")
+patch_margin_left = 15
+patch_margin_top = 26
+patch_margin_right = 15
+patch_margin_bottom = 13
+
+[node name="StaticBodyd2" type="StaticBody2D" parent="." unique_id=1209117084]
+position = Vector2(-367, -151)
+collision_layer = 15
+collision_mask = 15
+
+[node name="Label" type="Label" parent="StaticBodyd2" unique_id=10676663]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -11.5
+offset_right = 31.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Welcome to our stupid fucking game"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyd2" unique_id=90250514]
+position = Vector2(-2, -8)
+shape = SubResource("RectangleShape2D_7pe3o")
+
+[node name="Player" parent="." unique_id=1613558614 instance=ExtResource("2_jh7ln")]
+position = Vector2(-431, -272)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=932597700]
+position = Vector2(17, 24)
+
+[node name="Label" type="Label" parent="StaticBody2D" unique_id=263957741]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -11.5
+offset_right = 70.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "jump here fuckwit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=253339023]
+position = Vector2(-4, -3)
+shape = SubResource("RectangleShape2D_jh7ln")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=656293377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2084864951]
+position = Vector2(3, 324)
+shape = SubResource("WorldBoundaryShape2D_jh7ln")
+
+[node name="Label" type="Label" parent="." unique_id=976079901]
+offset_left = 310.0
+offset_top = 201.0
+offset_right = 350.0
+offset_bottom = 224.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=277949899]
+position = Vector2(500, 255)
+
+[node name="TextureRect" type="TextureRect" parent="Area2D" unique_id=1237046461]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_83x32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1094494157]
+shape = SubResource("CircleShape2D_mxso3")
+
+[node name="Label2" type="Label" parent="." unique_id=106222972]
+offset_left = 317.0
+offset_top = 207.0
+offset_right = 521.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "get out of my fucking level"
