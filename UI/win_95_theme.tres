@@ -25,6 +25,7 @@ axis_stretch_vertical = 1
 [resource]
 default_font = ExtResource("2_jwqli")
 Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 18
 Panel/styles/panel = SubResource("StyleBoxTexture_hm7o4")
 VScrollBar/icons/decrement = ExtResource("2_ncd6b")
 VScrollBar/icons/decrement_highlight = ExtResource("3_8s3tr")

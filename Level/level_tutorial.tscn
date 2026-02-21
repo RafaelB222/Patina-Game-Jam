@@ -25,20 +25,19 @@ size = Vector2(220, 24)
 [node name="LevelTutorial" type="Node2D" unique_id=817616158]
 script = ExtResource("1_mxso3")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1098530799]
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D" unique_id=1823281657]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1823281657]
 offset_left = -576.0
 offset_top = -325.0
 offset_right = 577.0
 offset_bottom = 324.0
+theme = ExtResource("3_mxso3")
 texture = ExtResource("1_7pe3o")
 patch_margin_left = 15
 patch_margin_top = 26
 patch_margin_right = 15
 patch_margin_bottom = 13
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/NinePatchRect" unique_id=1793514443]
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect" unique_id=1793514443]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -50,7 +49,7 @@ offset_bottom = 22.0
 grow_horizontal = 0
 texture = ExtResource("3_hm7o4")
 
-[node name="TextureRect2" type="TextureRect" parent="Camera2D/NinePatchRect/TextureRect" unique_id=451094039]
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/TextureRect" unique_id=451094039]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -65,7 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_da1cr")
 
-[node name="TextureRect2" type="TextureRect" parent="Camera2D/NinePatchRect" unique_id=1261060234]
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect" unique_id=1261060234]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -77,7 +76,7 @@ offset_bottom = 22.0
 grow_horizontal = 0
 texture = ExtResource("3_hm7o4")
 
-[node name="TextureRect2" type="TextureRect" parent="Camera2D/NinePatchRect/TextureRect2" unique_id=388867757]
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/TextureRect2" unique_id=388867757]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -92,7 +91,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_0fsbt")
 
-[node name="TextureRect3" type="TextureRect" parent="Camera2D/NinePatchRect" unique_id=1904715184]
+[node name="TextureRect3" type="TextureRect" parent="NinePatchRect" unique_id=1904715184]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -104,7 +103,7 @@ offset_bottom = 22.0
 grow_horizontal = 0
 texture = ExtResource("3_hm7o4")
 
-[node name="TextureRect2" type="TextureRect" parent="Camera2D/NinePatchRect/TextureRect3" unique_id=1514735914]
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/TextureRect3" unique_id=1514735914]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -118,6 +117,17 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_0k5u7")
+
+[node name="Panel" type="Label" parent="NinePatchRect" unique_id=994511797]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 126.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Infiltration.txt"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1098530799]
 
 [node name="StaticBodyd2" type="StaticBody2D" parent="." unique_id=1209117084]
 position = Vector2(-367, -151)

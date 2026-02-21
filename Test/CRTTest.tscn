@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc0bwa552an62"]
 
 [ext_resource type="Texture2D" uid="uid://bkkoba7osbxvy" path="res://Assets/James-Desktop.png" id="1_ywxc7"]
-[ext_resource type="Shader" path="res://crt_shader.gdshader" id="2_1xubi"]
+[ext_resource type="Shader" uid="uid://binfaie2tbsk5" path="res://crt_shader.gdshader" id="2_1xubi"]
 [ext_resource type="Script" uid="uid://knvv3hfxtg8i" path="res://Test/color_rect.gd" id="3_l34m5"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1xubi"]
@@ -12,7 +12,7 @@ resource_local_to_scene = true
 shader = ExtResource("2_1xubi")
 shader_parameter/tex = SubResource("ViewportTexture_1xubi")
 shader_parameter/mask_type = 1
-shader_parameter/curve = 0.0
+shader_parameter/curve = 0.390000018525
 shader_parameter/sharpness = 0.6666667
 shader_parameter/color_offset = 0.0
 shader_parameter/mask_brightness = 1.0
