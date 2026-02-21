@@ -6,6 +6,7 @@ const DISSOLVE_DURATION: float = 1.2
 @onready var _label: Label = $Label
 @onready var _color_rect: ColorRect = $ColorRect
 
+var _corners_touched: Array[bool] = [false, false, false, false]
 var _counting: bool = false
 var _elapsed: float = 0.0
 var _dissolving: bool = false
@@ -25,26 +26,28 @@ func _process(delta: float) -> void:
 			_dissolving = true
 
 func receive_uv_params(active: bool, light_pos: Vector2, facing: Vector2, cone_range: float, cone_half_angle: float) -> void:
-	var mat := _label.material as ShaderMaterial
-	mat.set_shader_parameter("uv_active", active)
-	mat.set_shader_parameter("light_world_pos", light_pos)
-	mat.set_shader_parameter("light_facing", facing)
+	for mat in [_label.material, _color_rect.material]:
+		(mat as ShaderMaterial).set_shader_parameter("uv_active", active)
+		(mat as ShaderMaterial).set_shader_parameter("light_world_pos", light_pos)
+		(mat as ShaderMaterial).set_shader_parameter("light_facing", facing)
 
-	if not _counting and active and _all_corners_in_cone(light_pos, facing, cone_range, cone_half_angle):
-		_counting = true
+	if not _counting and active:
+		_update_corners_touched(light_pos, facing, cone_range, cone_half_angle)
+		if not _corners_touched.has(false):
+			_counting = true
 
-func _all_corners_in_cone(light_pos: Vector2, facing: Vector2, cone_range: float, cone_half_angle: float) -> bool:
+func _update_corners_touched(light_pos: Vector2, facing: Vector2, cone_range: float, cone_half_angle: float) -> void:
 	var corners := [
 		Vector2(_label.offset_left, _label.offset_top),
 		Vector2(_label.offset_right, _label.offset_top),
 		Vector2(_label.offset_left, _label.offset_bottom),
 		Vector2(_label.offset_right, _label.offset_bottom),
 	]
-	for corner in corners:
-		var to_corner = (global_position + corner) - light_pos
+	for i in range(corners.size()):
+		if _corners_touched[i]:
+			continue
+		var to_corner = (global_position + corners[i]) - light_pos
 		var dist = to_corner.length()
-		if dist <= 0.0 or dist >= cone_range:
-			return false
-		if abs(facing.angle_to(to_corner.normalized())) >= cone_half_angle:
-			return false
-	return true
+		if dist > 0.0 and dist < cone_range:
+			if abs(facing.angle_to(to_corner.normalized())) < cone_half_angle:
+				_corners_touched[i] = true

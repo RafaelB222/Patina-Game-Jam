@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://h30c6cijwugy"]
 
 [ext_resource type="Script" uid="uid://crh57r2mj37dy" path="res://Player/player.gd" id="1_l8h54"]
-[ext_resource type="Script" uid="uid://uvlightcomp1" path="res://Player/uv_light_component.gd" id="6_uvcomp"]
 [ext_resource type="Resource" uid="uid://ceoc227akgwo6" path="res://Player/player_stats_resource.tres" id="2_btcbx"]
 [ext_resource type="Texture2D" uid="uid://chwcji4qkd1kv" path="res://Graphics/Virus/Green5.png" id="3_k53q1"]
 [ext_resource type="PackedScene" uid="uid://dshjxf6hsnstq" path="res://Player/player_movement_component.tscn" id="4_gwnis"]
 [ext_resource type="PackedScene" uid="uid://bomi3f1oe3gpj" path="res://Player/input_component.tscn" id="5_k53q1"]
+[ext_resource type="Script" uid="uid://b2tnsrww3gj88" path="res://Player/uv_light_component.gd" id="6_uvcomp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k53q1"]
 radius = 34.132095
@@ -31,12 +31,12 @@ input_component = NodePath("../InputComponent")
 [node name="InputComponent" parent="." unique_id=379749869 instance=ExtResource("5_k53q1")]
 
 [node name="UVLight" type="PointLight2D" parent="." unique_id=2101565176]
-script = ExtResource("6_uvcomp")
 enabled = false
 color = Color(0.4, 0.1, 1, 1)
 energy = 1.5
+script = ExtResource("6_uvcomp")
 
-[node name="ConeArea" type="Area2D" parent="UVLight"]
+[node name="ConeArea" type="Area2D" parent="UVLight" unique_id=1775678849]
 
-[node name="ConeShape" type="CollisionPolygon2D" parent="UVLight/ConeArea"]
+[node name="ConeShape" type="CollisionPolygon2D" parent="UVLight/ConeArea" unique_id=499220476]
 polygon = PackedVector2Array(0, 0, 253, -161, 288, -83, 300, 0, 288, 83, 253, 161)

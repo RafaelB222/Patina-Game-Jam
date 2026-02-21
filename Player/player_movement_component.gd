@@ -113,6 +113,7 @@ func get_cardinal_direction(direction: Vector2) -> Vector2:
 			return Vector2.DOWN
 		else: 
 			return Vector2.UP
+
 func apply_movement(delta: float, grav_dir: Vector2) -> void:
 	var stats = player.player_stats
 	var on_floor = player.is_on_floor()
