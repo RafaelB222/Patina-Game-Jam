@@ -1,0 +1,283 @@
+[gd_scene format=3 uid="uid://y10ops4utcay"]
+
+[ext_resource type="Script" uid="uid://kqoy50vk8nmn" path="res://Level/mailbox.gd" id="1_rrcv3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrcv3"]
+size = Vector2(2000, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt3im"]
+size = Vector2(2000, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fotk5"]
+size = Vector2(20, 4000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6jmw"]
+size = Vector2(20, 4000)
+
+[node name="Mailbox" type="Node2D" unique_id=1655901390]
+script = ExtResource("1_rrcv3")
+
+[node name="Background" type="ColorRect" parent="." unique_id=650658515]
+offset_right = 2000.0
+offset_bottom = 4000.0
+color = Color(0.99999946, 0.9988288, 0.8536532, 1)
+
+[node name="EmailThread" type="Node2D" parent="." unique_id=676545671]
+position = Vector2(70, 50)
+scale = Vector2(3, 3)
+
+[node name="TitleBar" type="Node2D" parent="EmailThread" unique_id=1078457488]
+
+[node name="BG" type="ColorRect" parent="EmailThread/TitleBar" unique_id=1743152282]
+offset_right = 620.0
+offset_bottom = 22.0
+color = Color(0, 0, 0.502, 1)
+
+[node name="TitleIcon" type="ColorRect" parent="EmailThread/TitleBar" unique_id=1414568245]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 20.0
+offset_bottom = 19.0
+color = Color(1, 1, 0, 1)
+
+[node name="TitleText" type="Label" parent="EmailThread/TitleBar" unique_id=404497408]
+offset_left = 26.0
+offset_top = 2.0
+offset_right = 562.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 10
+text = "RE: Confirmed Contact — Millbrook Basin, Montana - Outlook Express"
+vertical_alignment = 1
+
+[node name="BtnMin" type="ColorRect" parent="EmailThread/TitleBar" unique_id=1602552621]
+offset_left = 566.0
+offset_top = 4.0
+offset_right = 582.0
+offset_bottom = 18.0
+color = Color(0.753, 0.753, 0.753, 1)
+
+[node name="BtnMinLabel" type="Label" parent="EmailThread/TitleBar" unique_id=808598059]
+offset_left = 566.0
+offset_top = 3.0
+offset_right = 582.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 9
+text = "_"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnMax" type="ColorRect" parent="EmailThread/TitleBar" unique_id=2001277808]
+offset_left = 584.0
+offset_top = 4.0
+offset_right = 600.0
+offset_bottom = 18.0
+color = Color(0.753, 0.753, 0.753, 1)
+
+[node name="BtnMaxLabel" type="Label" parent="EmailThread/TitleBar" unique_id=2038410203]
+offset_left = 584.0
+offset_top = 3.0
+offset_right = 600.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 9
+text = "▢"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnClose" type="ColorRect" parent="EmailThread/TitleBar" unique_id=592313936]
+offset_left = 602.0
+offset_top = 4.0
+offset_right = 618.0
+offset_bottom = 18.0
+color = Color(0.753, 0.753, 0.753, 1)
+
+[node name="BtnCloseLabel" type="Label" parent="EmailThread/TitleBar" unique_id=565014153]
+offset_left = 602.0
+offset_top = 3.0
+offset_right = 618.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 9
+text = "✕"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuBar" type="Node2D" parent="EmailThread" unique_id=441824054]
+position = Vector2(0, 22)
+
+[node name="BG" type="ColorRect" parent="EmailThread/MenuBar" unique_id=1812060334]
+offset_right = 620.0
+offset_bottom = 26.0
+color = Color(0.753, 0.753, 0.753, 1)
+
+[node name="BottomBorder" type="ColorRect" parent="EmailThread/MenuBar" unique_id=2034000001]
+offset_top = 25.0
+offset_right = 620.0
+offset_bottom = 26.0
+color = Color(0.502, 0.502, 0.502, 1)
+
+[node name="MenuItems" type="Label" parent="EmailThread/MenuBar" unique_id=1512284110]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 616.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 11
+text = "File    Edit    View    Insert    Format    Tools    Message    Help"
+vertical_alignment = 1
+
+[node name="Toolbar" type="Node2D" parent="EmailThread" unique_id=1311432304]
+position = Vector2(0, 48)
+
+[node name="BG" type="ColorRect" parent="EmailThread/Toolbar" unique_id=1342691122]
+offset_right = 620.0
+offset_bottom = 38.0
+color = Color(0.753, 0.753, 0.753, 1)
+
+[node name="BottomBorder" type="ColorRect" parent="EmailThread/Toolbar" unique_id=912141772]
+offset_top = 36.0
+offset_right = 620.0
+offset_bottom = 38.0
+color = Color(0.502, 0.502, 0.502, 1)
+
+[node name="ToolItems" type="Label" parent="EmailThread/Toolbar" unique_id=864126225]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 616.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 11
+text = "⬅ Reply   ⤵ Reply All   ➡ Forward  |  Print   Delete  |  ⬅ Previous   ➡ Next"
+vertical_alignment = 1
+
+[node name="HeaderSection" type="Node2D" parent="EmailThread" unique_id=234249321]
+position = Vector2(0, 86)
+
+[node name="BG" type="ColorRect" parent="EmailThread/HeaderSection" unique_id=1423984120]
+offset_right = 620.0
+offset_bottom = 95.0
+color = Color(0.753, 0.753, 0.753, 1)
+
+[node name="BottomBorder" type="ColorRect" parent="EmailThread/HeaderSection" unique_id=1534342003]
+offset_top = 93.0
+offset_right = 620.0
+offset_bottom = 95.0
+color = Color(0.502, 0.502, 0.502, 1)
+
+[node name="FromLabel" type="Label" parent="EmailThread/HeaderSection" unique_id=1769637263]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 65.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 11
+text = "From:"
+vertical_alignment = 1
+
+[node name="FromField" type="ColorRect" parent="EmailThread/HeaderSection" unique_id=1912758733]
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 612.0
+offset_bottom = 22.0
+
+[node name="FromText" type="Label" parent="EmailThread/HeaderSection" unique_id=502012266]
+modulate = Color(0, 0, 0, 1)
+offset_left = 69.0
+offset_top = 7.0
+offset_right = 612.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 11
+text = "Agent Dana Yates <d.yates@fbi.gov>"
+vertical_alignment = 1
+
+[node name="DateLabel" type="Label" parent="EmailThread/HeaderSection" unique_id=1726043453]
+offset_left = 8.0
+offset_top = 25.0
+offset_right = 65.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 11
+text = "Date:"
+vertical_alignment = 1
+
+[node name="DateField" type="ColorRect" parent="EmailThread/HeaderSection" unique_id=866018669]
+offset_left = 65.0
+offset_top = 25.0
+offset_right = 612.0
+offset_bottom = 41.0
+
+[node name="DateText" type="Label" parent="EmailThread/HeaderSection" unique_id=1195913114]
+modulate = Color(0, 0, 0, 1)
+offset_left = 69.0
+offset_top = 26.0
+offset_right = 612.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 11
+text = "Friday, March 14, 2031  2:47 PM"
+vertical_alignment = 1
+
+[node name="ToLabel" type="Label" parent="EmailThread/HeaderSection" unique_id=1214692134]
+offset_left = 8.0
+offset_top = 44.0
+offset_right = 65.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 11
+text = "To:"
+vertical_alignment = 1
+
+[node name="ToField" type="ColorRect" parent="EmailThread/HeaderSection" unique_id=2067632049]
+offset_left = 65.0
+offset_top = 44.0
+offset_right = 612.0
+offset_bottom = 60.0
+
+[node name="ToText" type="Label" parent="EmailThread/HeaderSection" unique_id=581047694]
+modulate = Color(0, 0, 0, 1)
+offset_left = 69.0
+offset_top = 45.0
+offset_right = 612.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 11
+text = "Dr. Callum Reeves <c.reeves@nasa.gov>"
+vertical_alignment = 1
+
+[node name="SubjectLabel" type="Label" parent="EmailThread/HeaderSection" unique_id=1653103911]
+offset_left = 8.0
+offset_top = 63.0
+offset_right = 65.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 11
+text = "Subject:"
+vertical_alignment = 1
+
+[node name="SubjectField" type="ColorRect" parent="EmailThread/HeaderSection" unique_id=1171135187]
+offset_left = 65.0
+offset_top = 63.0
+offset_right = 612.0
+offset_bottom = 79.0
+
+[node name="SubjectText" type="Label" parent="EmailThread/HeaderSection" unique_id=1728253328]
+modulate = Color(0, 0, 0, 1)
+offset_left = 69.0
+offset_top = 64.0
+offset_right = 612.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 11
+text = "RE: Confirmed Contact — Millbrook Basin, Montana"
+vertical_alignment = 1
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1930194297]
+position = Vector2(188, 165)
+
+[node name="Boarder" type="StaticBody2D" parent="." unique_id=1125750427]
+
+[node name="Top" type="CollisionShape2D" parent="Boarder" unique_id=1960137977]
+position = Vector2(1000, -10)
+shape = SubResource("RectangleShape2D_rrcv3")
+
+[node name="Bottom" type="CollisionShape2D" parent="Boarder" unique_id=938132132]
+position = Vector2(1000, 4000)
+shape = SubResource("RectangleShape2D_tt3im")
+
+[node name="Left" type="CollisionShape2D" parent="Boarder" unique_id=836644245]
+position = Vector2(-10, 2000)
+shape = SubResource("RectangleShape2D_fotk5")
+
+[node name="Right" type="CollisionShape2D" parent="Boarder" unique_id=507457187]
+position = Vector2(2010, 2000)
+shape = SubResource("RectangleShape2D_g6jmw")

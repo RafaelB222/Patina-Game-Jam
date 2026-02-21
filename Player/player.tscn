@@ -40,3 +40,5 @@ script = ExtResource("6_uvcomp")
 
 [node name="ConeShape" type="CollisionPolygon2D" parent="UVLight/ConeArea" unique_id=499220476]
 polygon = PackedVector2Array(0, 0, 253, -161, 288, -83, 300, 0, 288, 83, 253, 161)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=623642857]
