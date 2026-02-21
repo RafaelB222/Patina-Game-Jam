@@ -10,6 +10,16 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_k53q1"]
 radius = 34.132095
 
+[sub_resource type="Curve" id="Curve_vtle1"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.44134897, -198.6207), 0.0, 0.0, 0, 0, Vector2(0.71847504, 64.55173), 0.0, 0.0, 0, 0, Vector2(0.90469205, 360), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_od3ui"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.08211143, -0.8551723), 0.0, 0.0, 0, 0, Vector2(0.41348973, 0.324138), 0.0, 0.0, 0, 0, Vector2(0.7390029, -0.42068958), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
 [node name="Player" type="CharacterBody2D" unique_id=1613558614 node_paths=PackedStringArray("input_component", "player_collision_shape")]
 script = ExtResource("1_l8h54")
 player_stats = ExtResource("2_btcbx")
