@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dc0bwa552an62"]
+
+[ext_resource type="Texture2D" uid="uid://bkkoba7osbxvy" path="res://Assets/James-Desktop.png" id="1_ywxc7"]
+[ext_resource type="Shader" path="res://crt_shader.gdshader" id="2_1xubi"]
+[ext_resource type="Script" uid="uid://knvv3hfxtg8i" path="res://Test/color_rect.gd" id="3_l34m5"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1xubi"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l34m5"]
+resource_local_to_scene = true
+shader = ExtResource("2_1xubi")
+shader_parameter/tex = SubResource("ViewportTexture_1xubi")
+shader_parameter/mask_type = 1
+shader_parameter/curve = 0.0
+shader_parameter/sharpness = 0.6666667
+shader_parameter/color_offset = 0.0
+shader_parameter/mask_brightness = 1.0
+shader_parameter/scanline_brightness = 1.0
+shader_parameter/min_scanline_thickness = 0.5
+shader_parameter/aspect = 0.75
+shader_parameter/wobble_strength = 0.0
+
+[node name="CrtTest" type="Control" unique_id=2143779446]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=297822617]
+size = Vector2i(320, 240)
+render_target_update_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport" unique_id=284124656]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ywxc7")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2052462764]
+material = SubResource("ShaderMaterial_l34m5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_l34m5")
