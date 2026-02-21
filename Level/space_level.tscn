@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://b5mvqs15ts6pn"]
+
+[ext_resource type="Script" uid="uid://dh14674ni3i5p" path="res://Level/space_level.gd" id="1_ab1t3"]
+[ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="2_k5uip"]
+[ext_resource type="PackedScene" uid="uid://bkgakxw6yr54p" path="res://Level/asteroid_cluster_1.tscn" id="3_uxjqv"]
+[ext_resource type="PackedScene" uid="uid://yd8hvr1uu3pa" path="res://Level/single_asteroid.tscn" id="4_single"]
+[ext_resource type="PackedScene" uid="uid://d4f0ae7n81b5k" path="res://Evidence/damning_photgraph.tscn" id="5_v0pqm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k5uip"]
+
+[node name="SpaceLevel" type="Node2D" unique_id=1097262666]
+script = ExtResource("1_ab1t3")
+
+[node name="BlackHole" type="Area2D" parent="." unique_id=2021469180]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlackHole" unique_id=479806300]
+shape = SubResource("CircleShape2D_k5uip")
+
+[node name="Sprite2D" type="Sprite2D" parent="BlackHole" unique_id=1355210613]
+texture = ExtResource("2_k5uip")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=359556238]
+position = Vector2(-1200, -1100)
+
+[node name="AC_Spawn" parent="." unique_id=2000000001 instance=ExtResource("3_uxjqv")]
+position = Vector2(-1080, -1020)
+rotation = 0.436
+
+[node name="SA_001" parent="." unique_id=2000000002 instance=ExtResource("4_single")]
+position = Vector2(-1150, -880)
+
+[node name="SA_002" parent="." unique_id=2000000003 instance=ExtResource("4_single")]
+position = Vector2(-1320, -620)
+rotation = 0.349
+
+[node name="SA_003" parent="." unique_id=2000000004 instance=ExtResource("4_single")]
+position = Vector2(-950, -1080)
+
+[node name="AC_001" parent="." unique_id=2000000005 instance=ExtResource("3_uxjqv")]
+position = Vector2(-780, -1290)
+rotation = -0.96
+
+[node name="SA_004" parent="." unique_id=2000000006 instance=ExtResource("4_single")]
+position = Vector2(-620, -1280)
+
+[node name="SA_005" parent="." unique_id=2000000007 instance=ExtResource("4_single")]
+position = Vector2(-350, -1020)
+
+[node name="AC_002" parent="." unique_id=2000000008 instance=ExtResource("3_uxjqv")]
+position = Vector2(-190, -1250)
+rotation = 2.269
+
+[node name="SA_006" parent="." unique_id=2000000009 instance=ExtResource("4_single")]
+position = Vector2(80, -1340)
+rotation = -0.524
+
+[node name="AC_003" parent="." unique_id=2000000010 instance=ExtResource("3_uxjqv")]
+position = Vector2(310, -1100)
+rotation = -0.262
+
+[node name="SA_007" parent="." unique_id=2000000011 instance=ExtResource("4_single")]
+position = Vector2(640, -1080)
+
+[node name="SA_008" parent="." unique_id=2000000012 instance=ExtResource("4_single")]
+position = Vector2(870, -820)
+
+[node name="AC_004" parent="." unique_id=2000000013 instance=ExtResource("3_uxjqv")]
+position = Vector2(720, -680)
+rotation = 1.396
+
+[node name="SA_009" parent="." unique_id=2000000014 instance=ExtResource("4_single")]
+position = Vector2(290, -920)
+
+[node name="SA_010" parent="." unique_id=2000000015 instance=ExtResource("4_single")]
+position = Vector2(60, -680)
+
+[node name="SA_011" parent="." unique_id=2000000016 instance=ExtResource("4_single")]
+position = Vector2(-190, -540)
+rotation = 0.175
+
+[node name="SA_012" parent="." unique_id=2000000017 instance=ExtResource("4_single")]
+position = Vector2(-1080, -250)
+
+[node name="AC_005" parent="." unique_id=2000000018 instance=ExtResource("3_uxjqv")]
+position = Vector2(-1380, 110)
+rotation = 0.524
+
+[node name="SA_013" parent="." unique_id=2000000019 instance=ExtResource("4_single")]
+position = Vector2(-870, 300)
+
+[node name="AC_006" parent="." unique_id=2000000020 instance=ExtResource("3_uxjqv")]
+position = Vector2(-580, -80)
+rotation = 2.007
+
+[node name="SA_014" parent="." unique_id=2000000021 instance=ExtResource("4_single")]
+position = Vector2(-320, 250)
+rotation = -0.524
+
+[node name="SA_015" parent="." unique_id=2000000022 instance=ExtResource("4_single")]
+position = Vector2(-140, 120)
+
+[node name="SA_016" parent="." unique_id=2000000023 instance=ExtResource("4_single")]
+position = Vector2(460, -260)
+rotation = 2.967
+
+[node name="SA_017" parent="." unique_id=2000000024 instance=ExtResource("4_single")]
+position = Vector2(720, -80)
+
+[node name="AC_007" parent="." unique_id=2000000025 instance=ExtResource("3_uxjqv")]
+position = Vector2(1280, -340)
+rotation = -2.793
+
+[node name="SA_018" parent="." unique_id=2000000026 instance=ExtResource("4_single")]
+position = Vector2(1150, -480)
+rotation = -1.745
+
+[node name="SA_019" parent="." unique_id=2000000027 instance=ExtResource("4_single")]
+position = Vector2(1420, -120)
+rotation = 0.698
+
+[node name="AC_008" parent="." unique_id=2000000028 instance=ExtResource("3_uxjqv")]
+position = Vector2(1200, 120)
+rotation = 0.785
+
+[node name="SA_020" parent="." unique_id=2000000029 instance=ExtResource("4_single")]
+position = Vector2(1180, 180)
+
+[node name="SA_021" parent="." unique_id=2000000030 instance=ExtResource("4_single")]
+position = Vector2(520, 420)
+
+[node name="AC_009" parent="." unique_id=2000000031 instance=ExtResource("3_uxjqv")]
+position = Vector2(-120, 380)
+rotation = -0.873
+
+[node name="SA_022" parent="." unique_id=2000000032 instance=ExtResource("4_single")]
+position = Vector2(-1180, 640)
+
+[node name="AC_010" parent="." unique_id=2000000033 instance=ExtResource("3_uxjqv")]
+position = Vector2(-1240, 380)
+rotation = 0.524
+
+[node name="SA_023" parent="." unique_id=2000000034 instance=ExtResource("4_single")]
+position = Vector2(-680, 870)
+rotation = 1.047
+
+[node name="AC_011" parent="." unique_id=2000000035 instance=ExtResource("3_uxjqv")]
+position = Vector2(-1040, 980)
+rotation = -1.658
+
+[node name="SA_024" parent="." unique_id=2000000036 instance=ExtResource("4_single")]
+position = Vector2(-960, 1240)
+
+[node name="SA_025" parent="." unique_id=2000000037 instance=ExtResource("4_single")]
+position = Vector2(-1290, 1380)
+
+[node name="AC_012" parent="." unique_id=2000000038 instance=ExtResource("3_uxjqv")]
+position = Vector2(-490, 1310)
+rotation = 2.705
+
+[node name="SA_026" parent="." unique_id=2000000039 instance=ExtResource("4_single")]
+position = Vector2(-420, 1080)
+
+[node name="SA_027" parent="." unique_id=2000000040 instance=ExtResource("4_single")]
+position = Vector2(-70, 860)
+
+[node name="AC_013" parent="." unique_id=2000000041 instance=ExtResource("3_uxjqv")]
+position = Vector2(160, 1180)
+rotation = -0.611
+
+[node name="SA_028" parent="." unique_id=2000000042 instance=ExtResource("4_single")]
+position = Vector2(70, 640)
+
+[node name="SA_029" parent="." unique_id=2000000043 instance=ExtResource("4_single")]
+position = Vector2(220, 1260)
+rotation = 2.443
+
+[node name="SA_030" parent="." unique_id=2000000044 instance=ExtResource("4_single")]
+position = Vector2(580, 1020)
+rotation = -1.396
+
+[node name="AC_014" parent="." unique_id=2000000045 instance=ExtResource("3_uxjqv")]
+position = Vector2(660, 1160)
+rotation = 1.92
+
+[node name="SA_031" parent="." unique_id=2000000046 instance=ExtResource("4_single")]
+position = Vector2(770, 780)
+
+[node name="AC_015" parent="." unique_id=2000000047 instance=ExtResource("3_uxjqv")]
+position = Vector2(1060, 820)
+rotation = -1.222
+
+[node name="SA_032" parent="." unique_id=2000000048 instance=ExtResource("4_single")]
+position = Vector2(1340, 560)
+
+[node name="SA_033" parent="." unique_id=2000000049 instance=ExtResource("4_single")]
+position = Vector2(880, 1370)
+
+[node name="SA_034" parent="." unique_id=2000000050 instance=ExtResource("4_single")]
+position = Vector2(1130, 1100)
+
+[node name="AC_GoalMain" parent="." unique_id=2000000051 instance=ExtResource("3_uxjqv")]
+position = Vector2(1120, 1140)
+rotation = 3.491
+
+[node name="AC_GoalAlt" parent="." unique_id=2000000052 instance=ExtResource("3_uxjqv")]
+position = Vector2(1310, 940)
+rotation = -2.094
+
+[node name="DamningPhotgraph" parent="." unique_id=860860609 instance=ExtResource("5_v0pqm")]
+position = Vector2(-718, -121)

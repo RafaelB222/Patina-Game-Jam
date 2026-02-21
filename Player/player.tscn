@@ -6,19 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dshjxf6hsnstq" path="res://Player/player_movement_component.tscn" id="4_gwnis"]
 [ext_resource type="PackedScene" uid="uid://bomi3f1oe3gpj" path="res://Player/input_component.tscn" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://b2tnsrww3gj88" path="res://Player/uv_light_component.gd" id="6_uvcomp"]
+[ext_resource type="PackedScene" uid="uid://cty2blcten5rk" path="res://Player/action_component.tscn" id="7_vtle1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k53q1"]
 radius = 34.132095
-
-[sub_resource type="Curve" id="Curve_vtle1"]
-_limits = [-360.0, 360.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.44134897, -198.6207), 0.0, 0.0, 0, 0, Vector2(0.71847504, 64.55173), 0.0, 0.0, 0, 0, Vector2(0.90469205, 360), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="Curve" id="Curve_od3ui"]
-_limits = [-1.0, 1.0, 0.0, 1.0]
-_data = [Vector2(0.08211143, -0.8551723), 0.0, 0.0, 0, 0, Vector2(0.41348973, 0.324138), 0.0, 0.0, 0, 0, Vector2(0.7390029, -0.42068958), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 4
 
 [node name="Player" type="CharacterBody2D" unique_id=1613558614 node_paths=PackedStringArray("input_component", "player_collision_shape")]
 script = ExtResource("1_l8h54")
@@ -52,3 +43,5 @@ script = ExtResource("6_uvcomp")
 polygon = PackedVector2Array(0, 0, 253, -161, 288, -83, 300, 0, 288, 83, 253, 161)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=623642857]
+
+[node name="ActionComponent" parent="." unique_id=861030658 instance=ExtResource("7_vtle1")]

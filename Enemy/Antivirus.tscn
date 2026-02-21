@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b0xg1x2dnqkdl"]
+
+[ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="1_2m2s2"]
+[ext_resource type="Script" uid="uid://d1ut13d1haqg8" path="res://Enemy/antivirus.gd" id="2_2nfh1"]
+[ext_resource type="Script" uid="uid://csl3ksrkh1kfo" path="res://Enemy/state_machine.gd" id="3_keue2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pk134"]
+
+[node name="Antivirus" type="CharacterBody2D" unique_id=703871089]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=453589789]
+shape = SubResource("CapsuleShape2D_pk134")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=342520922]
+modulate = Color(1, 0.21176471, 0.07058824, 1)
+scale = Vector2(0.578125, 0.5546875)
+texture = ExtResource("1_2m2s2")
+script = ExtResource("2_2nfh1")
+
+[node name="StateMachine" type="Node" parent="." unique_id=997096248]
+script = ExtResource("3_keue2")

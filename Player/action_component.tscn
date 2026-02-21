@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cty2blcten5rk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aklx7"]
+radius = 57.870552
+
+[node name="ActionComponent" type="Area2D" unique_id=861030658]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=625427581]
+rotation = 0.2617994
+shape = SubResource("CircleShape2D_aklx7")

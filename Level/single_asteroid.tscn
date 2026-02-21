@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://yd8hvr1uu3pa"]
+
+[ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="1_80uap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx86e"]
+size = Vector2(128, 128)
+
+[node name="SingleAsteroid" type="StaticBody2D" unique_id=129962681]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1712592678]
+modulate = Color(0.55, 0.35, 0.15, 1)
+texture = ExtResource("1_80uap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789714178]
+shape = SubResource("RectangleShape2D_rx86e")
