@@ -3,13 +3,12 @@
 [ext_resource type="Script" uid="uid://crh57r2mj37dy" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://uvlightcomp1" path="res://Player/uv_light_component.gd" id="6_uvcomp"]
 [ext_resource type="Resource" uid="uid://ceoc227akgwo6" path="res://Player/player_stats_resource.tres" id="2_btcbx"]
-[ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="3_gwnis"]
+[ext_resource type="Texture2D" uid="uid://chwcji4qkd1kv" path="res://Graphics/Virus/Green5.png" id="3_k53q1"]
 [ext_resource type="PackedScene" uid="uid://dshjxf6hsnstq" path="res://Player/player_movement_component.tscn" id="4_gwnis"]
 [ext_resource type="PackedScene" uid="uid://bomi3f1oe3gpj" path="res://Player/input_component.tscn" id="5_k53q1"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvfyp"]
-radius = 61.0
-height = 122.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_k53q1"]
+radius = 34.132095
 
 [node name="Player" type="CharacterBody2D" unique_id=1613558614 node_paths=PackedStringArray("input_component", "player_collision_shape")]
 script = ExtResource("1_l8h54")
@@ -19,10 +18,11 @@ player_collision_shape = NodePath("CollisionShape2D")
 uv_light_offset = 60.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173643046]
-shape = SubResource("CapsuleShape2D_hvfyp")
+shape = SubResource("CircleShape2D_k53q1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=250020712]
-texture = ExtResource("3_gwnis")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_k53q1")
 
 [node name="PlayerMovementComponent" parent="." unique_id=550559937 node_paths=PackedStringArray("player", "input_component") instance=ExtResource("4_gwnis")]
 player = NodePath("..")
