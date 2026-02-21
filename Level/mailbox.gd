@@ -9,7 +9,7 @@ func _ready() -> void:
 		var spawn_point = find_child("SpawnPoint", true, false)
 		if spawn_point:
 			player_instance.global_position = spawn_point.global_position
-			add_child(player_instance)
+		add_child(player_instance)
 
 
 
