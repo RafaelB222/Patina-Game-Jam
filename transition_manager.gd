@@ -5,7 +5,7 @@ signal transition_complete()
 
 var is_transitioning: bool = false
 
-func transition_to(new_scene_file_path: String) -> void:
+func transition_to(new_scene_file_path: String, spawn_id: String = "SpawnPoint") -> void:
 	if is_transitioning:
 		return
 	print_debug("Transitioning to scene: ", new_scene_file_path)
@@ -18,7 +18,7 @@ func transition_to(new_scene_file_path: String) -> void:
 		is_transitioning = false
 		return
 
-	await level_container.load_level(new_scene_file_path)
+	await level_container.load_level(new_scene_file_path, spawn_id)
 
 	transition_complete.emit()
 	await get_tree().create_timer(0.1).timeout

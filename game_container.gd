@@ -9,3 +9,6 @@ func _ready() -> void:
 
 func _on_level_loaded(spawn_position: Vector2) -> void:
 	player.global_position = spawn_position
+	var current_level = level_container._current_level
+	if current_level and "level_type" in current_level:
+		player.setup_for_level_type(current_level.level_type)

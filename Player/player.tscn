@@ -7,16 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://bomi3f1oe3gpj" path="res://Player/input_component.tscn" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://b2tnsrww3gj88" path="res://Player/uv_light_component.gd" id="6_uvcomp"]
 [ext_resource type="PackedScene" uid="uid://cty2blcten5rk" path="res://Player/action_component.tscn" id="7_vtle1"]
+[ext_resource type="Script" uid="uid://dybshqt0u5lix" path="res://Player/top_down_movement_component.gd" id="8_tdmc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k53q1"]
 radius = 34.132095
 
-[node name="Player" type="CharacterBody2D" unique_id=1613558614 node_paths=PackedStringArray("input_component", "player_collision_shape")]
+[node name="Player" type="CharacterBody2D" unique_id=1613558614 node_paths=PackedStringArray("input_component", "player_collision_shape", "side_scroll_movement", "top_down_movement")]
 script = ExtResource("1_l8h54")
 player_stats = ExtResource("2_btcbx")
 input_component = NodePath("InputComponent")
 player_collision_shape = NodePath("CollisionShape2D")
 uv_light_offset = 60.0
+side_scroll_movement = NodePath("PlayerMovementComponent")
+top_down_movement = NodePath("TopDownMovementComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173643046]
 shape = SubResource("CircleShape2D_k53q1")
@@ -43,5 +46,10 @@ script = ExtResource("6_uvcomp")
 polygon = PackedVector2Array(0, 0, 253, -161, 288, -83, 300, 0, 288, 83, 253, 161)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=623642857]
+
+[node name="TopDownMovementComponent" type="Node" parent="." unique_id=912345678 node_paths=PackedStringArray("player", "input_component")]
+script = ExtResource("8_tdmc")
+player = NodePath("..")
+input_component = NodePath("../InputComponent")
 
 [node name="ActionComponent" parent="." unique_id=861030658 instance=ExtResource("7_vtle1")]

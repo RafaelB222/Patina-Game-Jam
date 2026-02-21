@@ -6,7 +6,7 @@ class_name EnemyFollow
 @export var move_speed := 30
 @export var follow_range: int
 @export var animation_tree: AnimationTree
-@onready var animation_state_machine = animation_tree.get("parameters/playback")
+@onready var animation_state_machine = animation_tree.get("parameters/playback") if animation_tree else null
 
 var player: CharacterBody2D
 var attack_range: int
@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func Enter():
 	print("Follow state entered.")
-	player = get_tree().get_first_node_in_group("players")
+	player = get_tree().get_first_node_in_group("player")
 	move_speed = parent_entity.follow_speed
 	follow_range = parent_entity.follow_range
 	attack_range = parent_entity.attack_range

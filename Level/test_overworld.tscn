@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c402hin0dvlay"]
+
+[ext_resource type="Script" uid="uid://ch83c5bo3uwrw" path="res://Level/test_overworld.gd" id="1_0q25o"]
+[ext_resource type="PackedScene" uid="uid://b0xg1x2dnqkdl" path="res://Enemy/Antivirus.tscn" id="2_i637r"]
+
+[sub_resource type="TileSet" id="TileSet_fh375"]
+
+[node name="TestOverworld" type="Node2D" unique_id=2102567711]
+script = ExtResource("1_0q25o")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1020864077]
+tile_set = SubResource("TileSet_fh375")
+
+[node name="Antivirus" parent="." unique_id=703871089 instance=ExtResource("2_i637r")]
+position = Vector2(-15, -353)
+
+[node name="Antivirus2" parent="." unique_id=1436496243 instance=ExtResource("2_i637r")]
+position = Vector2(444, 375)

@@ -5,17 +5,40 @@ class_name Player
 @export var player_stats: PlayerStats
 @export var input_component: Node
 @export var player_collision_shape: CollisionShape2D
+@export var side_scroll_movement: Node
+@export var top_down_movement: Node
 @export var uv_light_offset: float = 25.0
 
 @onready var facing: Vector2 = Vector2.DOWN
 @onready var _sprite: Sprite2D = $Sprite2D
 @onready var _uv_light = $UVLight
 
+var evidence_held: Dictionary = {
+	"password": {
+		"owned": false,
+		"value": null
+	},
+	"image": {
+		"owned": false,
+		"value": null
+	},
+	"sound_clip": {
+		"owned": false,
+		"value": null
+	},
+	"gps_coords": {
+		"owned": false,
+		"value": null
+	}
+}
+
 var can_move: bool = true
 var _facing_indicator: Sprite2D
 var _uv_active: bool = false
 
+
 func _ready() -> void:
+	add_to_group("player")
 	_facing_indicator = Sprite2D.new()
 	_facing_indicator.texture = _sprite.texture
 	_facing_indicator.modulate = Color(1, 0, 0, 0.5)
@@ -74,4 +97,25 @@ func _create_uv_cone_texture(radius: int, angle_deg: float) -> ImageTexture:
 
 func eat_evidence() -> void:
 	pass
-	
+
+func die() -> void:
+	for key in evidence_held:
+		evidence_held[key]["owned"] = false
+		evidence_held[key]["value"] = null
+	var level_container = get_tree().get_first_node_in_group("level_container")
+	if level_container and level_container._current_level:
+		TransitionManager.transition_to(level_container._current_level.scene_file_path)
+	else:
+		get_tree().reload_current_scene()
+
+func setup_for_level_type(type: Enums.LEVEL_TYPE) -> void:
+	match type:
+		Enums.LEVEL_TYPE.SIDE_SCROLL:
+			side_scroll_movement.active = true
+			top_down_movement.active = false
+			motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
+		Enums.LEVEL_TYPE.TOP_DOWN:
+			side_scroll_movement.active = false
+			top_down_movement.active = true
+			motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+			velocity = Vector2.ZERO

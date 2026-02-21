@@ -6,7 +6,7 @@ class_name EnemyWander
 @export var move_speed := 10.0
 @export var follow_range: int
 @export var animation_tree: AnimationTree
-@onready var animation_state_machine = animation_tree.get("parameters/playback")
+@onready var animation_state_machine = animation_tree.get("parameters/playback") if animation_tree else null
 
 var player: CharacterBody2D
 
@@ -31,7 +31,7 @@ func randomize_wander():
 
 func Enter():
 	print("Wander state entered.")
-	player = get_tree().get_first_node_in_group("players")
+	player = get_tree().get_first_node_in_group("player")
 	move_speed = parent_entity.wander_speed
 	follow_range = parent_entity.follow_range
 	print_debug("wander state move speed = ", move_speed, " and follow range = ", follow_range)
@@ -50,8 +50,10 @@ func Update(delta: float):
 func Physics_Update(_delta: float):
 	if parent_entity == null:
 		print_debug("parent entity is null")
-	elif player == null:
+		return
+	if player == null:
 		print_debug("player is null")
+		return
 
 	var direction = player.global_position - parent_entity.global_position
 	

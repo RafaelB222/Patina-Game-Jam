@@ -1,21 +1,44 @@
 [gd_scene format=3 uid="uid://b0xg1x2dnqkdl"]
 
 [ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="1_2m2s2"]
+[ext_resource type="PackedScene" uid="uid://di55u74qb7u5h" path="res://Enemy/antivirus_hurtbox.tscn" id="1_hurtbox"]
 [ext_resource type="Script" uid="uid://d1ut13d1haqg8" path="res://Enemy/antivirus.gd" id="2_2nfh1"]
 [ext_resource type="Script" uid="uid://csl3ksrkh1kfo" path="res://Enemy/state_machine.gd" id="3_keue2"]
+[ext_resource type="PackedScene" uid="uid://chjrkdxaluof2" path="res://Enemy/anitvirus_movement_component.tscn" id="4_mcomp"]
+[ext_resource type="Script" uid="uid://cymw6xi18xlhx" path="res://Enemy/wander_state.gd" id="5_wander"]
+[ext_resource type="Script" uid="uid://bco1s3hft2xix" path="res://Enemy/follow_state.gd" id="6_follow"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pk134"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keue2"]
+size = Vector2(62, 57)
 
 [node name="Antivirus" type="CharacterBody2D" unique_id=703871089]
+script = ExtResource("2_2nfh1")
+
+[node name="AntivirusHurtbox" parent="." unique_id=598119635 instance=ExtResource("1_hurtbox")]
+position = Vector2(-1, -0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=453589789]
-shape = SubResource("CapsuleShape2D_pk134")
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_keue2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=342520922]
 modulate = Color(1, 0.21176471, 0.07058824, 1)
 scale = Vector2(0.578125, 0.5546875)
 texture = ExtResource("1_2m2s2")
-script = ExtResource("2_2nfh1")
 
-[node name="StateMachine" type="Node" parent="." unique_id=997096248]
+[node name="AnitvirusMovementComponent" parent="." unique_id=111222333 node_paths=PackedStringArray("entity", "wander_state", "follow_state") instance=ExtResource("4_mcomp")]
+entity = NodePath("..")
+wander_state = NodePath("../StateMachine/Wander")
+follow_state = NodePath("../StateMachine/Follow")
+
+[node name="StateMachine" type="Node" parent="." unique_id=997096248 node_paths=PackedStringArray("parent_entity")]
 script = ExtResource("3_keue2")
+parent_entity = NodePath("..")
+
+[node name="Wander" type="Node" parent="StateMachine" unique_id=111222334 node_paths=PackedStringArray("parent_entity")]
+script = ExtResource("5_wander")
+parent_entity = NodePath("../..")
+
+[node name="Follow" type="Node" parent="StateMachine" unique_id=111222335 node_paths=PackedStringArray("parent_entity")]
+script = ExtResource("6_follow")
+parent_entity = NodePath("../..")

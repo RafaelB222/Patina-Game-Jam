@@ -3,6 +3,7 @@ extends Node2D
 @export var player: CharacterBody2D
 @export var input_component: Node
 
+var active: bool = true
 var move_direction: Vector2 = Vector2.ZERO
 var has_double_jump: bool = false
 var has_air_dash: bool = false
@@ -32,10 +33,14 @@ func move(direction):
 	move_direction = direction
 
 func invert_gravity():
+	if not active:
+		return
 	PhysicsManager.invert_gravity()
 	player.up_direction = -PhysicsManager.gravity_direction
 
 func dash():
+	if not active:
+		return
 	var on_floor = player.is_on_floor()
 	if !dash_cooldown_timer.is_stopped():
 		return
@@ -149,6 +154,8 @@ func apply_gravity(delta: float, grav_dir: Vector2) -> void:
 			player.velocity -= grav_dir * (fall_component - player.player_stats.max_fall_speed)
 
 func _physics_process(delta: float) -> void:
+	if not active:
+		return
 	var grav_dir = PhysicsManager.get_gravity_dir(player.global_position)
 	if PhysicsManager.use_center_gravity:
 		player.up_direction = -grav_dir

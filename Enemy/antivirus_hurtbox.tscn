@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://di55u74qb7u5h"]
+
+[ext_resource type="Script" uid="uid://ct1cvqfhvnjvj" path="res://Enemy/antivirus_hurtbox.gd" id="1_o7t5s"]
+[ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="2_y23oh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msiwl"]
+size = Vector2(88, 84)
+
+[node name="AntivirusHurtbox" type="Area2D" unique_id=598119635]
+script = ExtResource("1_o7t5s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1134106583]
+shape = SubResource("RectangleShape2D_msiwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=60760250]
+visible = false
+scale = Vector2(0.62500006, 0.609375)
+texture = ExtResource("2_y23oh")

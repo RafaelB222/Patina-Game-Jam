@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://chjrkdxaluof2"]
+
+[ext_resource type="Script" uid="uid://qu6qxe30fi1j" path="res://Enemy/anitvirus_movement_component.gd" id="1_03hk5"]
+
+[node name="AnitvirusMovementComponent" type="Node" unique_id=265644263]
+script = ExtResource("1_03hk5")

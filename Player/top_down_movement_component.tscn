@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbdoy7ifh7j88"]
+
+[ext_resource type="Script" uid="uid://dybshqt0u5lix" path="res://Player/top_down_movement_component.gd" id="1_ptgsi"]
+
+[node name="TopDownMovementComponent" type="Node" unique_id=1553429709]
+script = ExtResource("1_ptgsi")
