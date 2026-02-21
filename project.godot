@@ -20,6 +20,7 @@ boot_splash/show_image=false
 
 PhysicsManager="*uid://cn63djm6d4ree"
 TransitionManager="*uid://bus5hbna8ehwd"
+EvidenceContainer="*uid://bqliy2cdjf8d"
 
 [editor_plugins]
 
