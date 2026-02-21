@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bmixo81k0pcmn"]
 
-[ext_resource type="Script" path="res://game_container.gd" id="4_gcgd"]
 [ext_resource type="PackedScene" uid="uid://h30c6cijwugy" path="res://Player/player.tscn" id="1_ge4kj"]
 [ext_resource type="PackedScene" uid="uid://cjt730l5vmqjw" path="res://Level/level_container.tscn" id="2_aq3js"]
 [ext_resource type="PackedScene" uid="uid://b8d6nki3fog73" path="res://UI/UIContainer.tscn" id="3_aq3js"]
+[ext_resource type="Script" path="res://game_container.gd" id="4_gcgd"]
 
 [node name="GameContainer" type="Node" unique_id=1169836255]
 script = ExtResource("4_gcgd")
@@ -13,4 +13,12 @@ script = ExtResource("4_gcgd")
 [node name="Player" parent="." unique_id=1613558614 instance=ExtResource("1_ge4kj")]
 position = Vector2(184, 58)
 
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1017127360]
+limit_smoothed = true
+
 [node name="UiContainer" parent="." unique_id=1599856749 instance=ExtResource("3_aq3js")]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=223588385]
+color = Color(0.40832946, 0.40832946, 0.40832946, 1)
+energy = 0.42
+blend_mode = 2

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://uv38ayqlqbb5" path="res://Graphics/RetroWindowsGUI/Window_Header_Resizable.png" id="1_7pe3o"]
 [ext_resource type="Script" uid="uid://cx2dr2vojml8s" path="res://Level/level_tutorial.gd" id="1_mxso3"]
+[ext_resource type="Texture2D" uid="uid://uyek587bww3v" path="res://Graphics/RetroWindowsGUI/I4IF27V.png" id="2_0fsbt"]
 [ext_resource type="Texture2D" uid="uid://76v4j14828ty" path="res://Graphics/RetroWindowsGUI/Windows_Button_Inactive.png" id="3_hm7o4"]
 [ext_resource type="Theme" uid="uid://b04unr2qrkngo" path="res://UI/win_95_theme.tres" id="3_mxso3"]
 [ext_resource type="Texture2D" uid="uid://cnydipdno0g4p" path="res://Graphics/RetroWindowsGUI/Windows_Cross.png" id="4_da1cr"]
@@ -9,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://cctchtpnghska" path="res://Graphics/RetroWindowsGUI/Windows_qmark.png" id="6_0k5u7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pe3o"]
-size = Vector2(291, 9)
+size = Vector2(349, 9.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jh7ln"]
-size = Vector2(153, 19)
+size = Vector2(236, 14.5)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jh7ln"]
 
@@ -20,10 +21,27 @@ size = Vector2(153, 19)
 size = Vector2(213, 153)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxso3"]
-size = Vector2(220, 24)
+size = Vector2(258, 17)
 
 [node name="LevelTutorial" type="Node2D" unique_id=817616158]
 script = ExtResource("1_mxso3")
+
+[node name="Win95DefaultBackground" type="TextureRect" parent="." unique_id=638055300]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18711.0
+offset_top = -9362.0
+offset_right = -16791.0
+offset_bottom = -8282.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(20, 20)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_0fsbt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1823281657]
 offset_left = -576.0
@@ -140,10 +158,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.0
+offset_left = -181.0
 offset_top = -13.0
-offset_right = 141.0
-offset_bottom = 15.0
+offset_right = 172.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
@@ -162,10 +180,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Welcome to our stupid fucking game"
+text = "Excellent, you made it in. Remember your mission."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyd2" unique_id=90250514]
-position = Vector2(-2, -8)
+position = Vector2(-3.5, -7.75)
 shape = SubResource("RectangleShape2D_7pe3o")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1111111112]
@@ -174,23 +192,23 @@ position = Vector2(-431, -272)
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=932597700]
 position = Vector2(17, 24)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=253339023]
-position = Vector2(-4, -3)
-shape = SubResource("RectangleShape2D_jh7ln")
-
 [node name="Panel3" type="Panel" parent="StaticBody2D" unique_id=1353789534]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -92.0
+offset_left = -114.0
 offset_top = -11.0
-offset_right = 82.0
-offset_bottom = 14.0
+offset_right = 127.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=253339023]
+position = Vector2(7, -5.25)
+shape = SubResource("RectangleShape2D_jh7ln")
 
 [node name="Label" type="Label" parent="StaticBody2D" unique_id=263957741]
 anchors_preset = 8
@@ -206,7 +224,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "jump here fuckwit"
+text = "Find the Files, Disrupt the System"
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=656293377]
 
@@ -235,7 +253,7 @@ position = Vector2(-14.5, 13.5)
 shape = SubResource("RectangleShape2D_83x32")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=50709220]
-position = Vector2(235, 230)
+position = Vector2(204, 239)
 
 [node name="Panel" type="Panel" parent="StaticBody2D3" unique_id=492673940]
 anchors_preset = 8
@@ -245,8 +263,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -114.0
 offset_top = -17.0
-offset_right = 114.0
-offset_bottom = 17.0
+offset_right = 147.0
+offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
@@ -258,18 +276,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -89.0
-offset_top = -9.0
-offset_right = 115.0
-offset_bottom = 14.0
+offset_left = -123.5
+offset_top = -11.5
+offset_right = 123.5
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "get out of my fucking level"
+text = "The Truth is out there. Bring it back."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1348488064]
-position = Vector2(-1, -2)
+position = Vector2(18, -5.5)
 shape = SubResource("RectangleShape2D_mxso3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
