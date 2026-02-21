@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cspur5vqhbtmj" path="res://Level/level_1.gd" id="1_b1hmd"]
 [ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="1_icon"]
-[ext_resource type="PackedScene" uid="uid://duvsecretplat1" path="res://Level/uv_secret_platform.tscn" id="2_uvlevel"]
+[ext_resource type="PackedScene" uid="uid://c25e10v07b5dc" path="res://Level/uv_secret_platform.tscn" id="2_uvlevel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wide"]
 size = Vector2(384, 128)
@@ -66,5 +66,16 @@ texture = ExtResource("1_icon")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformTop" unique_id=457585598]
 shape = SubResource("RectangleShape2D_1")
 
-[node name="UVSecretPlatform" parent="." instance=ExtResource("2_uvlevel")]
+[node name="UVSecretPlatform" parent="." unique_id=1220056226 instance=ExtResource("2_uvlevel")]
 position = Vector2(350, 480)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1111111111]
+position = Vector2(512, 520)
+
+[node name="Label" type="Label" parent="." unique_id=2137894226]
+z_index = -1
+offset_left = 284.0
+offset_top = 438.0
+offset_right = 722.0
+offset_bottom = 493.0
+text = "This is a secret message of such stupendous importance that if it were discovered then the world would be destroyed."

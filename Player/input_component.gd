@@ -18,9 +18,9 @@ func _input(event: InputEvent) -> void:
 	#if event.is_action_pressed("left_click"):
 		#basic_attack.emit()
 	
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("jump"):
 		jump.emit()
-	if event.is_action_released("ui_accept"):
+	if event.is_action_released("jump"):
 		jump_released.emit()
 	if event.is_action_pressed("dash"):
 		dash.emit()

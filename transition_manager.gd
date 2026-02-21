@@ -5,27 +5,21 @@ signal transition_complete()
 
 var is_transitioning: bool = false
 
-func transition_to(new_scene_file_path: String):
+func transition_to(new_scene_file_path: String) -> void:
+	if is_transitioning:
+		return
 	print_debug("Transitioning to scene: ", new_scene_file_path)
 	is_transitioning = true
 	scene_transitioning.emit()
-	var transition_result = get_tree().change_scene_to_file(new_scene_file_path)
-	if transition_result != OK:
-		printerr("Transition to: ", new_scene_file_path, " failed ;_;")
+
+	var level_container = get_tree().get_first_node_in_group("level_container")
+	if level_container == null:
+		printerr("TransitionManager: Could not find node in group 'level_container'.")
+		is_transitioning = false
 		return
 
-	await get_tree().tree_changed
-	# Wait until the new scene is actually assigned as current_scene
-	while get_tree().current_scene == null:
-		await get_tree().process_frame
-	print_debug("Tree changed")
-	var new_scene = get_tree().current_scene
-	if not new_scene.is_node_ready():
-		await new_scene.ready
-	print_debug("The new scene is now: ", new_scene)
+	await level_container.load_level(new_scene_file_path)
 
 	transition_complete.emit()
-
-	# Brief cooldown before allowing new transitions (prevents infinite loops)
 	await get_tree().create_timer(0.1).timeout
 	is_transitioning = false
