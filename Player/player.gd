@@ -3,12 +3,17 @@ extends CharacterBody2D
 class_name Player
 
 @export var player_stats: PlayerStats
+@export var input_component: Node
+@export var player_collision_shape: CollisionShape2D
+@export var uv_light_offset: float = 25.0
 
 @onready var facing: Vector2 = Vector2.DOWN
 @onready var _sprite: Sprite2D = $Sprite2D
+@onready var _uv_light = $UVLight
 
 var can_move: bool = true
 var _facing_indicator: Sprite2D
+var _uv_active: bool = false
 
 func _ready() -> void:
 	_facing_indicator = Sprite2D.new()
@@ -16,9 +21,15 @@ func _ready() -> void:
 	_facing_indicator.modulate = Color(1, 0, 0, 0.5)
 	_facing_indicator.region_enabled = true
 	add_child(_facing_indicator)
+	input_component.activate_uv_light.connect(activate_uv_light)
+	input_component.eat_evidence.connect(eat_evidence)
+	_uv_light.texture = _create_uv_cone_texture(300, 65.0)
+	_uv_light.rotation = facing.angle()
 
 func _physics_process(_delta: float) -> void:
 	_update_facing_indicator()
+	_uv_light.rotation = facing.angle()
+	_uv_light.position = facing.normalized() * uv_light_offset
 	move_and_slide()
 
 func _update_facing_indicator() -> void:
@@ -42,3 +53,25 @@ func _get_cardinal_facing() -> Vector2:
 		return Vector2.RIGHT if facing.x >= 0 else Vector2.LEFT
 	else:
 		return Vector2.DOWN if facing.y > 0 else Vector2.UP
+
+func activate_uv_light() -> void:
+	_uv_active = !_uv_active
+	_uv_light.set_active(_uv_active)
+
+func _create_uv_cone_texture(radius: int, angle_deg: float) -> ImageTexture:
+	var size = radius * 2
+	var img = Image.create(size, size, false, Image.FORMAT_RGBA8)
+	var center = Vector2(size / 2.0, size / 2.0)
+	var half_angle = deg_to_rad(angle_deg / 2.0)
+	for y in range(size):
+		for x in range(size):
+			var offset = Vector2(x, y) - center
+			var dist = offset.length()
+			if dist > 0.0 and dist <= radius and abs(offset.angle()) <= half_angle:
+				var falloff = pow(1.0 - (dist / radius), 0.5)
+				img.set_pixel(x, y, Color(1, 1, 1, falloff))
+	return ImageTexture.create_from_image(img)
+
+func eat_evidence() -> void:
+	pass
+	

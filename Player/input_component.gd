@@ -6,6 +6,8 @@ signal jump
 signal jump_released
 signal dash
 signal invert_gravity
+signal activate_uv_light
+signal eat_evidence
 
 var last_direction: Vector2 = Vector2.ZERO
 
@@ -24,6 +26,10 @@ func _input(event: InputEvent) -> void:
 		dash.emit()
 	if event.is_action_pressed("invert_gravity"):
 		invert_gravity.emit()
+	if event.is_action_pressed("UVlight"):
+		activate_uv_light.emit()
+	if event.is_action_pressed("eat_evidence"):
+		eat_evidence.emit()
 		
 
 func handle_move_input(_delta: float):

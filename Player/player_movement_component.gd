@@ -3,7 +3,6 @@ extends Node2D
 @export var player: CharacterBody2D
 @export var input_component: Node
 
-
 var move_direction: Vector2 = Vector2.ZERO
 var has_double_jump: bool = false
 var has_air_dash: bool = false
@@ -133,9 +132,10 @@ func apply_movement(delta: float, grav_dir: Vector2) -> void:
 	else:
 		if move_direction.x != 0:
 			player.velocity.x = move_toward(player.velocity.x, move_direction.x * stats.move_speed, accel * delta)
-			player.facing = get_cardinal_direction(move_direction)
 		else:
 			player.velocity.x = move_toward(player.velocity.x, 0, decel * delta)
+		if move_direction != Vector2.ZERO:
+			player.facing = get_cardinal_direction(move_direction)
 
 func apply_gravity(delta: float, grav_dir: Vector2) -> void:
 	if not player.is_on_floor():

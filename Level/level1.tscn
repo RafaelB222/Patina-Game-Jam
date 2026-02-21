@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cspur5vqhbtmj" path="res://Level/level_1.gd" id="1_b1hmd"]
 [ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="1_icon"]
+[ext_resource type="PackedScene" uid="uid://duvsecretplat1" path="res://Level/uv_secret_platform.tscn" id="2_uvlevel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wide"]
 size = Vector2(384, 128)
@@ -64,3 +65,6 @@ texture = ExtResource("1_icon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformTop" unique_id=457585598]
 shape = SubResource("RectangleShape2D_1")
+
+[node name="UVSecretPlatform" parent="." instance=ExtResource("2_uvlevel")]
+position = Vector2(350, 480)
