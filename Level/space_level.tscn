@@ -250,18 +250,18 @@ position = Vector2(1310, 940)
 rotation = -2.094
 
 [node name="DamningPhotgraph" parent="." unique_id=860860609 instance=ExtResource("5_v0pqm")]
-position = Vector2(-1234, -1051)
+position = Vector2(1379, 1055)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="DamningPhotgraph" unique_id=316399757]
-position = Vector2(718, 121)
+position = Vector2(723, 83)
 occluder = SubResource("OccluderPolygon2D_hnnje")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="DamningPhotgraph" unique_id=675928215]
-position = Vector2(871, 78)
+position = Vector2(885, 109)
 occluder = SubResource("OccluderPolygon2D_hnnje")
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="DamningPhotgraph" unique_id=925746288]
-position = Vector2(928, 224)
+position = Vector2(684, 195)
 occluder = SubResource("OccluderPolygon2D_hnnje")
 
 [node name="pointLight2D" type="PointLight2D" parent="DamningPhotgraph" unique_id=1179455105]

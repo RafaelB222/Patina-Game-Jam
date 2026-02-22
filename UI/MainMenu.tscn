@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dxrkm5bqw4v2p"]
 
-[ext_resource type="Script" uid="uid://b5041sydvrtnq" path="res://UI/main_menu.gd" id="1_maingd"]
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_maingd"]
 [ext_resource type="VideoStream" path="res://Assets/patina_labs_smooth.ogv" id="2_b37jj"]
+[ext_resource type="Theme" uid="uid://b04unr2qrkngo" path="res://UI/win_95_theme.tres" id="3_8aown"]
+[ext_resource type="FontFile" uid="uid://b8mgbux3xda04" path="res://Graphics/Fonts/W95FA.otf" id="3_t6syg"]
 
 [node name="MainMenu" type="Control" unique_id=1150712118]
 layout_mode = 3
@@ -62,6 +64,7 @@ theme_override_constants/separation = 16
 
 [node name="TitleLabel" type="Label" parent="MenuPanel/CenterContainer/VBoxContainer" unique_id=403367803]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_t6syg")
 theme_override_font_sizes/font_size = 64
 text = "DialUp.exe"
 horizontal_alignment = 1
@@ -73,6 +76,7 @@ layout_mode = 2
 [node name="NewGameButton" type="Button" parent="MenuPanel/CenterContainer/VBoxContainer" unique_id=1062581968]
 custom_minimum_size = Vector2(240, 56)
 layout_mode = 2
+theme = ExtResource("3_8aown")
 text = "New Game"
 
 [connection signal="pressed" from="MenuPanel/CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_pressed"]

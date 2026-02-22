@@ -15,6 +15,7 @@ run/main_scene="uid://dxrkm5bqw4v2p"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
+config/icon="uid://2gm7v51wp5m4"
 
 [autoload]
 
@@ -24,7 +25,7 @@ EvidenceContainer="*uid://bqliy2cdjf8d"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

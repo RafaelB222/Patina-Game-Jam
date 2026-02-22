@@ -16,7 +16,7 @@
 size = Vector2(363.5, 37.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jh7ln"]
-size = Vector2(240, 47.25)
+size = Vector2(293, 84)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jh7ln"]
 
@@ -31,7 +31,7 @@ texture_margin_right = 13.0
 texture_margin_bottom = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fsbt"]
-size = Vector2(177, 282)
+size = Vector2(177, 274)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0k5u7"]
 size = Vector2(117.5, 22.5)
@@ -221,16 +221,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = -22.0
-offset_right = 126.0
-offset_bottom = 30.0
+offset_left = -145.0
+offset_top = -41.0
+offset_right = 151.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=253339023]
-position = Vector2(6, 3.375)
+position = Vector2(3.5, 4)
 shape = SubResource("RectangleShape2D_jh7ln")
 
 [node name="Label" type="Label" parent="StaticBody2D" unique_id=263957741]
@@ -248,7 +248,9 @@ grow_vertical = 2
 theme = ExtResource("3_mxso3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Remember your mission.
-Find the Files, Disrupt the System"
+Find the Files, Disrupt the System.
+You need a Username and Password.
+Find the username at the top of an email"
 horizontal_alignment = 1
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=656293377]
@@ -364,7 +366,7 @@ Use it to read Redacted
 Files"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InstructionBody" unique_id=840641762]
-position = Vector2(-478.5, 351)
+position = Vector2(-478.5, 347)
 shape = SubResource("RectangleShape2D_0fsbt")
 
 [node name="Button" type="Button" parent="." unique_id=2076476673]
