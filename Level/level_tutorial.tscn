@@ -9,18 +9,26 @@
 [ext_resource type="Texture2D" uid="uid://c3s5b6qjt6diu" path="res://Graphics/RetroWindowsGUI/Windows_expandwindow.png" id="5_0fsbt"]
 [ext_resource type="Texture2D" uid="uid://cctchtpnghska" path="res://Graphics/RetroWindowsGUI/Windows_qmark.png" id="6_0k5u7"]
 [ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="9_0k5u7"]
+[ext_resource type="Texture2D" uid="uid://b6tgb1gqe3mag" path="res://Graphics/RetroWindowsGUI/Window_Header_Inactive.png" id="9_ldhcq"]
 [ext_resource type="AudioStream" uid="uid://d234v7bydvrll" path="res://Graphics/Ear Graphics/spacesong1.mp3" id="11_ldhcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pe3o"]
-size = Vector2(349, 9.5)
+size = Vector2(363.5, 37.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jh7ln"]
-size = Vector2(236, 14.5)
+size = Vector2(240, 47.25)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jh7ln"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxso3"]
 size = Vector2(258, 17)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4vlh"]
+texture = ExtResource("9_ldhcq")
+texture_margin_left = 13.0
+texture_margin_top = 30.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fsbt"]
 size = Vector2(127, 282)
@@ -171,10 +179,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -181.0
-offset_top = -13.0
-offset_right = 172.0
-offset_bottom = 12.0
+offset_left = -188.0
+offset_top = -20.0
+offset_right = 181.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
@@ -185,18 +193,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = -8.0
-offset_right = 111.0
-offset_bottom = 15.0
+offset_left = -184.0
+offset_top = -16.0
+offset_right = 175.0
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Excellent, you made it in. Remember your mission."
+text = "You're in. Now that we've hacked the mainframe
+they can't keep hiding the truth."
+horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyd2" unique_id=90250514]
-position = Vector2(-3.5, -7.75)
+position = Vector2(-3.75, -0.875)
 shape = SubResource("RectangleShape2D_7pe3o")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1111111112]
@@ -211,16 +221,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -114.0
-offset_top = -11.0
-offset_right = 127.0
-offset_bottom = 18.0
+offset_left = -115.0
+offset_top = -22.0
+offset_right = 126.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=253339023]
-position = Vector2(7, -5.25)
+position = Vector2(6, 3.375)
 shape = SubResource("RectangleShape2D_jh7ln")
 
 [node name="Label" type="Label" parent="StaticBody2D" unique_id=263957741]
@@ -237,7 +247,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_mxso3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Find the Files, Disrupt the System"
+text = "Remember your mission.
+Find the Files, Disrupt the System"
+horizontal_alignment = 1
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=656293377]
 
@@ -282,6 +294,40 @@ text = "The Truth is out there. Bring it back."
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1348488064]
 position = Vector2(18, -5.5)
 shape = SubResource("RectangleShape2D_mxso3")
+
+[node name="Panel" type="Panel" parent="." unique_id=1414994195]
+offset_left = 351.0
+offset_top = -250.0
+offset_right = 491.0
+offset_bottom = 69.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_g4vlh")
+
+[node name="TextureRect4" type="TextureRect" parent="Panel" unique_id=1281787329]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -22.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 22.0
+grow_horizontal = 0
+texture = ExtResource("3_hm7o4")
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TextureRect4" unique_id=1943382788]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_da1cr")
 
 [node name="InstructionBody" type="StaticBody2D" parent="." unique_id=374209362]
 position = Vector2(924, -427)

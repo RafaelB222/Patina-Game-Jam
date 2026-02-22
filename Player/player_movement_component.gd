@@ -51,10 +51,12 @@ func dash():
 		has_air_dash = true
 	if PhysicsManager.use_center_gravity:
 		player.velocity = player.facing * player.player_stats.dash_speed * player.player_stats.move_speed
+		TransitionManager.camera_shake.emit(2, .5)
 	else:
 		var dash_dir = signf(player.facing.x) if player.facing.x != 0 else 1.0
 		player.velocity.x = dash_dir * player.player_stats.dash_speed * player.player_stats.move_speed
 		player.velocity.y = 0
+		TransitionManager.camera_shake.emit(2, .5)
 	dash_timer.start(player.player_stats.dash_duration)
 	dash_cooldown_timer.start(player.player_stats.dash_cooldown)
 
@@ -98,11 +100,13 @@ func jump():
 	if player.is_on_floor():
 		var lateral_vel = player.velocity - player.velocity.dot(grav_dir) * grav_dir
 		player.velocity = lateral_vel + (-grav_dir) * abs(player.player_stats.jump_velocity)
+		TransitionManager.camera_shake.emit(2, .5)
 		has_double_jump = true
 	elif has_double_jump:
 		var double_jump_speed = 2.0 * player.player_stats.double_jump_height / player.player_stats.jump_time_to_peak
 		var lateral_vel = player.velocity - player.velocity.dot(grav_dir) * grav_dir
 		player.velocity = lateral_vel + (-grav_dir) * double_jump_speed
+		TransitionManager.camera_shake.emit(2, .5)
 		has_double_jump = true
 
 func jump_released():

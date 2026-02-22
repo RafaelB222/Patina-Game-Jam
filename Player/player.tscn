@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://dybshqt0u5lix" path="res://Player/top_down_movement_component.gd" id="8_tdmc"]
 [ext_resource type="Texture2D" uid="uid://cec12grijc5mt" path="res://Graphics/Virus/Green7.png" id="9_n471f"]
 [ext_resource type="Texture2D" uid="uid://dainmktdxdobf" path="res://Graphics/Virus/Green8.png" id="10_7emwf"]
+[ext_resource type="Script" uid="uid://dbtnvfe4tm8l3" path="res://Player/camera_2d.gd" id="14_8mwp6"]
 [ext_resource type="Texture2D" uid="uid://fs3kpncr57yy" path="res://Graphics/Lights/main.png" id="16_lfmf2"]
 [ext_resource type="Script" uid="uid://42wdg82cmn2x" path="res://Player/directional_light_2d.gd" id="17_hshwv"]
 [ext_resource type="AudioStream" uid="uid://d2p1pymqvgcgu" path="res://Graphics/Ear Graphics/Kenney Samples/slime_000.ogg" id="17_pisgm"]
@@ -118,6 +119,7 @@ script = ExtResource("6_uvcomp")
 polygon = PackedVector2Array(0, 0, 253, -161, 288, -83, 300, 0, 288, 83, 253, 161)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=623642857]
+script = ExtResource("14_8mwp6")
 
 [node name="TopDownMovementComponent" type="Node" parent="." unique_id=912345678 node_paths=PackedStringArray("player", "input_component")]
 script = ExtResource("8_tdmc")

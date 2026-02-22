@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cp84ck3lm7pit" path="res://Graphics/win95 Icons/PNGs/Gray briefcase.png" id="4_rvgrq"]
 [ext_resource type="Texture2D" uid="uid://76v4j14828ty" path="res://Graphics/RetroWindowsGUI/Windows_Button_Inactive.png" id="5_rvgrq"]
 [ext_resource type="Texture2D" uid="uid://cnydipdno0g4p" path="res://Graphics/RetroWindowsGUI/Windows_Cross.png" id="6_jur18"]
-[ext_resource type="Script" uid="uid://cjfxy51g0nail" path="res://Level/button_tets.gd" id="7_n250d"]
-[ext_resource type="AudioStream" uid="uid://72pb7sbo3o8t" path="res://Graphics/Ear Graphics/mouse-click-really-fuckin-short.mp3" id="8_n250d"]
 
 [node name="InventoryUI" type="Control" unique_id=1920487921]
 visible = false
@@ -38,11 +36,6 @@ offset_top = -52.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="AudioFileSprite" type="TextureRect" parent="PanelContainer/Panel/VBoxContainer" unique_id=579803812]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="TextFileSprite" type="TextureRect" parent="PanelContainer/Panel/VBoxContainer" unique_id=1894840932]
 layout_mode = 2
@@ -92,15 +85,16 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Inv."
 
-[node name="Button" type="Button" parent="." unique_id=1670181297]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1671386971]
 layout_mode = 0
-offset_left = 156.0
-offset_top = 83.0
-offset_right = 247.0
-offset_bottom = 135.0
-script = ExtResource("7_n250d")
+offset_left = 26.0
+offset_top = 39.0
+offset_right = 63.0
+offset_bottom = 73.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button" unique_id=136458536]
-stream = ExtResource("8_n250d")
-
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=790675175]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 78.0
+offset_right = 64.0
+offset_bottom = 112.0

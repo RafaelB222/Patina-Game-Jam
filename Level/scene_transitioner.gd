@@ -62,6 +62,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and in_exit:
 		sound.play()
+		TransitionManager.camera_shake.emit(2, .5)
 		if not texture:
 			text.texture = selected
 		await get_tree().create_timer(.5).timeout

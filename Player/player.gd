@@ -110,6 +110,7 @@ func _create_uv_cone_texture(radius: int, angle_deg: float) -> ImageTexture:
 
 func eat_evidence() -> void:
 	for evidence in _action_component.get_nearby_evidence():
+		EvidenceContainer.evidence_obtained.emit()
 		var type: String = evidence.evidence_type
 		if evidence_held.has(type):
 			evidence_held[type]["owned"] = true
@@ -124,6 +125,8 @@ func eat_evidence() -> void:
 
 func die() -> void:
 	##THIS NEEDS TO HAPPEN BEFORE TRANSITION
+	TransitionManager.camera_shake.emit(5, 2)
+	print("sending")
 	death_audio.play()
 	var tween = get_tree().create_tween()
 	tween.tween_property(_sprite, "modulate", Color.RED, 1.0)

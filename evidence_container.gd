@@ -9,6 +9,7 @@ var sound_clip_obtained: bool = false
 var gps_coords: Vector2
 var gps_coords_obtained: bool = false
 
+signal evidence_obtained()
 
 func all_evidence_obtained() ->  bool:
 	if password_obtained and image_obtained and sound_clip_obtained and gps_coords_obtained:
@@ -19,19 +20,23 @@ func all_evidence_obtained() ->  bool:
 func obtain_password(obtained_password: String) -> void:
 	password = obtained_password
 	password_obtained = true
+	evidence_obtained.emit()
 
 func obtain_image(obtained_image: Texture2D) -> void:
 	image = obtained_image
 	image_obtained = true
+	evidence_obtained.emit()
 
 
 func obtain_sound_clip(obtained_clip: AudioStream) -> void:
 	sound_clip = obtained_clip
 	sound_clip_obtained = true
+	evidence_obtained.emit()
 
 func obtain_gps_coords(obtained_coords: Vector2) -> void:
 	gps_coords = obtained_coords
 	gps_coords_obtained = true
+	evidence_obtained.emit()
 
 
 func _process(delta: float) -> void:
