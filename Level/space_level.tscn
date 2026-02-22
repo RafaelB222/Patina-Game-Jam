@@ -237,7 +237,7 @@ position = Vector2(1310, 940)
 rotation = -2.094
 
 [node name="DamningPhotgraph" parent="." unique_id=860860609 instance=ExtResource("5_v0pqm")]
-position = Vector2(-718, -121)
+position = Vector2(1395, 1090)
 
 [node name="PointLight2D" type="PointLight2D" parent="DamningPhotgraph" unique_id=1181372935]
 color = Color(0.78585064, 0.738495, 0.56450534, 1)

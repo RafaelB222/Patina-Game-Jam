@@ -1,6 +1,7 @@
 extends Control
 
 @onready var texture_rect: TextureRect = $TextureRect
+@onready var label: Label = $Label
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
@@ -8,8 +9,9 @@ func _ready() -> void:
 	add_to_group("image_popup")
 	timer.timeout.connect(_dismiss)
 
-func show_image(texture: Texture2D) -> void:
+func show_evidence(texture: Texture2D, label_text: String) -> void:
 	texture_rect.texture = texture
+	label.text = label_text
 	visible = true
 	timer.start()
 

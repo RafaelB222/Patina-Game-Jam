@@ -5,8 +5,8 @@ extends Node2D
 
 var active: bool = true
 var move_direction: Vector2 = Vector2.ZERO
-var has_double_jump: bool = false
-var has_air_dash: bool = false
+var air_jumps_remaining: int = 2
+var air_dashes_remaining: int = 2
 var is_dashing: bool = false
 
 @onready var dash_timer: Timer = Timer.new()
@@ -44,11 +44,11 @@ func dash():
 	var on_floor = player.is_on_floor()
 	if !dash_cooldown_timer.is_stopped():
 		return
-	if !on_floor and !has_air_dash:
+	if !on_floor and air_dashes_remaining <= 0:
 		return
 	is_dashing = true
 	if !on_floor:
-		has_air_dash = true
+		air_dashes_remaining -= 1
 	if PhysicsManager.use_center_gravity:
 		player.velocity = player.facing * player.player_stats.dash_speed * player.player_stats.move_speed
 		TransitionManager.camera_shake.emit(2, .5)
@@ -101,13 +101,13 @@ func jump():
 		var lateral_vel = player.velocity - player.velocity.dot(grav_dir) * grav_dir
 		player.velocity = lateral_vel + (-grav_dir) * abs(player.player_stats.jump_velocity)
 		TransitionManager.camera_shake.emit(2, .5)
-		has_double_jump = true
-	elif has_double_jump:
+		air_jumps_remaining = 2
+	elif air_jumps_remaining > 0:
 		var double_jump_speed = 2.0 * player.player_stats.double_jump_height / player.player_stats.jump_time_to_peak
 		var lateral_vel = player.velocity - player.velocity.dot(grav_dir) * grav_dir
 		player.velocity = lateral_vel + (-grav_dir) * double_jump_speed
 		TransitionManager.camera_shake.emit(2, .5)
-		has_double_jump = true
+		air_jumps_remaining -= 1
 
 func jump_released():
 	pass
@@ -165,8 +165,8 @@ func _physics_process(delta: float) -> void:
 	var grav_dir = PhysicsManager.get_gravity_dir(player.global_position)
 	player.up_direction = -grav_dir
 	if player.is_on_floor():
-		has_double_jump = true
-		has_air_dash = true
+		air_jumps_remaining = 2
+		air_dashes_remaining = 2
 	if !is_dashing:
 		apply_gravity(delta, grav_dir)
 	if player.can_move:

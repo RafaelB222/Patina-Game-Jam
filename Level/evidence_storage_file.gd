@@ -57,7 +57,15 @@ func check_evidence() -> bool:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and player_in_range:
-		#var evidence: Dictionary = player.evidence_held
-		check_evidence()
-		TransitionManager.transition_to(path_to_victory)
+		if check_evidence():
+			TransitionManager.transition_to(path_to_victory)
+		else:
+			var popup = get_tree().get_first_node_in_group("image_popup")
+			if popup:
+				if not EvidenceContainer.username_obtained and not EvidenceContainer.password_obtained:
+					popup.show_evidence(null, "Missing Username and Password!")
+				elif not EvidenceContainer.username_obtained:
+					popup.show_evidence(null, "Missing Username!")
+				elif not EvidenceContainer.password_obtained:
+					popup.show_evidence(null, "Missing Password!")
 		

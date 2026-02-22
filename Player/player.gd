@@ -101,6 +101,7 @@ func _create_uv_cone_texture(radius: int, angle_deg: float) -> ImageTexture:
 	return ImageTexture.create_from_image(img)
 
 func eat_evidence() -> void:
+	var popup = get_tree().get_first_node_in_group("image_popup")
 	for evidence in _action_component.get_nearby_evidence():
 		EvidenceContainer.evidence_obtained.emit()
 		var type: String = evidence.evidence_type
@@ -109,40 +110,42 @@ func eat_evidence() -> void:
 			evidence_held[type]["value"] = evidence.evidence_value
 			print("You obtained the: ", type, " evidence!!!! Evidence held is now: ", evidence_held)
 			if type == "password":
-				#var popup = get_tree().get_first_node_in_group("image_popup")
 				EvidenceContainer.obtain_password(evidence.evidence_value)
-				#if popup:
-					#popup.show_image(evidence.evidence_value)
 				eat_audio.play()
 			elif type == "username":
 				EvidenceContainer.obtain_username(evidence.evidence_value)
 				print("Username collected: ", evidence.evidence_value)
 				eat_audio.play()
+			if popup:
+				var sprite = evidence.get_node_or_null("Sprite2D")
+				var texture = sprite.texture if sprite else null
+				popup.show_evidence(texture, type.capitalize() + " obtained!")
 		evidence.queue_free()
 	print("Username stored in evidence: ", EvidenceContainer.username, ". Password stored in evidence: ", EvidenceContainer.password)
 
 func die() -> void:
 	##THIS NEEDS TO HAPPEN BEFORE TRANSITION
-	TransitionManager.camera_shake.emit(5, 2)
-	print("sending")
-	death_audio.play()
-	var tween = get_tree().create_tween()
-	tween.tween_property(_sprite, "modulate", Color.RED, 1.0)
-	tween.parallel().tween_property(_sprite, "scale", Vector2(), 1.0)
-	#await get_tree().create_timer(1).timeout
-	for key in evidence_held:
-		evidence_held[key]["owned"] = false
-		evidence_held[key]["value"] = null
-	var level_container = get_tree().get_first_node_in_group("level_container")
-	if level_container and level_container._current_level:
-		TransitionManager.transition_to(level_container._current_level.scene_file_path)
-		
-	else:
-		get_tree().reload_current_scene()
-	tween.tween_property(_sprite, "modulate", original_modulate, 0.2)
-	tween.parallel().tween_property(_sprite, "scale", original_scale, 0.2)
-	await get_tree().create_timer(1).timeout
-	rebirth_audio.play()
+	if !TransitionManager.is_transitioning:
+		TransitionManager.camera_shake.emit(5, 2)
+		print("sending")
+		death_audio.play()
+		var tween = get_tree().create_tween()
+		tween.tween_property(_sprite, "modulate", Color.RED, 1.0)
+		tween.parallel().tween_property(_sprite, "scale", Vector2(), 1.0)
+		#await get_tree().create_timer(1).timeout
+		for key in evidence_held:
+			evidence_held[key]["owned"] = false
+			evidence_held[key]["value"] = null
+		var level_container = get_tree().get_first_node_in_group("level_container")
+		if level_container and level_container._current_level:
+			TransitionManager.transition_to(level_container._current_level.scene_file_path)
+			
+		else:
+			get_tree().reload_current_scene()
+		tween.tween_property(_sprite, "modulate", original_modulate, 0.2)
+		tween.parallel().tween_property(_sprite, "scale", original_scale, 0.2)
+		await get_tree().create_timer(1).timeout
+		rebirth_audio.play()
 
 func setup_for_level_type(type: Enums.LEVEL_TYPE) -> void:
 	match type:

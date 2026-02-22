@@ -31,8 +31,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("dash"):
 		dash.emit()
 		dash_audio.play()
-	if event.is_action_pressed("invert_gravity"):
-		invert_gravity.emit()
 	if event.is_action_pressed("UVlight"):
 		activate_uv_light.emit()
 	if event.is_action_pressed("eat_evidence"):

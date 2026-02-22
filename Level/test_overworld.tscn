@@ -302,21 +302,21 @@ position = Vector2(-289, 229)
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=50360147]
 position = Vector2(942, -411)
 
-[node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("4_vfu0w")]
+[node name="PornStash" parent="." unique_id=1033257813 instance=ExtResource("4_vfu0w")]
 position = Vector2(-427, -254)
 next_scene = "res://Level/empty_folder.tscn"
 texture = ExtResource("6_mr34p")
 label_text = "Porn Stash"
 
-[node name="SceneTransitioner2" parent="." unique_id=1910001107 instance=ExtResource("4_vfu0w")]
+[node name="SpaceTransition" parent="." unique_id=1910001107 instance=ExtResource("4_vfu0w")]
 position = Vector2(574, -91)
 next_scene = "res://Level/space_level.tscn"
 texture = ExtResource("6_mr34p")
-label_text = "Documents"
+label_text = "New Frontiers"
 
-[node name="SceneTransitioner3" parent="." unique_id=188250733 instance=ExtResource("4_vfu0w")]
+[node name="LunchMeetings" parent="." unique_id=188250733 instance=ExtResource("4_vfu0w")]
 position = Vector2(56, 273)
-next_scene = "res://Level/space_level.tscn"
+next_scene = "uid://qy0mj63be7co"
 texture = ExtResource("6_mr34p")
 label_text = "Lunch Meetings"
 
@@ -327,3 +327,15 @@ position = Vector2(665, -88)
 next_scene = "uid://y10ops4utcay"
 texture = ExtResource("8_220s0")
 label_text = "Mailbox"
+
+[node name="Area51PNL1974" parent="." unique_id=1331405431 instance=ExtResource("4_vfu0w")]
+position = Vector2(-1092, 822)
+next_scene = "uid://qy0mj63be7co"
+texture = ExtResource("6_mr34p")
+label_text = "Area 51 PNL 1974"
+
+[node name="TopSecret" parent="." unique_id=1867332724 instance=ExtResource("4_vfu0w")]
+position = Vector2(1334, 427)
+next_scene = "uid://qy0mj63be7co"
+texture = ExtResource("6_mr34p")
+label_text = "Top Secret"

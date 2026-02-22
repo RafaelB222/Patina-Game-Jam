@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxrkm5bqw4v2p"]
 
 [ext_resource type="Script" uid="uid://b5041sydvrtnq" path="res://UI/main_menu.gd" id="1_maingd"]
-[ext_resource type="VideoStream" uid="uid://dtjcqgubd1r3j" path="res://Assets/patina_labs_smooth.ogv" id="2_b37jj"]
+[ext_resource type="VideoStream" path="res://Assets/patina_labs_smooth.ogv" id="2_b37jj"]
 
 [node name="MainMenu" type="Control" unique_id=1150712118]
 layout_mode = 3
@@ -63,7 +63,7 @@ theme_override_constants/separation = 16
 [node name="TitleLabel" type="Label" parent="MenuPanel/CenterContainer/VBoxContainer" unique_id=403367803]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "Strange Places"
+text = "DialUp.exe"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="MenuPanel/CenterContainer/VBoxContainer" unique_id=13208762]
