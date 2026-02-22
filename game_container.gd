@@ -1,7 +1,7 @@
 extends Node
 
-@onready var player: CharacterBody2D = $Player
-@onready var level_container = $LevelContainer
+@onready var player: CharacterBody2D = $SubViewportContainer/SubViewport/Player
+@onready var level_container = $SubViewportContainer/SubViewport/LevelContainer
 
 func _ready() -> void:
 	level_container.level_loaded.connect(_on_level_loaded)

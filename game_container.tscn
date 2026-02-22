@@ -4,21 +4,49 @@
 [ext_resource type="PackedScene" uid="uid://cjt730l5vmqjw" path="res://Level/level_container.tscn" id="2_aq3js"]
 [ext_resource type="PackedScene" uid="uid://b8d6nki3fog73" path="res://UI/UIContainer.tscn" id="3_aq3js"]
 [ext_resource type="Script" uid="uid://crmdoeoqdipyt" path="res://game_container.gd" id="4_gcgd"]
+[ext_resource type="Shader" uid="uid://binfaie2tbsk5" path="res://crt_shader.gdshader" id="5_dvbua"]
+[ext_resource type="Script" uid="uid://knvv3hfxtg8i" path="res://Test/color_rect.gd" id="6_shdsl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ul0mr"]
+resource_local_to_scene = true
+shader = ExtResource("5_dvbua")
+shader_parameter/mask_type = 4
+shader_parameter/curve = 0.1070000050825
+shader_parameter/sharpness = 0.726000010735
+shader_parameter/color_offset = -0.08899998047750002
+shader_parameter/mask_brightness = 0.88800004218
+shader_parameter/scanline_brightness = 0.7490000118275
+shader_parameter/min_scanline_thickness = 0.61400001729
+shader_parameter/aspect = 0.562000002945
+shader_parameter/wobble_strength = 0.518000024605
 
 [node name="GameContainer" type="Node" unique_id=1169836255]
 script = ExtResource("4_gcgd")
 
-[node name="LevelContainer" parent="." unique_id=1143750569 instance=ExtResource("2_aq3js")]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1410093102]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Player" parent="." unique_id=1613558614 instance=ExtResource("1_ge4kj")]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1153399699]
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="LevelContainer" parent="SubViewportContainer/SubViewport" unique_id=1143750569 instance=ExtResource("2_aq3js")]
+
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=1613558614 instance=ExtResource("1_ge4kj")]
 position = Vector2(184, 58)
 
-[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1017127360]
+[node name="Camera2D2" type="Camera2D" parent="SubViewportContainer/SubViewport/Player" unique_id=1017127360]
 limit_smoothed = true
 
-[node name="UiContainer" parent="." unique_id=1599856749 instance=ExtResource("3_aq3js")]
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=223588385]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="SubViewportContainer/SubViewport" unique_id=223588385]
 color = Color(0.40832946, 0.40832946, 0.40832946, 1)
 energy = 0.42
 blend_mode = 2
+
+[node name="UiContainer" parent="SubViewportContainer/SubViewport" unique_id=1599856749 instance=ExtResource("3_aq3js")]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer" unique_id=720371938]
+material = SubResource("ShaderMaterial_ul0mr")
+layout_mode = 2
+script = ExtResource("6_shdsl")

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://tre45n4um0np"]
 
 [ext_resource type="Theme" uid="uid://b04unr2qrkngo" path="res://UI/win_95_theme.tres" id="1_ng86p"]
-[ext_resource type="Texture2D" path="res://Graphics/win95 Icons/Sound program-1.png" id="2_n6yp6"]
 [ext_resource type="Texture2D" uid="uid://cwi0s472iidvm" path="res://Graphics/win95 Icons/PNGs/Mail text-1.png" id="3_5a0oy"]
 [ext_resource type="Texture2D" uid="uid://cp84ck3lm7pit" path="res://Graphics/win95 Icons/PNGs/Gray briefcase.png" id="4_rvgrq"]
 [ext_resource type="Texture2D" uid="uid://76v4j14828ty" path="res://Graphics/RetroWindowsGUI/Windows_Button_Inactive.png" id="5_rvgrq"]
@@ -41,7 +40,6 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_n6yp6")
 
 [node name="TextFileSprite" type="TextureRect" parent="PanelContainer/Panel/VBoxContainer" unique_id=1894840932]
 layout_mode = 2

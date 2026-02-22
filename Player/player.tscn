@@ -24,7 +24,7 @@ uv_light_offset = 60.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173643046]
 shape = SubResource("CircleShape2D_k53q1")
 
-[node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=1740804528]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1740804528]
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("6_b1ygp")
 
