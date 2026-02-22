@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var level_center: Vector2 = Vector2.ZERO
+var level_type = Enums.LEVEL_TYPE.SIDE_SCROLL
 
 func _ready() -> void:
 	PhysicsManager.use_center_gravity = true

@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://crr6s1qyr6emd"]
 
-[ext_resource type="Script" path="res://Level/test_overworld.gd" id="1_0q25o"]
+[ext_resource type="Script" uid="uid://ch83c5bo3uwrw" path="res://Level/test_overworld.gd" id="1_0q25o"]
 [ext_resource type="PackedScene" uid="uid://b0xg1x2dnqkdl" path="res://Enemy/Antivirus.tscn" id="2_i637r"]
 [ext_resource type="PackedScene" uid="uid://bv80ib07xjhjg" path="res://Level/evidence_storage_file.tscn" id="3_eo1io"]
+[ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="4_vfu0w"]
+[ext_resource type="PackedScene" uid="uid://b5mvqs15ts6pn" path="res://Level/space_level.tscn" id="5_56ifb"]
+[ext_resource type="Texture2D" uid="uid://b5c7pw8uo17pd" path="res://Graphics/win95 Icons/All [Without duplicates]/Folder (hi-res).png" id="6_mr34p"]
 
 [sub_resource type="TileSet" id="TileSet_fh375"]
 
@@ -20,3 +23,27 @@ position = Vector2(444, 375)
 
 [node name="EvidenceStorageFile" parent="." unique_id=1379983594 instance=ExtResource("3_eo1io")]
 position = Vector2(-289, 229)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=50360147]
+position = Vector2(942, -411)
+
+[node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("4_vfu0w")]
+position = Vector2(-427, -254)
+next_scene = ExtResource("5_56ifb")
+texture = ExtResource("6_mr34p")
+label_text = "Porn Stash"
+
+[node name="SceneTransitioner2" parent="." unique_id=1910001107 instance=ExtResource("4_vfu0w")]
+position = Vector2(574, -91)
+next_scene = ExtResource("5_56ifb")
+texture = ExtResource("6_mr34p")
+label_text = "Documents"
+
+[node name="SceneTransitioner3" parent="." unique_id=188250733 instance=ExtResource("4_vfu0w")]
+position = Vector2(56, 273)
+next_scene = ExtResource("5_56ifb")
+texture = ExtResource("6_mr34p")
+label_text = "Lunch Meetings"
+
+[node name="SpaceSpawnPoint" type="Marker2D" parent="." unique_id=465538156]
+position = Vector2(665, -88)

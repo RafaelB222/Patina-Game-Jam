@@ -24,7 +24,7 @@ EvidenceContainer="*uid://bqliy2cdjf8d"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
 
 [input]
 

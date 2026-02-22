@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cnydipdno0g4p" path="res://Graphics/RetroWindowsGUI/Windows_Cross.png" id="4_da1cr"]
 [ext_resource type="Texture2D" uid="uid://c3s5b6qjt6diu" path="res://Graphics/RetroWindowsGUI/Windows_expandwindow.png" id="5_0fsbt"]
 [ext_resource type="Texture2D" uid="uid://cctchtpnghska" path="res://Graphics/RetroWindowsGUI/Windows_qmark.png" id="6_0k5u7"]
+[ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="9_0k5u7"]
+[ext_resource type="PackedScene" uid="uid://88fj3ydsx3xe" path="res://Level/level1.tscn" id="10_435nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pe3o"]
 size = Vector2(349, 9.5)
@@ -16,9 +18,6 @@ size = Vector2(349, 9.5)
 size = Vector2(236, 14.5)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jh7ln"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_83x32"]
-size = Vector2(213, 153)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxso3"]
 size = Vector2(258, 17)
@@ -238,26 +237,6 @@ text = "Find the Files, Disrupt the System"
 position = Vector2(3, 324)
 shape = SubResource("WorldBoundaryShape2D_jh7ln")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=277949899]
-position = Vector2(477, 227)
-
-[node name="TextureRect" type="TextureRect" parent="Area2D" unique_id=1237046461]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1094494157]
-position = Vector2(-14.5, 13.5)
-shape = SubResource("RectangleShape2D_83x32")
-
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=50709220]
 position = Vector2(204, 239)
 
@@ -340,5 +319,6 @@ text = "Pimpin Aint Easy"
 position = Vector2(62.25, 13.75)
 shape = SubResource("RectangleShape2D_0k5u7")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("9_0k5u7")]
+position = Vector2(490, 259)
+next_scene = ExtResource("10_435nn")

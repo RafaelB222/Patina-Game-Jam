@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cspur5vqhbtmj" path="res://Level/level_1.gd" id="1_b1hmd"]
 [ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="1_icon"]
 [ext_resource type="PackedScene" uid="uid://c25e10v07b5dc" path="res://Level/uv_secret_platform.tscn" id="2_uvlevel"]
+[ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="4_nkc7i"]
+[ext_resource type="PackedScene" uid="uid://crr6s1qyr6emd" path="res://Level/test_overworld.tscn" id="5_871rc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wide"]
 size = Vector2(384, 128)
@@ -79,3 +81,7 @@ offset_top = 438.0
 offset_right = 722.0
 offset_bottom = 493.0
 text = "This is a secret message of such stupendous importance that if it were discovered then the world would be destroyed."
+
+[node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("4_nkc7i")]
+position = Vector2(703, 190)
+next_scene = ExtResource("5_871rc")

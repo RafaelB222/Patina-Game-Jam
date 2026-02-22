@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dvqabjs2foubn"]
+
+[ext_resource type="Script" uid="uid://cltk5qgtcuwlh" path="res://Level/scene_transitioner.gd" id="1_kxgb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1phn2"]
+size = Vector2(112, 81)
+
+[node name="SceneTransitioner" type="Area2D" unique_id=1033257813]
+script = ExtResource("1_kxgb4")
+
+[node name="Highlight" type="ColorRect" parent="." unique_id=1122334455]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.5, 1, 0.3)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1291570328]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=998877665]
+visible = false
+modulate = Color(0.038397167, 0.038397167, 0.03839716, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 24.0
+offset_right = 40.0
+offset_bottom = 38.0
+grow_horizontal = 2
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=926716998]
+shape = SubResource("RectangleShape2D_1phn2")
