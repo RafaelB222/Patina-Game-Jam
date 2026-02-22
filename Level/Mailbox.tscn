@@ -31,9 +31,10 @@ script = ExtResource("1_rrcv3")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=379374060]
 layout_mode = 0
-offset_left = -10.0
-offset_right = 2010.0
-offset_bottom = 4000.0
+offset_left = -3239.0
+offset_top = -2135.0
+offset_right = 5854.0
+offset_bottom = 5652.0
 texture = ExtResource("3_y27di")
 
 [node name="MailboxApp" type="Control" parent="." unique_id=1620345518]

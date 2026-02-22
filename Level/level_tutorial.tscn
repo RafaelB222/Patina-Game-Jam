@@ -31,7 +31,7 @@ texture_margin_right = 13.0
 texture_margin_bottom = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fsbt"]
-size = Vector2(127, 282)
+size = Vector2(177, 282)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0k5u7"]
 size = Vector2(117.5, 22.5)
@@ -298,8 +298,8 @@ shape = SubResource("RectangleShape2D_mxso3")
 [node name="Panel" type="Panel" parent="." unique_id=1414994195]
 offset_left = 351.0
 offset_top = -250.0
-offset_right = 491.0
-offset_bottom = 69.0
+offset_right = 539.0
+offset_bottom = 62.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_g4vlh")
 
 [node name="TextureRect4" type="TextureRect" parent="Panel" unique_id=1281787329]
@@ -338,8 +338,8 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = -570.0
 offset_top = 208.0
-offset_right = -436.0
-offset_bottom = 492.0
+offset_right = -388.0
+offset_bottom = 486.0
 grow_vertical = 0
 theme = ExtResource("3_mxso3")
 
@@ -359,12 +359,12 @@ R to eat evidence
 
 F to interact
 
-Q for Blacklight
-
-Tab for inventory"
+Q for Blacklight:
+Use it to read Redacted
+Files"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InstructionBody" unique_id=840641762]
-position = Vector2(-503.5, 351)
+position = Vector2(-478.5, 351)
 shape = SubResource("RectangleShape2D_0fsbt")
 
 [node name="Button" type="Button" parent="." unique_id=2076476673]
@@ -373,7 +373,7 @@ offset_top = 272.0
 offset_right = -436.0
 offset_bottom = 308.0
 theme = ExtResource("3_mxso3")
-text = "Pimpin Aint Easy"
+text = "Roswell, '74"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Button" unique_id=1310852598]
 

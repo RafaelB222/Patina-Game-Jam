@@ -8,6 +8,7 @@ var password_obtained: bool = false
 
 signal evidence_obtained()
 
+
 #func all_evidence_obtained() ->  bool:
 	#if password_obtained and image_obtained and sound_clip_obtained and gps_coords_obtained:
 		#return true

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://c402hin0dvlay"]
 
 [ext_resource type="Script" uid="uid://ch83c5bo3uwrw" path="res://Level/test_overworld.gd" id="1_0q25o"]
-[ext_resource type="Texture2D" uid="uid://dapu2wixyh38a" path="res://Graphics/RetroWindowsGUI/microsoft-clouds-windows-98-wallpaper-2560x1080-version-2-v0-0yntnh0mp3ac1.webp" id="2_56ifb"]
+[ext_resource type="Texture2D" uid="uid://uyek587bww3v" path="res://Graphics/RetroWindowsGUI/I4IF27V.png" id="2_56ifb"]
 [ext_resource type="PackedScene" uid="uid://b0xg1x2dnqkdl" path="res://Enemy/Antivirus.tscn" id="2_i637r"]
 [ext_resource type="PackedScene" uid="uid://bv80ib07xjhjg" path="res://Level/evidence_storage_file.tscn" id="3_eo1io"]
+[ext_resource type="Texture2D" uid="uid://dapu2wixyh38a" path="res://Graphics/RetroWindowsGUI/microsoft-clouds-windows-98-wallpaper-2560x1080-version-2-v0-0yntnh0mp3ac1.webp" id="3_gtkui"]
 [ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="4_vfu0w"]
 [ext_resource type="Texture2D" uid="uid://76v4j14828ty" path="res://Graphics/RetroWindowsGUI/Windows_Button_Inactive.png" id="6_jy1ct"]
 [ext_resource type="Texture2D" uid="uid://b5c7pw8uo17pd" path="res://Graphics/win95 Icons/All [Without duplicates]/Folder (hi-res).png" id="6_mr34p"]
@@ -37,8 +38,17 @@ texture_margin_top = 30.0
 texture_margin_right = 13.0
 texture_margin_bottom = 13.0
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gtkui"]
+
 [node name="TestOverworld" type="Node2D" unique_id=2102567711]
 script = ExtResource("1_0q25o")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=685146763]
+offset_left = -10750.0
+offset_top = -5797.0
+offset_right = 10807.0
+offset_bottom = 5713.0
+texture = ExtResource("2_56ifb")
 
 [node name="Control" type="Control" parent="." unique_id=624517343]
 layout_mode = 3
@@ -55,7 +65,7 @@ offset_top = -1855.0
 offset_right = -309.0
 offset_bottom = -775.0
 scale = Vector2(3, 3)
-texture = ExtResource("2_56ifb")
+texture = ExtResource("3_gtkui")
 
 [node name="Panel" type="Panel" parent="Control" unique_id=234643800]
 custom_minimum_size = Vector2(10, 10)
@@ -206,6 +216,27 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_gtkui")
 [node name="Panel" type="Panel" parent="Control/PanelContainer2" unique_id=501203425]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="Control/PanelContainer2/Panel" unique_id=738410993]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -3.0
+offset_right = -2.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back in ’94, I was tracking anomalous EM spikes out past Groom Lake. Geiger counter twitching like it drank three espressos, compass spinning like a DJ at a rave. Standard signs. Then I see it: not a craft, not a creature — a presence. Low hum, ultraviolet shimmer, and a smell like ozone and burnt circuitry. That’s when I knew: off-world biological reconnaissance unit. Class Delta. Observational. Curious. Dangerous.
+
+See, people think aliens just land in shiny discs and wave. Nah. That’s the Hollywood psyop. Real extraterrestrials? They probe ecosystems first. Test atmospheric tolerance. Monitor technological development. Slip in through classified test ranges where radar anomalies can be explained away as “experimental aircraft.” Convenient, right?
+
+And don’t get me started on the so-called “weather balloons.” You ever see a balloon that interferes with shortwave radios, drains camera batteries, and leaves a triangular imprint in the sand that’s warmer than the surrounding ground at 2 a.m.? Didn’t think so.
+
+I’ve got case files (analog, of course). No digital trail. VHS tapes, thermal prints, handwritten logs. You store this stuff on ..."
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="PanelButtons" type="Control" parent="Control/PanelContainer2" unique_id=697031393]
 layout_mode = 2
 
@@ -293,6 +324,18 @@ texture = ExtResource("9_5rrfl")
 [node name="Antivirus" parent="." unique_id=703871089 instance=ExtResource("2_i637r")]
 position = Vector2(-15, -353)
 
+[node name="Antivirus3" parent="." unique_id=1122979783 instance=ExtResource("2_i637r")]
+position = Vector2(369, -790)
+
+[node name="Antivirus5" parent="." unique_id=1731920758 instance=ExtResource("2_i637r")]
+position = Vector2(1622, -866)
+
+[node name="Antivirus6" parent="." unique_id=1484023939 instance=ExtResource("2_i637r")]
+position = Vector2(2283, -57)
+
+[node name="Antivirus4" parent="." unique_id=1513419033 instance=ExtResource("2_i637r")]
+position = Vector2(1496, 175)
+
 [node name="Antivirus2" parent="." unique_id=1436496243 instance=ExtResource("2_i637r")]
 position = Vector2(444, 375)
 
@@ -327,6 +370,12 @@ position = Vector2(665, -88)
 next_scene = "uid://y10ops4utcay"
 texture = ExtResource("8_220s0")
 label_text = "Mailbox"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=62349367]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1909460301]
+position = Vector2(-33, 1355)
+shape = SubResource("WorldBoundaryShape2D_gtkui")
 
 [node name="Area51PNL1974" parent="." unique_id=1331405431 instance=ExtResource("4_vfu0w")]
 position = Vector2(-1092, 822)

@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dh14674ni3i5p" path="res://Level/space_level.gd" id="1_ab1t3"]
 [ext_resource type="Texture2D" uid="uid://x1jexpuvslci" path="res://Graphics/Space/pexels-krisof-1252890.jpg" id="2_7lwym"]
-[ext_resource type="Texture2D" uid="uid://cw3iiu3n77ryy" path="res://icon.svg" id="2_k5uip"]
 [ext_resource type="Script" uid="uid://vkag7b3bmvfm" path="res://Level/black_hole.gd" id="3_4bkmm"]
 [ext_resource type="PackedScene" uid="uid://bkgakxw6yr54p" path="res://Level/asteroid_cluster_1.tscn" id="3_uxjqv"]
+[ext_resource type="Texture2D" uid="uid://d3y07gpvspkrt" path="res://Graphics/Space/WhatsApp_Image_2022-07-26_at_14.33.15-removebg-preview.png" id="4_mbjhi"]
 [ext_resource type="PackedScene" uid="uid://yd8hvr1uu3pa" path="res://Level/single_asteroid.tscn" id="4_single"]
 [ext_resource type="PackedScene" uid="uid://d4f0ae7n81b5k" path="res://Evidence/damning_photgraph.tscn" id="5_v0pqm"]
 [ext_resource type="Texture2D" uid="uid://fs3kpncr57yy" path="res://Graphics/Lights/main.png" id="8_mbjhi"]
+[ext_resource type="Script" uid="uid://ry1m3ya8noqu" path="res://Level/point_light_2d.gd" id="9_mbjhi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k5uip"]
 
@@ -47,7 +48,19 @@ script = ExtResource("3_4bkmm")
 shape = SubResource("CircleShape2D_k5uip")
 
 [node name="Sprite2D" type="Sprite2D" parent="BlackHole" unique_id=1355210613]
-texture = ExtResource("2_k5uip")
+modulate = Color(6.9789587e-07, 0.22218555, 0.26032165, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_mbjhi")
+
+[node name="PointLight2D" type="PointLight2D" parent="BlackHole/Sprite2D" unique_id=1012766255]
+color = Color(0.43080375, 0.056474872, 0.79812545, 1)
+texture = ExtResource("8_mbjhi")
+texture_scale = 5.0
+script = ExtResource("9_mbjhi")
+flicker_speed = 7.5
+energy_min = 0.7
+energy_max = 2.0
+scale_flicker = 0.5
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=359556238]
 position = Vector2(-1200, -1100)
@@ -239,13 +252,6 @@ rotation = -2.094
 [node name="DamningPhotgraph" parent="." unique_id=860860609 instance=ExtResource("5_v0pqm")]
 position = Vector2(1395, 1090)
 
-[node name="PointLight2D" type="PointLight2D" parent="DamningPhotgraph" unique_id=1181372935]
-color = Color(0.78585064, 0.738495, 0.56450534, 1)
-energy = 0.75
-shadow_enabled = true
-texture = ExtResource("8_mbjhi")
-texture_scale = 5.0
-
 [node name="LightOccluder2D" type="LightOccluder2D" parent="DamningPhotgraph" unique_id=316399757]
 position = Vector2(718, 121)
 occluder = SubResource("OccluderPolygon2D_hnnje")
@@ -257,3 +263,10 @@ occluder = SubResource("OccluderPolygon2D_hnnje")
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="DamningPhotgraph" unique_id=925746288]
 position = Vector2(928, 224)
 occluder = SubResource("OccluderPolygon2D_hnnje")
+
+[node name="pointLight2D" type="PointLight2D" parent="DamningPhotgraph" unique_id=1179455105]
+color = Color(0.95461303, 0.8145662, 0.4735878, 1)
+energy = 0.65
+texture = ExtResource("8_mbjhi")
+texture_scale = 3.0
+script = ExtResource("9_mbjhi")
