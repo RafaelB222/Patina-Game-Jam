@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cctchtpnghska" path="res://Graphics/RetroWindowsGUI/Windows_qmark.png" id="4_o0550"]
 [ext_resource type="Texture2D" uid="uid://c3s5b6qjt6diu" path="res://Graphics/RetroWindowsGUI/Windows_expandwindow.png" id="5_y27di"]
 [ext_resource type="PackedScene" uid="uid://c25e10v07b5dc" path="res://Level/uv_secret_platform.tscn" id="8_sku7y"]
+[ext_resource type="PackedScene" uid="uid://doaxdbeuxaack" path="res://Evidence/secret_username.tscn" id="9_upa62"]
 [ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="9_wxkh1"]
-[ext_resource type="PackedScene" uid="uid://c402hin0dvlay" path="res://Level/test_overworld.tscn" id="10_upa62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrcv3"]
 size = Vector2(2000, 20)
@@ -447,20 +447,21 @@ position = Vector2(1497, 1444.0001)
 scale = Vector2(4.2530775, 0.28084636)
 
 [node name="UVSecretPlatform31" parent="Redactions" unique_id=520397451 instance=ExtResource("8_sku7y")]
-position = Vector2(1017, 1187)
-scale = Vector2(2.5958724, 0.2818884)
+position = Vector2(945, 1396)
+scale = Vector2(4.086562, -1.1625303)
 
 [node name="UVSecretPlatform32" parent="Redactions" unique_id=292023142 instance=ExtResource("8_sku7y")]
 position = Vector2(629, 1001.99994)
 scale = Vector2(6.4377637, 0.2818884)
 
 [node name="UVSecretPlatform33" parent="Redactions" unique_id=1641348691 instance=ExtResource("8_sku7y")]
-position = Vector2(1021, 1075.9999)
+position = Vector2(1009, 1076)
 scale = Vector2(3.8704774, 0.36967477)
 
 [node name="UVSecretPlatform36" parent="Redactions" unique_id=1826348191 instance=ExtResource("8_sku7y")]
 position = Vector2(1485, 1183.9999)
 scale = Vector2(3.8704774, 0.36967477)
+on_dissolve_spawn = ExtResource("9_upa62")
 
 [node name="UVSecretPlatform14" parent="Redactions" unique_id=5226115 instance=ExtResource("8_sku7y")]
 position = Vector2(1576, 1573.0001)
@@ -497,5 +498,5 @@ position = Vector2(1941, 2000)
 shape = SubResource("RectangleShape2D_g6jmw")
 
 [node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("9_wxkh1")]
-position = Vector2(151, 727)
-next_scene = ExtResource("10_upa62")
+position = Vector2(1828, 3873)
+next_scene = "res://Level/test_overworld.tscn"

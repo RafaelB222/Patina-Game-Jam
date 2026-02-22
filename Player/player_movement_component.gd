@@ -163,8 +163,7 @@ func _physics_process(delta: float) -> void:
 	if not active:
 		return
 	var grav_dir = PhysicsManager.get_gravity_dir(player.global_position)
-	if PhysicsManager.use_center_gravity:
-		player.up_direction = -grav_dir
+	player.up_direction = -grav_dir
 	if player.is_on_floor():
 		has_double_jump = true
 		has_air_dash = true

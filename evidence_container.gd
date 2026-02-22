@@ -1,13 +1,10 @@
 extends Node
 
+var username: String
+var username_discovered: bool = false
+var username_obtained: bool = false
 var password: String
 var password_obtained: bool = false
-var image: Texture2D
-var image_obtained: bool = false
-var sound_clip: AudioStream
-var sound_clip_obtained: bool = false
-var gps_coords: Vector2
-var gps_coords_obtained: bool = false
 
 signal evidence_obtained()
 
@@ -17,29 +14,13 @@ func all_evidence_obtained() ->  bool:
 	else:
 		return false
 
+
 func obtain_password(obtained_password: String) -> void:
 	password = obtained_password
 	password_obtained = true
 	evidence_obtained.emit()
 
-func obtain_image(obtained_image: Texture2D) -> void:
-	image = obtained_image
-	image_obtained = true
+func obtain_username(obtained_username: String) ->  void:
+	username = obtained_username
+	username_obtained = true
 	evidence_obtained.emit()
-
-
-func obtain_sound_clip(obtained_clip: AudioStream) -> void:
-	sound_clip = obtained_clip
-	sound_clip_obtained = true
-	evidence_obtained.emit()
-
-func obtain_gps_coords(obtained_coords: Vector2) -> void:
-	gps_coords = obtained_coords
-	gps_coords_obtained = true
-	evidence_obtained.emit()
-
-
-func _process(delta: float) -> void:
-	var game_won: bool = all_evidence_obtained()
-	if game_won:
-		print("congrats on winning!!")

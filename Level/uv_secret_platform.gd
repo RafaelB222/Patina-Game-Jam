@@ -3,6 +3,8 @@ extends StaticBody2D
 const DISAPPEAR_DELAY: float = 3.0
 const DISSOLVE_DURATION: float = 1.2
 
+@export var on_dissolve_spawn: PackedScene = null
+
 @onready var _label: Label = $Label
 @onready var _color_rect: ColorRect = $ColorRect
 
@@ -23,6 +25,10 @@ func _process(delta: float) -> void:
 		(_color_rect.material as ShaderMaterial).set_shader_parameter("dissolve_amount", amount)
 		(_label.material as ShaderMaterial).set_shader_parameter("dissolve_amount", amount)
 		if _dissolve_progress >= 1.0:
+			if on_dissolve_spawn:
+				var spawned := on_dissolve_spawn.instantiate()
+				get_parent().add_child(spawned)
+				spawned.global_position = global_position
 			queue_free()
 	elif _counting:
 		_elapsed += delta

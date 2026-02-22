@@ -324,6 +324,6 @@ label_text = "Lunch Meetings"
 position = Vector2(665, -88)
 
 [node name="SceneTransitioner4" parent="." unique_id=1142577170 instance=ExtResource("4_vfu0w")]
-next_scene = "res://Level/empty_folder.tscn"
+next_scene = "uid://y10ops4utcay"
 texture = ExtResource("8_220s0")
 label_text = "Mailbox"

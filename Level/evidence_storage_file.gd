@@ -4,6 +4,7 @@ extends Node2D
 @onready var area2D: Area2D = $Area2D
 var player_in_range: bool = false
 var player: CharacterBody2D
+var path_to_victory: String = "res://Level/victory_scene.tscn"
 
 
 
@@ -32,16 +33,6 @@ func _ready() -> void:
 	area2D.body_entered.connect(_on_area_2d_body_entered)
 	area2D.body_exited.connect(_on_area_2d_body_exited)
 
-func store_evidence(evidence: Dictionary) -> void:
-	print("evidence received from the player is: ", evidence)
-	for evidence_key in evidence:
-		var evidence_piece: Dictionary = evidence[evidence_key]
-		print("The current piece of evidence is: ", evidence_piece)
-		if evidence_piece["owned"]:
-			print("storing ", evidence_key)
-			stored_evidence[evidence_key] = evidence_piece
-	
-	print("Stored evidence is now: ", stored_evidence)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -55,9 +46,18 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		player_in_range = false
 		highlight.visible = false
 
+func check_evidence() -> bool:
+	if EvidenceContainer.password_obtained and EvidenceContainer.username_obtained:
+		print("YOU WIN!!!!!!")
+		return true
+	else:
+		print("NOT ENOUGH EVIDENCE NOOB!!!!")
+		return false
+
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and player_in_range:
-		var evidence: Dictionary = player.evidence_held
-		store_evidence(evidence)
+		#var evidence: Dictionary = player.evidence_held
+		check_evidence()
+		TransitionManager.transition_to(path_to_victory)
 		

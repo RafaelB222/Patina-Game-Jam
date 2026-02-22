@@ -383,7 +383,7 @@ shape = SubResource("RectangleShape2D_0k5u7")
 
 [node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("9_0k5u7")]
 position = Vector2(490, 259)
-next_scene = "res://Level/level1.tscn"
+next_scene = "uid://c402hin0dvlay"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1420905310]
 stream = ExtResource("11_ldhcq")

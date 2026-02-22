@@ -22,19 +22,11 @@ var original_modulate: Color
 var original_scale: Vector2
 
 var evidence_held: Dictionary = {
+	"username": {
+		"owned": false,
+		"value": null
+	},
 	"password": {
-		"owned": false,
-		"value": null
-	},
-	"image": {
-		"owned": false,
-		"value": null
-	},
-	"sound_clip": {
-		"owned": false,
-		"value": null
-	},
-	"gps_coords": {
 		"owned": false,
 		"value": null
 	}
@@ -116,12 +108,18 @@ func eat_evidence() -> void:
 			evidence_held[type]["owned"] = true
 			evidence_held[type]["value"] = evidence.evidence_value
 			print("You obtained the: ", type, " evidence!!!! Evidence held is now: ", evidence_held)
-			if type == "image":
-				var popup = get_tree().get_first_node_in_group("image_popup")
-				if popup:
-					popup.show_image(evidence.evidence_value)
-		eat_audio.play()
+			if type == "password":
+				#var popup = get_tree().get_first_node_in_group("image_popup")
+				EvidenceContainer.obtain_password(evidence.evidence_value)
+				#if popup:
+					#popup.show_image(evidence.evidence_value)
+				eat_audio.play()
+			elif type == "username":
+				EvidenceContainer.obtain_username(evidence.evidence_value)
+				print("Username collected: ", evidence.evidence_value)
+				eat_audio.play()
 		evidence.queue_free()
+	print("Username stored in evidence: ", EvidenceContainer.username, ". Password stored in evidence: ", EvidenceContainer.password)
 
 func die() -> void:
 	##THIS NEEDS TO HAPPEN BEFORE TRANSITION

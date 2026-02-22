@@ -20,11 +20,11 @@ shape = SubResource("RectangleShape2D_iv6db")
 
 [node name="Label" type="Label" parent="." unique_id=1939906577]
 modulate = Color(0.12955844, 0.12955847, 0.12955844, 1)
-offset_left = -65.0
-offset_top = 38.0
-offset_right = 67.0
-offset_bottom = 62.0
-text = "Evidence Storage"
+offset_left = -109.0
+offset_top = 49.0
+offset_right = 170.0
+offset_bottom = 73.0
+text = "Government Secrets ... shhh"
 
 [node name="Highlight" type="ColorRect" parent="." unique_id=245764591]
 visible = false
