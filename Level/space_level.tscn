@@ -250,7 +250,7 @@ position = Vector2(1310, 940)
 rotation = -2.094
 
 [node name="DamningPhotgraph" parent="." unique_id=860860609 instance=ExtResource("5_v0pqm")]
-position = Vector2(1395, 1090)
+position = Vector2(-1234, -1051)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="DamningPhotgraph" unique_id=316399757]
 position = Vector2(718, 121)
