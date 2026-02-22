@@ -1,5 +1,6 @@
 extends Control
 
+var level_type = Enums.LEVEL_TYPE.SIDE_SCROLL
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

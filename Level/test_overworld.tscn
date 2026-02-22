@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://crr6s1qyr6emd"]
+[gd_scene format=3 uid="uid://c402hin0dvlay"]
 
 [ext_resource type="Script" uid="uid://ch83c5bo3uwrw" path="res://Level/test_overworld.gd" id="1_0q25o"]
 [ext_resource type="PackedScene" uid="uid://b0xg1x2dnqkdl" path="res://Enemy/Antivirus.tscn" id="2_i637r"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="4_vfu0w"]
 [ext_resource type="PackedScene" uid="uid://b5mvqs15ts6pn" path="res://Level/space_level.tscn" id="5_56ifb"]
 [ext_resource type="Texture2D" uid="uid://b5c7pw8uo17pd" path="res://Graphics/win95 Icons/All [Without duplicates]/Folder (hi-res).png" id="6_mr34p"]
+[ext_resource type="PackedScene" uid="uid://y10ops4utcay" path="res://Level/Mailbox.tscn" id="7_mr34p"]
+[ext_resource type="Texture2D" uid="uid://dp4ibesym1yo" path="res://Graphics/win95 Icons/PNGs/Mail catalog.png" id="8_220s0"]
 
 [sub_resource type="TileSet" id="TileSet_fh375"]
 
@@ -47,3 +49,8 @@ label_text = "Lunch Meetings"
 
 [node name="SpaceSpawnPoint" type="Marker2D" parent="." unique_id=465538156]
 position = Vector2(665, -88)
+
+[node name="SceneTransitioner4" parent="." unique_id=1142577170 instance=ExtResource("4_vfu0w")]
+next_scene = ExtResource("7_mr34p")
+texture = ExtResource("8_220s0")
+label_text = "Mailbox"

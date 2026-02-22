@@ -7,6 +7,10 @@ const DISSOLVE_DURATION: float = 1.2
 @onready var _color_rect: ColorRect = $ColorRect
 
 var _corners_touched: Array[bool] = [false, false, false, false]
+
+func _ready() -> void:
+	_label.material = _label.material.duplicate()
+	_color_rect.material = _color_rect.material.duplicate()
 var _counting: bool = false
 var _elapsed: float = 0.0
 var _dissolving: bool = false
