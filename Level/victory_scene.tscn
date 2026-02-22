@@ -2,13 +2,12 @@
 
 [ext_resource type="Theme" uid="uid://b04unr2qrkngo" path="res://UI/win_95_theme.tres" id="1_juwwl"]
 [ext_resource type="AudioStream" uid="uid://cjom6i4s2ympc" path="res://Graphics/Ear Graphics/FreeSFX/Voices/You Win.wav" id="1_n5uei"]
-[ext_resource type="Script" uid="uid://cp0vheee1a8pr" path="res://Level/victory.gd" id="3_m6dra"]
+[ext_resource type="Script" path="res://Level/victory.gd" id="3_m6dra"]
 [ext_resource type="Texture2D" uid="uid://76v4j14828ty" path="res://Graphics/RetroWindowsGUI/Windows_Button_Inactive.png" id="3_vjg18"]
 [ext_resource type="Texture2D" uid="uid://cnydipdno0g4p" path="res://Graphics/RetroWindowsGUI/Windows_Cross.png" id="4_m6dra"]
 [ext_resource type="Texture2D" uid="uid://c3s5b6qjt6diu" path="res://Graphics/RetroWindowsGUI/Windows_expandwindow.png" id="5_gvaeg"]
 [ext_resource type="Texture2D" uid="uid://cctchtpnghska" path="res://Graphics/RetroWindowsGUI/Windows_qmark.png" id="6_lj3vj"]
-[ext_resource type="Texture2D" uid="uid://dtqthbmjfaxxd" path="res://Graphics/Lights/l3.png" id="7_heh42"]
-[ext_resource type="Script" path="res://Level/victory_scene.gd" id="9_scri"]
+[ext_resource type="Script" uid="uid://d28woc5qp6iat" path="res://Level/victory_scene.gd" id="9_scri"]
 
 [node name="VictoryScene" type="Control" unique_id=858654747]
 layout_mode = 3
@@ -124,9 +123,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -258.0
-offset_top = -18.0
+offset_top = -246.0
 offset_right = 258.0
-offset_bottom = 18.0
+offset_bottom = -210.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "It's time to investigate your findings. Extract from the mainframe. Congratulations."
@@ -147,9 +146,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0, 0, 0.25)
 mouse_filter = 2
-visible = false
+color = Color(1, 0, 0, 0.25)
 
 [node name="Confetti" type="CPUParticles2D" parent="." unique_id=666666661]
 position = Vector2(576, 0)
@@ -157,6 +155,8 @@ emitting = false
 amount = 150
 lifetime = 5.0
 randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(576, 2)
 direction = Vector2(0, 1)
 spread = 30.0
 gravity = Vector2(0, 300)
@@ -166,14 +166,12 @@ angular_velocity_min = -180.0
 angular_velocity_max = 180.0
 scale_amount_min = 5.0
 scale_amount_max = 10.0
-emission_shape = 3
-emission_rect_extents = Vector2(576, 2)
 
 [node name="ImageDisplay" type="TextureRect" parent="." unique_id=888888888]
+visible = false
 layout_mode = 0
 offset_left = 376.0
 offset_top = 74.0
 offset_right = 776.0
 offset_bottom = 574.0
 stretch_mode = 6
-visible = false

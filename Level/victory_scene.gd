@@ -24,7 +24,15 @@ var dvd_velocity = Vector2(160, 110)
 var dvd_active = false
 
 func _ready():
-	cycle_button.pressed.connect(_on_button_pressed)
+	image_display.texture = load("res://Assets/a2.jpg")
+	image_display.visible = true
+	image_display.position = (size - image_display.size) / 2
+	party_active = true
+	party_flash.visible = true
+	confetti.emitting = true
+	cycle_button.visible = false
+	dvd_active = true
+	$Victory.play()
 	var gradient = Gradient.new()
 	gradient.colors = [Color.RED, Color.ORANGE, Color.YELLOW, Color.GREEN, Color.CYAN, Color.BLUE, Color.MAGENTA, Color.PINK]
 	confetti.color_ramp = gradient
@@ -57,14 +65,3 @@ func _process(delta):
 		elif image_display.position.y + img_size.y >= screen_size.y:
 			image_display.position.y = screen_size.y - img_size.y
 			dvd_velocity.y = -abs(dvd_velocity.y)
-
-func _on_button_pressed():
-	image_display.texture = load("res://Assets/a2.jpg")
-	image_display.visible = true
-	image_display.position = (size - image_display.size) / 2
-	party_active = true
-	party_flash.visible = true
-	confetti.emitting = true
-	cycle_button.visible = false
-	dvd_active = true
-	$Victory.play()
