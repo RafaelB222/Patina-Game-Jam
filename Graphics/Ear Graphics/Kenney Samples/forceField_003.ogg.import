@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://drr7a3f3862e0"
+path="res://.godot/imported/forceField_003.ogg-354e30273219317b3d0e6d18caf74235.oggvorbisstr"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/Kenney Samples/forceField_003.ogg"
+dest_files=["res://.godot/imported/forceField_003.ogg-354e30273219317b3d0e6d18caf74235.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

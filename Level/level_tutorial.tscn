@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cctchtpnghska" path="res://Graphics/RetroWindowsGUI/Windows_qmark.png" id="6_0k5u7"]
 [ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="9_0k5u7"]
 [ext_resource type="PackedScene" uid="uid://88fj3ydsx3xe" path="res://Level/level1.tscn" id="10_435nn"]
+[ext_resource type="AudioStream" uid="uid://d234v7bydvrll" path="res://Graphics/Ear Graphics/spacesong1.mp3" id="11_ldhcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pe3o"]
 size = Vector2(349, 9.5)
@@ -23,7 +24,7 @@ size = Vector2(236, 14.5)
 size = Vector2(258, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fsbt"]
-size = Vector2(132, 104)
+size = Vector2(124, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0k5u7"]
 size = Vector2(117.5, 22.5)
@@ -148,7 +149,7 @@ offset_top = 7.0
 offset_right = 126.0
 offset_bottom = 25.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Infiltration.txt"
+text = "VirusInfiltration.exe"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1098530799]
 
@@ -284,8 +285,8 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = -570.0
 offset_top = 208.0
-offset_right = -433.0
-offset_bottom = 318.0
+offset_right = -441.0
+offset_bottom = 364.0
 grow_vertical = 0
 theme = ExtResource("3_mxso3")
 
@@ -299,10 +300,12 @@ text = "W A S D to move
 
 Space to jump
 
-Shift to dash"
+Shift to dash
+
+F to interact"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InstructionBody" unique_id=840641762]
-position = Vector2(-501, 262)
+position = Vector2(-505, 286)
 shape = SubResource("RectangleShape2D_0fsbt")
 
 [node name="Button" type="Button" parent="." unique_id=2076476673]
@@ -322,3 +325,8 @@ shape = SubResource("RectangleShape2D_0k5u7")
 [node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("9_0k5u7")]
 position = Vector2(490, 259)
 next_scene = ExtResource("10_435nn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1420905310]
+stream = ExtResource("11_ldhcq")
+autoplay = true
+parameters/looping = true

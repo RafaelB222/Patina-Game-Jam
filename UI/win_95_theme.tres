@@ -69,6 +69,8 @@ axis_stretch_vertical = 1
 [resource]
 default_font = ExtResource("2_jwqli")
 Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_hnnht")
 Button/styles/focus = SubResource("StyleBoxTexture_ij3du")
 Button/styles/hover = SubResource("StyleBoxTexture_xghmc")

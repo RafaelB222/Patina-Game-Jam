@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://xvacyrq1v2ya"
+path="res://.godot/imported/engineCircular_003.ogg-05aa825f50d6aacd2d43c409148f9f51.oggvorbisstr"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/Kenney Samples/engineCircular_003.ogg"
+dest_files=["res://.godot/imported/engineCircular_003.ogg-05aa825f50d6aacd2d43c409148f9f51.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

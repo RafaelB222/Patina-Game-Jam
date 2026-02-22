@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://gao02i62suwo"
+path="res://.godot/imported/doorOpen_000.ogg-6cdfad7e777b5de0bd945200f772b10b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/Kenney Samples/doorOpen_000.ogg"
+dest_files=["res://.godot/imported/doorOpen_000.ogg-6cdfad7e777b5de0bd945200f772b10b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

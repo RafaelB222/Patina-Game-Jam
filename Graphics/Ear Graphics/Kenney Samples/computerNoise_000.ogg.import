@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bxytdc6x051js"
+path="res://.godot/imported/computerNoise_000.ogg-54fd0a965fb53063938197847e7bc10e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/Kenney Samples/computerNoise_000.ogg"
+dest_files=["res://.godot/imported/computerNoise_000.ogg-54fd0a965fb53063938197847e7bc10e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

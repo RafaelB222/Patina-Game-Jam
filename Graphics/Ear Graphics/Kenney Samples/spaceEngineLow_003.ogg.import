@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cbimsh6d81rmf"
+path="res://.godot/imported/spaceEngineLow_003.ogg-063e7feef404ff6008a4f786ff1bbfaf.oggvorbisstr"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/Kenney Samples/spaceEngineLow_003.ogg"
+dest_files=["res://.godot/imported/spaceEngineLow_003.ogg-063e7feef404ff6008a4f786ff1bbfaf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

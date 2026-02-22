@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cflqp2eeu7p3m"
+path="res://.godot/imported/laserLarge_000.ogg-966d562d52b29789b5b714058df16fde.oggvorbisstr"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/Kenney Samples/laserLarge_000.ogg"
+dest_files=["res://.godot/imported/laserLarge_000.ogg-966d562d52b29789b5b714058df16fde.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

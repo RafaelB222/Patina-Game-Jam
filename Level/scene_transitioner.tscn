@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvqabjs2foubn"]
 
 [ext_resource type="Script" uid="uid://cltk5qgtcuwlh" path="res://Level/scene_transitioner.gd" id="1_kxgb4"]
+[ext_resource type="AudioStream" uid="uid://72pb7sbo3o8t" path="res://Graphics/Ear Graphics/mouse-click-really-fuckin-short.mp3" id="2_1phn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1phn2"]
 size = Vector2(112, 81)
@@ -53,3 +54,6 @@ horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=926716998]
 shape = SubResource("RectangleShape2D_1phn2")
+
+[node name="AudioPlaya2D" type="AudioStreamPlayer" parent="." unique_id=774361222]
+stream = ExtResource("2_1phn2")

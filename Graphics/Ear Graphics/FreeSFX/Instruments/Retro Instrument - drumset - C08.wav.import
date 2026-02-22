@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgtlyq1t7m1r"
+path="res://.godot/imported/Retro Instrument - drumset - C08.wav-0c65a4b7fc6065d4a554314c579f40bb.sample"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/FreeSFX/Instruments/Retro Instrument - drumset - C08.wav"
+dest_files=["res://.godot/imported/Retro Instrument - drumset - C08.wav-0c65a4b7fc6065d4a554314c579f40bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

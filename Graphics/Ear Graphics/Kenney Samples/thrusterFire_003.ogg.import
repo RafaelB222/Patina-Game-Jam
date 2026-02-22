@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dn5h7uyoai165"
+path="res://.godot/imported/thrusterFire_003.ogg-3f6b16e7f801c2c8d5412f890fad4aa4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/Kenney Samples/thrusterFire_003.ogg"
+dest_files=["res://.godot/imported/thrusterFire_003.ogg-3f6b16e7f801c2c8d5412f890fad4aa4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

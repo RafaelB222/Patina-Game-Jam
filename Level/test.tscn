@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dl52tu5kbbptp"]
+
+[ext_resource type="AudioStream" uid="uid://dvtkp4lveor4q" path="res://Graphics/Ear Graphics/FreeSFX/GameSFX/Blops/Retro Blop 07.wav" id="1_4sme4"]
+
+[node name="Control" type="Control" unique_id=1889113010]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1580697593]
+layout_mode = 0
+offset_right = 193.0
+offset_bottom = 60.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2142098836]
+stream = ExtResource("1_4sme4")

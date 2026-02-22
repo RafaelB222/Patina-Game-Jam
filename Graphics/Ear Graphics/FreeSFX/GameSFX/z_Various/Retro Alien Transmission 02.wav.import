@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr83y288u08y3"
+path="res://.godot/imported/Retro Alien Transmission 02.wav-033d8fdfed7fefc8a6071accf14d80e9.sample"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/FreeSFX/GameSFX/z_Various/Retro Alien Transmission 02.wav"
+dest_files=["res://.godot/imported/Retro Alien Transmission 02.wav-033d8fdfed7fefc8a6071accf14d80e9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://onpiop1556pp"
+path="res://.godot/imported/spaceEngineLarge_002.ogg-71406176d10ac4bf3422184c855c139e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/Kenney Samples/spaceEngineLarge_002.ogg"
+dest_files=["res://.godot/imported/spaceEngineLarge_002.ogg-71406176d10ac4bf3422184c855c139e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cp0idq4e04chi"
+path="res://.godot/imported/explosionCrunch_003.ogg-cfb706661c9fee05f13f8de3995cb13a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/Kenney Samples/explosionCrunch_003.ogg"
+dest_files=["res://.godot/imported/explosionCrunch_003.ogg-cfb706661c9fee05f13f8de3995cb13a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b37sf3oo0am52"
+path="res://.godot/imported/Retro Success Melody 04 - electric piano 2.wav-a53202c6c1d3b7d5c3de7badfa61d9c0.sample"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/FreeSFX/GameSFX/Music/Success/Retro Success Melody 04 - electric piano 2.wav"
+dest_files=["res://.godot/imported/Retro Success Melody 04 - electric piano 2.wav-a53202c6c1d3b7d5c3de7badfa61d9c0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

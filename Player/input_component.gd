@@ -11,6 +11,10 @@ signal eat_evidence
 
 var last_direction: Vector2 = Vector2.ZERO
 
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
+@onready var audio_stream_player_2: AudioStreamPlayer = $"../AudioStreamPlayer2"
+@onready var dash_audio: AudioStreamPlayer = $"../DashAudio"
+
 func _process(delta: float) -> void:
 	handle_move_input(delta)
 
@@ -20,11 +24,13 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("jump"):
 		jump.emit()
-		print("jump")
+		audio_stream_player.play()
+		audio_stream_player_2.play()
 	if event.is_action_released("jump"):
 		jump_released.emit()
 	if event.is_action_pressed("dash"):
 		dash.emit()
+		dash_audio.play()
 	if event.is_action_pressed("invert_gravity"):
 		invert_gravity.emit()
 	if event.is_action_pressed("UVlight"):

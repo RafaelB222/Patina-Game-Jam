@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1nfwyjecx425"
+path="res://.godot/imported/longsongsilver.mp3-9b694662cc82b79fcc475d2e24e93e0d.mp3str"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/longsongsilver.mp3"
+dest_files=["res://.godot/imported/longsongsilver.mp3-9b694662cc82b79fcc475d2e24e93e0d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

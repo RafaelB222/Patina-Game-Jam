@@ -14,6 +14,12 @@ class_name Player
 @onready var _uv_light = $UVLight
 @onready var _action_component: Area2D = $ActionComponent
 
+@onready var death_audio: AudioStreamPlayer = $DeathAudio
+@onready var rebirth_audio: AudioStreamPlayer = $RebirthAudio
+
+var original_modulate: Color
+var original_scale: Vector2
+
 var evidence_held: Dictionary = {
 	"password": {
 		"owned": false,
@@ -37,8 +43,9 @@ var can_move: bool = true
 var _facing_indicator: Sprite2D
 var _uv_active: bool = false
 
-
 func _ready() -> void:
+	original_modulate = _sprite.modulate
+	original_scale = _sprite.scale
 	add_to_group("player")
 	#_facing_indicator = AnimatedSprite2D.new()
 	#_facing_indicator.texture = _sprite.texture
@@ -110,14 +117,25 @@ func eat_evidence() -> void:
 		evidence.queue_free()
 
 func die() -> void:
+	##THIS NEEDS TO HAPPEN BEFORE TRANSITION
+	death_audio.play()
+	var tween = get_tree().create_tween()
+	tween.tween_property(_sprite, "modulate", Color.RED, 1.0)
+	tween.parallel().tween_property(_sprite, "scale", Vector2(), 1.0)
+	#await get_tree().create_timer(1).timeout
 	for key in evidence_held:
 		evidence_held[key]["owned"] = false
 		evidence_held[key]["value"] = null
 	var level_container = get_tree().get_first_node_in_group("level_container")
 	if level_container and level_container._current_level:
 		TransitionManager.transition_to(level_container._current_level.scene_file_path)
+		
 	else:
 		get_tree().reload_current_scene()
+	tween.tween_property(_sprite, "modulate", original_modulate, 0.2)
+	tween.parallel().tween_property(_sprite, "scale", original_scale, 0.2)
+	await get_tree().create_timer(1).timeout
+	rebirth_audio.play()
 
 func setup_for_level_type(type: Enums.LEVEL_TYPE) -> void:
 	match type:

@@ -6,6 +6,7 @@ extends Area2D
 @onready var text = $TextureRect
 @onready var highlight = $Highlight
 @onready var label = $Label
+@onready var sound = $AudioPlaya2D
 
 @export var next_scene: PackedScene
 @export var texture: Texture2D
@@ -40,7 +41,6 @@ func _ready() -> void:
 		label.text = label_text
 		label.visible = true
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		in_exit = true
@@ -61,6 +61,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and in_exit:
+		sound.play()
 		if not texture:
 			text.texture = selected
+		await get_tree().create_timer(.5).timeout
 		TransitionManager.transition_to(next_scene.resource_path)

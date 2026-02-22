@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bn2egip47jqrv"
+path="res://.godot/imported/Retro Vehicle Sirens 03.wav-a008b11b351988d198f820e09f5ac321.sample"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/FreeSFX/GameSFX/Vehicles/Retro Vehicle Sirens 03.wav"
+dest_files=["res://.godot/imported/Retro Vehicle Sirens 03.wav-a008b11b351988d198f820e09f5ac321.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

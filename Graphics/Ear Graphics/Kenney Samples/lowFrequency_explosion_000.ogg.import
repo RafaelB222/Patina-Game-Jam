@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b11b413q61nxg"
+path="res://.godot/imported/lowFrequency_explosion_000.ogg-31b01b249902111137bc408540d7c0b3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/Kenney Samples/lowFrequency_explosion_000.ogg"
+dest_files=["res://.godot/imported/lowFrequency_explosion_000.ogg-31b01b249902111137bc408540d7c0b3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

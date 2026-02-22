@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b6puueveq0pvy"
+path="res://.godot/imported/Retro Weapon Laser 36.wav-0b6875a7fe9d96c4c87183d7c8626502.sample"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/FreeSFX/GameSFX/Weapon/laser/Retro Weapon Laser 36.wav"
+dest_files=["res://.godot/imported/Retro Weapon Laser 36.wav-0b6875a7fe9d96c4c87183d7c8626502.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
