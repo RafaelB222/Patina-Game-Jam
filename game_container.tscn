@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cjt730l5vmqjw" path="res://Level/level_container.tscn" id="2_aq3js"]
 [ext_resource type="PackedScene" uid="uid://b8d6nki3fog73" path="res://UI/UIContainer.tscn" id="3_aq3js"]
 [ext_resource type="Script" uid="uid://crmdoeoqdipyt" path="res://game_container.gd" id="4_gcgd"]
+[ext_resource type="Script" uid="uid://dlewme1w75wjx" path="res://camera_2d_2.gd" id="4_ul0mr"]
 [ext_resource type="Shader" uid="uid://binfaie2tbsk5" path="res://crt_shader.gdshader" id="5_dvbua"]
 [ext_resource type="Script" uid="uid://knvv3hfxtg8i" path="res://Test/color_rect.gd" id="6_shdsl"]
+[ext_resource type="AudioStream" uid="uid://b1nfwyjecx425" path="res://Graphics/Ear Graphics/longsongsilver.mp3" id="7_shdsl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ul0mr"]
 resource_local_to_scene = true
@@ -44,6 +46,7 @@ position = Vector2(184, 58)
 
 [node name="Camera2D2" type="Camera2D" parent="SubViewportContainer/SubViewport/Player" unique_id=1017127360]
 limit_smoothed = true
+script = ExtResource("4_ul0mr")
 
 [node name="UiContainer" parent="SubViewportContainer/SubViewport" unique_id=1599856749 instance=ExtResource("3_aq3js")]
 
@@ -51,3 +54,7 @@ limit_smoothed = true
 material = SubResource("ShaderMaterial_ul0mr")
 layout_mode = 2
 script = ExtResource("6_shdsl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1496968594]
+stream = ExtResource("7_shdsl")
+autoplay = true

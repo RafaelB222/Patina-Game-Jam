@@ -1,20 +1,294 @@
 [gd_scene format=3 uid="uid://c402hin0dvlay"]
 
 [ext_resource type="Script" uid="uid://ch83c5bo3uwrw" path="res://Level/test_overworld.gd" id="1_0q25o"]
+[ext_resource type="Texture2D" uid="uid://dapu2wixyh38a" path="res://Graphics/RetroWindowsGUI/microsoft-clouds-windows-98-wallpaper-2560x1080-version-2-v0-0yntnh0mp3ac1.webp" id="2_56ifb"]
 [ext_resource type="PackedScene" uid="uid://b0xg1x2dnqkdl" path="res://Enemy/Antivirus.tscn" id="2_i637r"]
 [ext_resource type="PackedScene" uid="uid://bv80ib07xjhjg" path="res://Level/evidence_storage_file.tscn" id="3_eo1io"]
 [ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="4_vfu0w"]
+[ext_resource type="Texture2D" uid="uid://76v4j14828ty" path="res://Graphics/RetroWindowsGUI/Windows_Button_Inactive.png" id="6_jy1ct"]
 [ext_resource type="Texture2D" uid="uid://b5c7pw8uo17pd" path="res://Graphics/win95 Icons/All [Without duplicates]/Folder (hi-res).png" id="6_mr34p"]
-[ext_resource type="PackedScene" uid="uid://y10ops4utcay" path="res://Level/Mailbox.tscn" id="7_mr34p"]
+[ext_resource type="Texture2D" uid="uid://cnydipdno0g4p" path="res://Graphics/RetroWindowsGUI/Windows_Cross.png" id="7_06h4n"]
 [ext_resource type="Texture2D" uid="uid://dp4ibesym1yo" path="res://Graphics/win95 Icons/PNGs/Mail catalog.png" id="8_220s0"]
+[ext_resource type="Texture2D" uid="uid://c3s5b6qjt6diu" path="res://Graphics/RetroWindowsGUI/Windows_expandwindow.png" id="8_gtkui"]
+[ext_resource type="Texture2D" uid="uid://byn2281mdr04r" path="res://Graphics/RetroWindowsGUI/Window_Base.png" id="8_kx3ay"]
+[ext_resource type="Texture2D" uid="uid://cctchtpnghska" path="res://Graphics/RetroWindowsGUI/Windows_qmark.png" id="9_5rrfl"]
+[ext_resource type="Texture2D" uid="uid://2ovcqbngokx3" path="res://Graphics/RetroWindowsGUI/Windows_Toggle_Inactive.png" id="9_n68t6"]
+[ext_resource type="Texture2D" uid="uid://b6tgb1gqe3mag" path="res://Graphics/RetroWindowsGUI/Window_Header_Inactive.png" id="10_06h4n"]
+[ext_resource type="Theme" uid="uid://b04unr2qrkngo" path="res://UI/win_95_theme.tres" id="10_8rhfc"]
 
-[sub_resource type="TileSet" id="TileSet_fh375"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jy1ct"]
+texture = ExtResource("9_n68t6")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hxs3n"]
+texture = ExtResource("8_kx3ay")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gtkui"]
+texture = ExtResource("10_06h4n")
+texture_margin_left = 13.0
+texture_margin_top = 30.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
 
 [node name="TestOverworld" type="Node2D" unique_id=2102567711]
 script = ExtResource("1_0q25o")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1020864077]
-tile_set = SubResource("TileSet_fh375")
+[node name="Control" type="Control" parent="." unique_id=624517343]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -414.0
+offset_top = -4.0
+offset_right = -374.0
+offset_bottom = 36.0
+
+[node name="TileMapLayer" type="TextureRect" parent="Control" unique_id=1650614653]
+layout_mode = 0
+offset_left = -2229.0
+offset_top = -1855.0
+offset_right = -309.0
+offset_bottom = -775.0
+scale = Vector2(3, 3)
+texture = ExtResource("2_56ifb")
+
+[node name="Panel" type="Panel" parent="Control" unique_id=234643800]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 3033.0
+offset_top = 1361.0
+offset_right = 3527.0
+offset_bottom = 1382.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jy1ct")
+
+[node name="Label" type="Label" parent="Control/Panel" unique_id=1564669072]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 73.0
+offset_bottom = 26.0
+theme = ExtResource("10_8rhfc")
+text = "03:72 AM"
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1341444756]
+layout_mode = 0
+offset_left = -2229.0
+offset_top = 1357.0
+offset_right = 3531.0
+offset_bottom = 1385.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_hxs3n")
+
+[node name="ThemeControl" type="Control" parent="Control" unique_id=1836792928]
+anchors_preset = 0
+offset_left = 952.0
+offset_top = -417.0
+offset_right = 992.0
+offset_bottom = -377.0
+theme = ExtResource("10_8rhfc")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/ThemeControl" unique_id=642953229]
+layout_mode = 0
+offset_left = 261.0
+offset_top = -169.0
+offset_right = 553.0
+offset_bottom = 146.0
+
+[node name="Panel" type="Panel" parent="Control/ThemeControl/PanelContainer" unique_id=235512098]
+layout_mode = 2
+
+[node name="PanelButtons" type="Control" parent="Control/ThemeControl/PanelContainer" unique_id=357905744]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/ThemeControl/PanelContainer/PanelButtons" unique_id=1499395168]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+texture = ExtResource("6_jy1ct")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ThemeControl/PanelContainer/PanelButtons/TextureRect" unique_id=1082332539]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_06h4n")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ThemeControl/PanelContainer/PanelButtons" unique_id=597683074]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -29.0
+offset_top = -24.0
+offset_right = -13.0
+offset_bottom = -8.0
+grow_horizontal = 0
+texture = ExtResource("6_jy1ct")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ThemeControl/PanelContainer/PanelButtons/TextureRect2" unique_id=369606497]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_gtkui")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/ThemeControl/PanelContainer/PanelButtons" unique_id=1250503983]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_top = -24.0
+offset_right = -34.0
+offset_bottom = -8.0
+grow_horizontal = 0
+texture = ExtResource("6_jy1ct")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ThemeControl/PanelContainer/PanelButtons/TextureRect3" unique_id=883107589]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 4.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_5rrfl")
+
+[node name="Label" type="Label" parent="Control/ThemeControl" unique_id=495848411]
+layout_mode = 0
+offset_left = 267.0
+offset_top = -163.0
+offset_right = 533.0
+offset_bottom = -145.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Infil.exe "
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control" unique_id=1997948606]
+layout_mode = 0
+offset_left = 2600.0
+offset_top = -1790.0
+offset_right = 3483.0
+offset_bottom = -1429.0
+theme = ExtResource("10_8rhfc")
+theme_override_styles/panel = SubResource("StyleBoxTexture_gtkui")
+
+[node name="Panel" type="Panel" parent="Control/PanelContainer2" unique_id=501203425]
+layout_mode = 2
+
+[node name="PanelButtons" type="Control" parent="Control/PanelContainer2" unique_id=697031393]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer2/PanelButtons" unique_id=372880094]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+texture = ExtResource("6_jy1ct")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/PanelContainer2/PanelButtons/TextureRect" unique_id=450885137]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_06h4n")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/PanelContainer2/PanelButtons" unique_id=845638781]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -29.0
+offset_top = -24.0
+offset_right = -13.0
+offset_bottom = -8.0
+grow_horizontal = 0
+texture = ExtResource("6_jy1ct")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/PanelContainer2/PanelButtons/TextureRect2" unique_id=1888025748]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_gtkui")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/PanelContainer2/PanelButtons" unique_id=855536168]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_top = -24.0
+offset_right = -34.0
+offset_bottom = -8.0
+grow_horizontal = 0
+texture = ExtResource("6_jy1ct")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/PanelContainer2/PanelButtons/TextureRect3" unique_id=858097595]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 4.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_5rrfl")
 
 [node name="Antivirus" parent="." unique_id=703871089 instance=ExtResource("2_i637r")]
 position = Vector2(-15, -353)

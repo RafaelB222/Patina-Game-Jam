@@ -16,11 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://cec12grijc5mt" path="res://Graphics/Virus/Green7.png" id="9_n471f"]
 [ext_resource type="Texture2D" uid="uid://dainmktdxdobf" path="res://Graphics/Virus/Green8.png" id="10_7emwf"]
 [ext_resource type="Texture2D" uid="uid://fs3kpncr57yy" path="res://Graphics/Lights/main.png" id="16_lfmf2"]
+[ext_resource type="Script" uid="uid://42wdg82cmn2x" path="res://Player/directional_light_2d.gd" id="17_hshwv"]
 [ext_resource type="AudioStream" uid="uid://d2p1pymqvgcgu" path="res://Graphics/Ear Graphics/Kenney Samples/slime_000.ogg" id="17_pisgm"]
 [ext_resource type="AudioStream" uid="uid://bevwjx3w8no0o" path="res://Graphics/Ear Graphics/FreeSFX/GameSFX/Blops/Retro Blop StereoUP 09.wav" id="18_b1ygp"]
 [ext_resource type="AudioStream" uid="uid://c7ttolf1hjxj6" path="res://Graphics/Ear Graphics/FreeSFX/GameSFX/Swoosh/Retro Swooosh 07.wav" id="19_o28un"]
 [ext_resource type="AudioStream" uid="uid://ci5xfs41aei5s" path="res://Graphics/Ear Graphics/FreeSFX/GameSFX/Events/Negative/Retro Negative Short 23.wav" id="20_n471f"]
 [ext_resource type="AudioStream" uid="uid://s5x0twiwnxbx" path="res://Graphics/Ear Graphics/FreeSFX/GameSFX/Roar/Retro Roar LoFi 01.wav" id="21_7emwf"]
+[ext_resource type="AudioStream" uid="uid://bikeb6wlkkms4" path="res://Graphics/Ear Graphics/FreeSFX/GameSFX/HiTech/Retro HiTech 08.wav" id="23_gpjlu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k53q1"]
 radius = 37.01351
@@ -126,9 +128,10 @@ input_component = NodePath("../InputComponent")
 
 [node name="DirectionalLight2D" type="PointLight2D" parent="." unique_id=265076043]
 color = Color(0.61871636, 0.9999998, 0.90360594, 1)
-energy = 0.25
+energy = 0.3
 texture = ExtResource("16_lfmf2")
 texture_scale = 2.5
+script = ExtResource("17_hshwv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1048377112]
 stream = ExtResource("17_pisgm")
@@ -145,3 +148,6 @@ stream = ExtResource("20_n471f")
 
 [node name="RebirthAudio" type="AudioStreamPlayer" parent="." unique_id=401745286]
 stream = ExtResource("21_7emwf")
+
+[node name="EatAudio" type="AudioStreamPlayer" parent="." unique_id=1025086119]
+stream = ExtResource("23_gpjlu")

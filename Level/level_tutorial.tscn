@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://c3s5b6qjt6diu" path="res://Graphics/RetroWindowsGUI/Windows_expandwindow.png" id="5_0fsbt"]
 [ext_resource type="Texture2D" uid="uid://cctchtpnghska" path="res://Graphics/RetroWindowsGUI/Windows_qmark.png" id="6_0k5u7"]
 [ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="9_0k5u7"]
-; [ext_resource type="PackedScene" uid="uid://88fj3ydsx3xe" path="res://Level/level1.tscn" id="10_435nn"]
 [ext_resource type="AudioStream" uid="uid://d234v7bydvrll" path="res://Graphics/Ear Graphics/spacesong1.mp3" id="11_ldhcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pe3o"]
@@ -24,7 +23,7 @@ size = Vector2(236, 14.5)
 size = Vector2(258, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fsbt"]
-size = Vector2(124, 152)
+size = Vector2(127, 282)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0k5u7"]
 size = Vector2(117.5, 22.5)
@@ -150,6 +149,14 @@ offset_right = 126.0
 offset_bottom = 25.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "VirusInfiltration.exe"
+
+[node name="VScrollBar" type="VScrollBar" parent="NinePatchRect" unique_id=2058843903]
+layout_mode = 0
+offset_left = 1132.0
+offset_top = 31.0
+offset_right = 1147.0
+offset_bottom = 625.0
+page = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1098530799]
 
@@ -277,7 +284,7 @@ position = Vector2(18, -5.5)
 shape = SubResource("RectangleShape2D_mxso3")
 
 [node name="InstructionBody" type="StaticBody2D" parent="." unique_id=374209362]
-position = Vector2(842, -386)
+position = Vector2(924, -427)
 
 [node name="Instructions" type="Panel" parent="InstructionBody" unique_id=726650288]
 anchors_preset = 2
@@ -285,8 +292,8 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = -570.0
 offset_top = 208.0
-offset_right = -441.0
-offset_bottom = 364.0
+offset_right = -436.0
+offset_bottom = 492.0
 grow_vertical = 0
 theme = ExtResource("3_mxso3")
 
@@ -302,10 +309,16 @@ Space to jump
 
 Shift to dash
 
-F to interact"
+R to eat evidence
+
+F to interact
+
+Q for Blacklight
+
+Tab for inventory"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InstructionBody" unique_id=840641762]
-position = Vector2(-505, 286)
+position = Vector2(-503.5, 351)
 shape = SubResource("RectangleShape2D_0fsbt")
 
 [node name="Button" type="Button" parent="." unique_id=2076476673]
@@ -324,9 +337,10 @@ shape = SubResource("RectangleShape2D_0k5u7")
 
 [node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("9_0k5u7")]
 position = Vector2(490, 259)
-
 next_scene = "res://Level/level1.tscn"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1420905310]
 stream = ExtResource("11_ldhcq")
+volume_db = -80.0
 autoplay = true
 parameters/looping = true

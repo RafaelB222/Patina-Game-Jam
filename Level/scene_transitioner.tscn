@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cltk5qgtcuwlh" path="res://Level/scene_transitioner.gd" id="1_kxgb4"]
 [ext_resource type="AudioStream" uid="uid://72pb7sbo3o8t" path="res://Graphics/Ear Graphics/mouse-click-really-fuckin-short.mp3" id="2_1phn2"]
+[ext_resource type="Texture2D" uid="uid://fs3kpncr57yy" path="res://Graphics/Lights/main.png" id="3_lco0y"]
+[ext_resource type="Script" uid="uid://ry1m3ya8noqu" path="res://Level/point_light_2d.gd" id="4_75se0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1phn2"]
 size = Vector2(112, 81)
@@ -57,3 +59,10 @@ shape = SubResource("RectangleShape2D_1phn2")
 
 [node name="AudioPlaya2D" type="AudioStreamPlayer" parent="." unique_id=774361222]
 stream = ExtResource("2_1phn2")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=858016946]
+color = Color(0.78058505, 0.50249755, 0.9999992, 1)
+energy = 0.7
+texture = ExtResource("3_lco0y")
+texture_scale = 1.5
+script = ExtResource("4_75se0")

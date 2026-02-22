@@ -3,6 +3,8 @@ extends CanvasLayer
 signal scene_transitioning()
 signal transition_complete()
 
+signal camera_shake()
+
 var is_transitioning: bool = false
 
 func transition_to(new_scene_file_path: String, spawn_id: String = "SpawnPoint") -> void:

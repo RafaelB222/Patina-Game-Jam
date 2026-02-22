@@ -14,6 +14,7 @@ class_name Player
 @onready var _uv_light = $UVLight
 @onready var _action_component: Area2D = $ActionComponent
 
+@onready var eat_audio: AudioStreamPlayer = $EatAudio
 @onready var death_audio: AudioStreamPlayer = $DeathAudio
 @onready var rebirth_audio: AudioStreamPlayer = $RebirthAudio
 
@@ -118,6 +119,7 @@ func eat_evidence() -> void:
 				var popup = get_tree().get_first_node_in_group("image_popup")
 				if popup:
 					popup.show_image(evidence.evidence_value)
+		eat_audio.play()
 		evidence.queue_free()
 
 func die() -> void:

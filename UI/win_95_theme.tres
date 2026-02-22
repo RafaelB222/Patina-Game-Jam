@@ -60,6 +60,24 @@ texture_margin_bottom = 13.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yb11r"]
 texture = ExtResource("2_ncd6b")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bihwu"]
+texture = ExtResource("3_8s3tr")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kirfh"]
+texture = ExtResource("4_ncd6b")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p5pp5"]
 texture = ExtResource("5_hnnht")
@@ -87,5 +105,6 @@ VScrollBar/icons/increment = ExtResource("2_ncd6b")
 VScrollBar/icons/increment_highlight = ExtResource("3_8s3tr")
 VScrollBar/icons/increment_pressed = ExtResource("4_ncd6b")
 VScrollBar/styles/grabber = SubResource("StyleBoxTexture_yb11r")
-VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_bihwu")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_kirfh")
 VScrollBar/styles/scroll = SubResource("StyleBoxTexture_p5pp5")

@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bkgakxw6yr54p" path="res://Level/asteroid_cluster_1.tscn" id="3_uxjqv"]
 [ext_resource type="PackedScene" uid="uid://yd8hvr1uu3pa" path="res://Level/single_asteroid.tscn" id="4_single"]
 [ext_resource type="PackedScene" uid="uid://d4f0ae7n81b5k" path="res://Evidence/damning_photgraph.tscn" id="5_v0pqm"]
-[ext_resource type="AudioStream" uid="uid://b1nfwyjecx425" path="res://Graphics/Ear Graphics/longsongsilver.mp3" id="8_jtw4e"]
 [ext_resource type="Texture2D" uid="uid://fs3kpncr57yy" path="res://Graphics/Lights/main.png" id="8_mbjhi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k5uip"]
@@ -242,7 +241,7 @@ position = Vector2(-718, -121)
 
 [node name="PointLight2D" type="PointLight2D" parent="DamningPhotgraph" unique_id=1181372935]
 color = Color(0.78585064, 0.738495, 0.56450534, 1)
-energy = 0.5
+energy = 0.75
 shadow_enabled = true
 texture = ExtResource("8_mbjhi")
 texture_scale = 5.0
@@ -258,7 +257,3 @@ occluder = SubResource("OccluderPolygon2D_hnnje")
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="DamningPhotgraph" unique_id=925746288]
 position = Vector2(928, 224)
 occluder = SubResource("OccluderPolygon2D_hnnje")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=552463298]
-stream = ExtResource("8_jtw4e")
-autoplay = true

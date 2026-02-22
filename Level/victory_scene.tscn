@@ -2,6 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://b04unr2qrkngo" path="res://UI/win_95_theme.tres" id="1_juwwl"]
 [ext_resource type="AudioStream" uid="uid://cjom6i4s2ympc" path="res://Graphics/Ear Graphics/FreeSFX/Voices/You Win.wav" id="1_n5uei"]
+[ext_resource type="Script" uid="uid://diheyb53o5o7p" path="res://Level/victory_scene.gd" id="2_gvaeg"]
+[ext_resource type="AudioStream" uid="uid://bwj2ti7scpymw" path="res://Graphics/Ear Graphics/FreeSFX/GameSFX/Music/Success/Retro Success Melody 01 - sawtooth lead 1.wav" id="3_m6dra"]
 [ext_resource type="Texture2D" uid="uid://76v4j14828ty" path="res://Graphics/RetroWindowsGUI/Windows_Button_Inactive.png" id="3_vjg18"]
 [ext_resource type="Texture2D" uid="uid://cnydipdno0g4p" path="res://Graphics/RetroWindowsGUI/Windows_Cross.png" id="4_m6dra"]
 [ext_resource type="Texture2D" uid="uid://c3s5b6qjt6diu" path="res://Graphics/RetroWindowsGUI/Windows_expandwindow.png" id="5_gvaeg"]
@@ -16,9 +18,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_juwwl")
+script = ExtResource("2_gvaeg")
 
 [node name="Victory" type="AudioStreamPlayer" parent="." unique_id=1656127296]
 stream = ExtResource("1_n5uei")
+
+[node name="Victory2" type="AudioStreamPlayer" parent="." unique_id=215058555]
+stream = ExtResource("3_m6dra")
 autoplay = true
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1592464755]
@@ -135,3 +141,6 @@ offset_right = 126.0
 offset_bottom = 25.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "VICTORY.EXE"
+
+[connection signal="finished" from="Victory" to="." method="_on_victory_finished"]
+[connection signal="finished" from="Victory2" to="." method="_on_victory_2_finished"]

@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bco1s3hft2xix" path="res://Enemy/follow_state.gd" id="6_follow"]
 [ext_resource type="Texture2D" uid="uid://fs3kpncr57yy" path="res://Graphics/Lights/main.png" id="8_aqsnp"]
 [ext_resource type="AudioStream" uid="uid://d01if7senqnbl" path="res://Graphics/Ear Graphics/FreeSFX/GameSFX/z_Various/Retro Computer 02.wav" id="9_u7l3j"]
+[ext_resource type="Script" uid="uid://b0a28rapj4o42" path="res://Enemy/directional_light_2d.gd" id="9_uba3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keue2"]
 size = Vector2(62, 57)
@@ -47,6 +48,11 @@ color = Color(0.99999243, 0.44923228, 0.47896236, 1)
 energy = 0.4
 texture = ExtResource("8_aqsnp")
 texture_scale = 2.5
+script = ExtResource("9_uba3i")
+flicker_speed = 20.0
+energy_min = 0.5
+energy_max = 1.5
+scale_flicker = 0.2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2045802209]
 stream = ExtResource("9_u7l3j")
