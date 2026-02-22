@@ -27,8 +27,8 @@ var stored_evidence: Dictionary = {
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	add_to_group("evidence_storage")
-	body_entered.connect(_on_area_2d_body_entered)
-	body_exited.connect(_on_area_2d_body_exited)
+	#body_entered.connect(_on_area_2d_body_entered)
+	#body_exited.connect(_on_area_2d_body_exited)
 
 func store_evidence(evidence: Dictionary) -> void:
 	var evidence_type: String = evidence["type"]
@@ -52,4 +52,5 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and player_in_range:
+		pass
 		
