@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b5c7pw8uo17pd" path="res://Graphics/win95 Icons/All [Without duplicates]/Folder (hi-res).png" id="1_um71x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv6db"]
-size = Vector2(103, 76.5)
+size = Vector2(217, 175)
 
 [node name="EvidenceStorageFile" type="Node2D" unique_id=1379983594]
 script = ExtResource("1_iv6db")
@@ -16,7 +16,6 @@ scale = Vector2(3.5000002, 3.3125005)
 texture = ExtResource("1_um71x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1065442253]
-position = Vector2(0, 3.75)
 shape = SubResource("RectangleShape2D_iv6db")
 
 [node name="Label" type="Label" parent="." unique_id=1939906577]
@@ -34,10 +33,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
+offset_left = -107.0
+offset_top = -87.0
+offset_right = 108.0
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.5, 1, 0.3)

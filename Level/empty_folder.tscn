@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://qy0mj63be7co"]
+
+[ext_resource type="Script" uid="uid://b4mrlguv5q3qr" path="res://Level/empty_folder.gd" id="1_2rkri"]
+[ext_resource type="Texture2D" uid="uid://d4msct75jqaey" path="res://Level/dot_grid.png" id="2_udg2q"]
+[ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="3_ccx5i"]
+[ext_resource type="Texture2D" uid="uid://b5c7pw8uo17pd" path="res://Graphics/win95 Icons/All [Without duplicates]/Folder (hi-res).png" id="5_iuynu"]
+
+[node name="EmptyFolder" type="Node2D" unique_id=1175630368]
+script = ExtResource("1_2rkri")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=508113779]
+texture = ExtResource("2_udg2q")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1390129709]
+position = Vector2(0, -2)
+
+[node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("3_ccx5i")]
+position = Vector2(100, 11)
+next_scene = "res://Level/test_overworld.tscn"
+texture = ExtResource("5_iuynu")
+label_text = "Desktop"

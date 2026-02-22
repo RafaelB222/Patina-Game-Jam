@@ -8,7 +8,7 @@ extends Area2D
 @onready var label = $Label
 @onready var sound = $AudioPlaya2D
 
-@export var next_scene: PackedScene
+@export_file("*.tscn") var next_scene: String
 @export var texture: Texture2D
 @export var label_text: String = ""
 
@@ -65,4 +65,4 @@ func _input(event: InputEvent) -> void:
 		if not texture:
 			text.texture = selected
 		await get_tree().create_timer(.5).timeout
-		TransitionManager.transition_to(next_scene.resource_path)
+		TransitionManager.transition_to(next_scene)

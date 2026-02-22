@@ -114,6 +114,10 @@ func eat_evidence() -> void:
 			evidence_held[type]["owned"] = true
 			evidence_held[type]["value"] = evidence.evidence_value
 			print("You obtained the: ", type, " evidence!!!! Evidence held is now: ", evidence_held)
+			if type == "image":
+				var popup = get_tree().get_first_node_in_group("image_popup")
+				if popup:
+					popup.show_image(evidence.evidence_value)
 		evidence.queue_free()
 
 func die() -> void:

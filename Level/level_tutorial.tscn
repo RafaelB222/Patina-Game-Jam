@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c3s5b6qjt6diu" path="res://Graphics/RetroWindowsGUI/Windows_expandwindow.png" id="5_0fsbt"]
 [ext_resource type="Texture2D" uid="uid://cctchtpnghska" path="res://Graphics/RetroWindowsGUI/Windows_qmark.png" id="6_0k5u7"]
 [ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="9_0k5u7"]
-[ext_resource type="PackedScene" uid="uid://88fj3ydsx3xe" path="res://Level/level1.tscn" id="10_435nn"]
+; [ext_resource type="PackedScene" uid="uid://88fj3ydsx3xe" path="res://Level/level1.tscn" id="10_435nn"]
 [ext_resource type="AudioStream" uid="uid://d234v7bydvrll" path="res://Graphics/Ear Graphics/spacesong1.mp3" id="11_ldhcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pe3o"]
@@ -324,8 +324,8 @@ shape = SubResource("RectangleShape2D_0k5u7")
 
 [node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("9_0k5u7")]
 position = Vector2(490, 259)
-next_scene = ExtResource("10_435nn")
 
+next_scene = "res://Level/level1.tscn"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1420905310]
 stream = ExtResource("11_ldhcq")
 autoplay = true

@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://b0xg1x2dnqkdl" path="res://Enemy/Antivirus.tscn" id="2_i637r"]
 [ext_resource type="PackedScene" uid="uid://bv80ib07xjhjg" path="res://Level/evidence_storage_file.tscn" id="3_eo1io"]
 [ext_resource type="PackedScene" uid="uid://dvqabjs2foubn" path="res://Level/scene_transitioner.tscn" id="4_vfu0w"]
-[ext_resource type="PackedScene" uid="uid://b5mvqs15ts6pn" path="res://Level/space_level.tscn" id="5_56ifb"]
 [ext_resource type="Texture2D" uid="uid://b5c7pw8uo17pd" path="res://Graphics/win95 Icons/All [Without duplicates]/Folder (hi-res).png" id="6_mr34p"]
 [ext_resource type="PackedScene" uid="uid://y10ops4utcay" path="res://Level/Mailbox.tscn" id="7_mr34p"]
 [ext_resource type="Texture2D" uid="uid://dp4ibesym1yo" path="res://Graphics/win95 Icons/PNGs/Mail catalog.png" id="8_220s0"]
@@ -31,19 +30,19 @@ position = Vector2(942, -411)
 
 [node name="SceneTransitioner" parent="." unique_id=1033257813 instance=ExtResource("4_vfu0w")]
 position = Vector2(-427, -254)
-next_scene = ExtResource("5_56ifb")
+next_scene = "res://Level/empty_folder.tscn"
 texture = ExtResource("6_mr34p")
 label_text = "Porn Stash"
 
 [node name="SceneTransitioner2" parent="." unique_id=1910001107 instance=ExtResource("4_vfu0w")]
 position = Vector2(574, -91)
-next_scene = ExtResource("5_56ifb")
+next_scene = "res://Level/space_level.tscn"
 texture = ExtResource("6_mr34p")
 label_text = "Documents"
 
 [node name="SceneTransitioner3" parent="." unique_id=188250733 instance=ExtResource("4_vfu0w")]
 position = Vector2(56, 273)
-next_scene = ExtResource("5_56ifb")
+next_scene = "res://Level/space_level.tscn"
 texture = ExtResource("6_mr34p")
 label_text = "Lunch Meetings"
 
@@ -51,6 +50,6 @@ label_text = "Lunch Meetings"
 position = Vector2(665, -88)
 
 [node name="SceneTransitioner4" parent="." unique_id=1142577170 instance=ExtResource("4_vfu0w")]
-next_scene = ExtResource("7_mr34p")
+next_scene = "res://Level/empty_folder.tscn"
 texture = ExtResource("8_220s0")
 label_text = "Mailbox"

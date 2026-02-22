@@ -92,6 +92,8 @@ func dash_end():
 
 ## Double jump approach (jump on press, second jump available in air)
 func jump():
+	if not active:
+		return
 	var grav_dir = PhysicsManager.get_gravity_dir(player.global_position)
 	if player.is_on_floor():
 		var lateral_vel = player.velocity - player.velocity.dot(grav_dir) * grav_dir
