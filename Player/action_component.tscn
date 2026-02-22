@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://cty2blcten5rk"]
 
+[ext_resource type="Script" uid="uid://bf80scdlvckgd" path="res://Player/action_component.gd" id="1_v75jo"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_aklx7"]
 radius = 57.870552
 
 [node name="ActionComponent" type="Area2D" unique_id=861030658]
+script = ExtResource("1_v75jo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=625427581]
 rotation = 0.2617994
