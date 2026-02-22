@@ -1,12 +1,48 @@
 [gd_resource type="Theme" format=3 uid="uid://b04unr2qrkngo"]
 
 [ext_resource type="Texture2D" uid="uid://cjphe657dc0do" path="res://Graphics/RetroWindowsGUI/Windows_Toggle_Active.png" id="1_ignl6"]
+[ext_resource type="Texture2D" uid="uid://76v4j14828ty" path="res://Graphics/RetroWindowsGUI/Windows_Button_Inactive.png" id="1_ncd6b"]
 [ext_resource type="Texture2D" uid="uid://uv38ayqlqbb5" path="res://Graphics/RetroWindowsGUI/Window_Header_Resizable.png" id="2_8s3tr"]
 [ext_resource type="FontFile" uid="uid://b8mgbux3xda04" path="res://Graphics/Fonts/W95FA.otf" id="2_jwqli"]
 [ext_resource type="Texture2D" uid="uid://eudabu1sqmgo" path="res://Graphics/RetroWindowsGUI/Windows_Button.png" id="2_ncd6b"]
 [ext_resource type="Texture2D" uid="uid://bcf27jhrvjchr" path="res://Graphics/RetroWindowsGUI/Windows_Button_Focus.png" id="3_8s3tr"]
 [ext_resource type="Texture2D" uid="uid://dc1fbi1w4yqok" path="res://Graphics/RetroWindowsGUI/Windows_Button_Pressed.png" id="4_ncd6b"]
 [ext_resource type="Texture2D" uid="uid://b6dpcyt2tr5ah" path="res://Graphics/RetroWindowsGUI/Windows_SideBar_Underside.png" id="5_hnnht"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hnnht"]
+texture = ExtResource("1_ncd6b")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ij3du"]
+texture = ExtResource("3_8s3tr")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xghmc"]
+texture = ExtResource("3_8s3tr")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmsmu"]
+texture = ExtResource("2_ncd6b")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2d6an"]
+texture = ExtResource("4_ncd6b")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hm7o4"]
 texture = ExtResource("1_ignl6")
@@ -32,6 +68,12 @@ axis_stretch_vertical = 1
 
 [resource]
 default_font = ExtResource("2_jwqli")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_hnnht")
+Button/styles/focus = SubResource("StyleBoxTexture_ij3du")
+Button/styles/hover = SubResource("StyleBoxTexture_xghmc")
+Button/styles/normal = SubResource("StyleBoxTexture_rmsmu")
+Button/styles/pressed = SubResource("StyleBoxTexture_2d6an")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 18
 Panel/styles/panel = SubResource("StyleBoxTexture_hm7o4")

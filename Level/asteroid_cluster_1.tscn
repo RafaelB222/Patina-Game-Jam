@@ -4,28 +4,28 @@
 [ext_resource type="Texture2D" uid="uid://cefvit07xic2b" path="res://Graphics/Space/10 asteriod sprite pack/large asteriod 2.png" id="2_c14vk"]
 [ext_resource type="Texture2D" uid="uid://ccebrmav332w" path="res://Graphics/Space/10 asteriod sprite pack/destroyed asteriod 1.png" id="3_ruffc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvvy6"]
-size = Vector2(117, 119)
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5y4a"]
+radius = 64.03124
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5y4a"]
-size = Vector2(119, 117)
+[sub_resource type="CircleShape2D" id="CircleShape2D_c14vk"]
+radius = 60.00833
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c14vk"]
-size = Vector2(116, 118)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ruffc"]
+radius = 67.36468
 
 [node name="AsteroidCluster1" type="StaticBody2D" unique_id=1407709735]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=844546474]
 position = Vector2(-111, 122)
-shape = SubResource("RectangleShape2D_vvvy6")
+shape = SubResource("CircleShape2D_h5y4a")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=994579489]
 position = Vector2(-7, 242)
-shape = SubResource("RectangleShape2D_h5y4a")
+shape = SubResource("CircleShape2D_c14vk")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1317768859]
 position = Vector2(-4, 1)
-shape = SubResource("RectangleShape2D_c14vk")
+shape = SubResource("CircleShape2D_ruffc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=561507911]
 position = Vector2(-3, 0)

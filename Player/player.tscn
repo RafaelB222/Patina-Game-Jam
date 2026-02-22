@@ -2,15 +2,77 @@
 
 [ext_resource type="Script" uid="uid://crh57r2mj37dy" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Resource" uid="uid://ceoc227akgwo6" path="res://Player/player_stats_resource.tres" id="2_btcbx"]
+[ext_resource type="Texture2D" uid="uid://xsixirv7e4d8" path="res://Graphics/Virus/Green1.png" id="3_dkpta"]
+[ext_resource type="Texture2D" uid="uid://chwcji4qkd1kv" path="res://Graphics/Virus/Green5.png" id="3_k53q1"]
 [ext_resource type="PackedScene" uid="uid://dshjxf6hsnstq" path="res://Player/player_movement_component.tscn" id="4_gwnis"]
+[ext_resource type="Texture2D" uid="uid://dieht7edwuydf" path="res://Graphics/Virus/Green2.png" id="4_lfmf2"]
 [ext_resource type="PackedScene" uid="uid://bomi3f1oe3gpj" path="res://Player/input_component.tscn" id="5_k53q1"]
+[ext_resource type="Texture2D" uid="uid://b4flvr6o2gnvf" path="res://Graphics/Virus/Green3.png" id="5_pisgm"]
 [ext_resource type="Texture2D" uid="uid://bs6u2edw7ifdp" path="res://Graphics/Virus/Green4.png" id="6_b1ygp"]
 [ext_resource type="Script" path="res://Player/uv_light_component.gd" id="6_uvcomp"]
 [ext_resource type="PackedScene" uid="uid://cty2blcten5rk" path="res://Player/action_component.tscn" id="7_vtle1"]
+[ext_resource type="Texture2D" uid="uid://cwwf23cxnek5m" path="res://Graphics/Virus/Green6.png" id="8_o28un"]
 [ext_resource type="Script" uid="uid://dybshqt0u5lix" path="res://Player/top_down_movement_component.gd" id="8_tdmc"]
+[ext_resource type="Texture2D" uid="uid://cec12grijc5mt" path="res://Graphics/Virus/Green7.png" id="9_n471f"]
+[ext_resource type="Texture2D" uid="uid://dainmktdxdobf" path="res://Graphics/Virus/Green8.png" id="10_7emwf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k53q1"]
-radius = 34.132095
+radius = 37.01351
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkpta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pisgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b1ygp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o28un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n471f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7emwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7emwf")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dkpta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lfmf2")
+}, {
+"duration": 8.0,
+"texture": ExtResource("5_pisgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b1ygp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k53q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o28un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n471f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7emwf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=1613558614 node_paths=PackedStringArray("input_component", "player_collision_shape", "side_scroll_movement", "top_down_movement")]
 script = ExtResource("1_l8h54")
@@ -24,9 +86,11 @@ uv_light_offset = 60.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173643046]
 shape = SubResource("CircleShape2D_k53q1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1740804528]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1147864342]
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("6_b1ygp")
+sprite_frames = SubResource("SpriteFrames_dkpta")
+animation = &"death"
+autoplay = "default"
 
 [node name="PlayerMovementComponent" parent="." unique_id=550559937 node_paths=PackedStringArray("player", "input_component") instance=ExtResource("4_gwnis")]
 player = NodePath("..")

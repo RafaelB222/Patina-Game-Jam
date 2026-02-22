@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://tre45n4um0np"]
 
 [ext_resource type="Theme" uid="uid://b04unr2qrkngo" path="res://UI/win_95_theme.tres" id="1_ng86p"]
+[ext_resource type="Script" uid="uid://c7s3wiog85r5w" path="res://Level/inventory_ui.gd" id="2_n250d"]
 [ext_resource type="Texture2D" uid="uid://cwi0s472iidvm" path="res://Graphics/win95 Icons/PNGs/Mail text-1.png" id="3_5a0oy"]
 [ext_resource type="Texture2D" uid="uid://cp84ck3lm7pit" path="res://Graphics/win95 Icons/PNGs/Gray briefcase.png" id="4_rvgrq"]
 [ext_resource type="Texture2D" uid="uid://76v4j14828ty" path="res://Graphics/RetroWindowsGUI/Windows_Button_Inactive.png" id="5_rvgrq"]
@@ -9,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://72pb7sbo3o8t" path="res://Graphics/Ear Graphics/mouse-click-really-fuckin-short.mp3" id="8_n250d"]
 
 [node name="InventoryUI" type="Control" unique_id=1920487921]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ng86p")
+script = ExtResource("2_n250d")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=58684410]
 layout_mode = 0

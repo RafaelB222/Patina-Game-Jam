@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://d2rycno67gnah" path="res://Level/single_asteroid.gd" id="1_rx86e"]
 [ext_resource type="Texture2D" uid="uid://fs3kpncr57yy" path="res://Graphics/Lights/main.png" id="2_rx86e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx86e"]
-size = Vector2(128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_rx86e"]
+radius = 61.03278
 
 [node name="SingleAsteroid" type="StaticBody2D" unique_id=129962681]
 script = ExtResource("1_rx86e")
@@ -13,7 +13,7 @@ script = ExtResource("1_rx86e")
 scale = Vector2(10, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789714178]
-shape = SubResource("RectangleShape2D_rx86e")
+shape = SubResource("CircleShape2D_rx86e")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1362853892]
 energy = 0.7

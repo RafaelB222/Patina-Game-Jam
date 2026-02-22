@@ -23,6 +23,12 @@ size = Vector2(213, 153)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxso3"]
 size = Vector2(258, 17)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fsbt"]
+size = Vector2(132, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k5u7"]
+size = Vector2(117.5, 22.5)
+
 [node name="LevelTutorial" type="Node2D" unique_id=817616158]
 script = ExtResource("1_mxso3")
 
@@ -289,6 +295,50 @@ text = "The Truth is out there. Bring it back."
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1348488064]
 position = Vector2(18, -5.5)
 shape = SubResource("RectangleShape2D_mxso3")
+
+[node name="InstructionBody" type="StaticBody2D" parent="." unique_id=374209362]
+position = Vector2(842, -386)
+
+[node name="Instructions" type="Panel" parent="InstructionBody" unique_id=726650288]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -570.0
+offset_top = 208.0
+offset_right = -433.0
+offset_bottom = 318.0
+grow_vertical = 0
+theme = ExtResource("3_mxso3")
+
+[node name="Label" type="Label" parent="InstructionBody/Instructions" unique_id=1360956914]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 126.0
+offset_bottom = 108.0
+text = "W A S D to move
+
+Space to jump
+
+Shift to dash"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InstructionBody" unique_id=840641762]
+position = Vector2(-501, 262)
+shape = SubResource("RectangleShape2D_0fsbt")
+
+[node name="Button" type="Button" parent="." unique_id=2076476673]
+offset_left = -560.0
+offset_top = 272.0
+offset_right = -436.0
+offset_bottom = 308.0
+theme = ExtResource("3_mxso3")
+text = "Pimpin Aint Easy"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Button" unique_id=1310852598]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/StaticBody2D" unique_id=1050364800]
+position = Vector2(62.25, 13.75)
+shape = SubResource("RectangleShape2D_0k5u7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

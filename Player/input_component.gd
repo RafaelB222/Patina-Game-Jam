@@ -31,7 +31,6 @@ func _input(event: InputEvent) -> void:
 		activate_uv_light.emit()
 	if event.is_action_pressed("eat_evidence"):
 		eat_evidence.emit()
-		
 
 func handle_move_input(_delta: float):
 	var direction = Input.get_vector("left", "right", "up", "down")

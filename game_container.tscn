@@ -28,6 +28,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1153399699]
+handle_input_locally = false
 size = Vector2i(640, 480)
 render_target_update_mode = 4
 
@@ -39,14 +40,14 @@ position = Vector2(184, 58)
 [node name="Camera2D2" type="Camera2D" parent="SubViewportContainer/SubViewport/Player" unique_id=1017127360]
 limit_smoothed = true
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="SubViewportContainer/SubViewport" unique_id=223588385]
-color = Color(0.40832946, 0.40832946, 0.40832946, 1)
-energy = 0.42
-blend_mode = 2
-
 [node name="UiContainer" parent="SubViewportContainer/SubViewport" unique_id=1599856749 instance=ExtResource("3_aq3js")]
 
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer" unique_id=720371938]
 material = SubResource("ShaderMaterial_ul0mr")
 layout_mode = 2
 script = ExtResource("6_shdsl")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="SubViewportContainer" unique_id=223588385]
+color = Color(0.40832946, 0.40832946, 0.40832946, 1)
+energy = 0.42
+blend_mode = 2
