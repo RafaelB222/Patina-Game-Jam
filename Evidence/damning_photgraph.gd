@@ -3,5 +3,5 @@ extends Evidence
 
 func _ready() -> void:
 	super._ready()
-	evidence_type = "password"
-	evidence_value = "edgelord69"
+	evidence_type = "image"
+	evidence_value = sprite.texture
