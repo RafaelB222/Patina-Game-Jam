@@ -12,6 +12,7 @@ class_name Player
 @onready var facing: Vector2 = Vector2.DOWN
 @onready var _sprite: Sprite2D = $Sprite2D
 @onready var _uv_light = $UVLight
+@onready var _action_component: Area2D = $ActionComponent
 
 var evidence_held: Dictionary = {
 	"password": {
@@ -96,7 +97,13 @@ func _create_uv_cone_texture(radius: int, angle_deg: float) -> ImageTexture:
 	return ImageTexture.create_from_image(img)
 
 func eat_evidence() -> void:
-	pass
+	for evidence in _action_component.get_nearby_evidence():
+		var type: String = evidence.evidence_type
+		if evidence_held.has(type):
+			evidence_held[type]["owned"] = true
+			evidence_held[type]["value"] = evidence.evidence_value
+			print("You obtained the: ", type, " evidence!!!! Evidence held is now: ", evidence_held)
+		evidence.queue_free()
 
 func die() -> void:
 	for key in evidence_held:

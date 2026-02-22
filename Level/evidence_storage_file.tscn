@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bv80ib07xjhjg"]
+
+[ext_resource type="Script" uid="uid://c0bonjv08gdp6" path="res://Level/evidence_storage_file.gd" id="1_iv6db"]
+[ext_resource type="Texture2D" uid="uid://b5c7pw8uo17pd" path="res://Graphics/win95 Icons/All [Without duplicates]/Folder (hi-res).png" id="1_um71x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv6db"]
+size = Vector2(103, 76.5)
+
+[node name="EvidenceStorageFile" type="Node2D" unique_id=1379983594]
+script = ExtResource("1_iv6db")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1957352160]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1497833665]
+scale = Vector2(3.5000002, 3.3125005)
+texture = ExtResource("1_um71x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1065442253]
+position = Vector2(0, 3.75)
+shape = SubResource("RectangleShape2D_iv6db")
