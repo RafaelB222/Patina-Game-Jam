@@ -3,51 +3,35 @@ extends Control
 # @onready grabs a reference to a node as soon as the scene is ready.
 # The $ is shorthand for get_node(). So $IntroPanel means get_node("IntroPanel").
 @onready var intro_panel: Control = $IntroPanel
-@onready var intro_title: Label = $IntroPanel/IntroTitle
+@onready var intro_video: VideoStreamPlayer = $IntroPanel/VideoStreamPlayer
 @onready var menu_panel: Control = $MenuPanel
 
 
 func _ready() -> void:
-	# Hide the menu and make everything start invisible.
-	# We'll animate them in with a Tween.
+	# Hide the menu at the start — we'll fade it in after the video.
 	menu_panel.visible = false
 	menu_panel.modulate.a = 0.0
-	intro_title.modulate.a = 0.0
-	intro_title.scale = Vector2(0.0, 0.0)
-	# Wait one frame so the layout engine has calculated the label's size,
-	# then set the pivot to the centre so it scales outward from the middle.
-	await get_tree().process_frame
-	intro_title.pivot_offset = intro_title.size / 2
-	_play_intro()
+	# .connect() links a signal to a function.
+	# "finished" fires automatically when the video reaches the end.
+	intro_video.finished.connect(_on_intro_finished)
 
 
-func _play_intro() -> void:
-	# A Tween lets you animate any property over time.
-	# By default, tweens run steps sequentially (one after the other).
+func _on_intro_finished() -> void:
+	# This runs as soon as the video ends.
 	var tween := create_tween()
 
-	# Step 1: Fade the title IN and scale it UP at the same time.
-	# tween.parallel() makes the next step run alongside the previous one.
-	tween.tween_property(intro_title, "modulate:a", 1.0, 1.2) \
-			.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-	tween.parallel().tween_property(intro_title, "scale", Vector2(1.0, 1.0), 1.2) \
-			.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
-
-	# Step 2: Hold on the title for a moment.
-	tween.tween_interval(1.5)
-
-	# Step 3: Fade the entire intro panel OUT.
+	# Fade the entire intro panel out.
 	tween.tween_property(intro_panel, "modulate:a", 0.0, 0.8) \
 			.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
 
-	# Step 4: tween_callback lets you call a function at a specific point in the sequence.
-	# Here we swap which panel is visible once the intro has faded out.
+	# Once faded, swap which panel is visible.
+	# tween_callback lets you call a function at a specific point in the sequence.
 	tween.tween_callback(func():
 		intro_panel.visible = false
 		menu_panel.visible = true
 	)
 
-	# Step 5: Fade the menu IN.
+	# Fade the menu in.
 	tween.tween_property(menu_panel, "modulate:a", 1.0, 0.6) \
 			.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 

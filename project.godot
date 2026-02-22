@@ -13,7 +13,7 @@ config_version=5
 config/name="Game-Jam"
 run/main_scene="uid://bmixo81k0pcmn"
 config/features=PackedStringArray("4.6", "Forward Plus")
-boot_splash/bg_color=Color(0.059, 0.043, 0.098, 1)
+boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 
 [autoload]
@@ -24,7 +24,7 @@ EvidenceContainer="*uid://bqliy2cdjf8d"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
