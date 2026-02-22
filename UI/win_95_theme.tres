@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://b04unr2qrkngo"]
 
 [ext_resource type="Texture2D" uid="uid://cjphe657dc0do" path="res://Graphics/RetroWindowsGUI/Windows_Toggle_Active.png" id="1_ignl6"]
+[ext_resource type="Texture2D" uid="uid://uv38ayqlqbb5" path="res://Graphics/RetroWindowsGUI/Window_Header_Resizable.png" id="2_8s3tr"]
 [ext_resource type="FontFile" uid="uid://b8mgbux3xda04" path="res://Graphics/Fonts/W95FA.otf" id="2_jwqli"]
 [ext_resource type="Texture2D" uid="uid://eudabu1sqmgo" path="res://Graphics/RetroWindowsGUI/Windows_Button.png" id="2_ncd6b"]
 [ext_resource type="Texture2D" uid="uid://bcf27jhrvjchr" path="res://Graphics/RetroWindowsGUI/Windows_Button_Focus.png" id="3_8s3tr"]
@@ -13,6 +14,13 @@ texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0
 texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ncd6b"]
+texture = ExtResource("2_8s3tr")
+texture_margin_left = 13.0
+texture_margin_top = 30.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yb11r"]
 texture = ExtResource("2_ncd6b")
@@ -27,6 +35,7 @@ default_font = ExtResource("2_jwqli")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 18
 Panel/styles/panel = SubResource("StyleBoxTexture_hm7o4")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ncd6b")
 VScrollBar/icons/decrement = ExtResource("2_ncd6b")
 VScrollBar/icons/decrement_highlight = ExtResource("3_8s3tr")
 VScrollBar/icons/decrement_pressed = ExtResource("4_ncd6b")

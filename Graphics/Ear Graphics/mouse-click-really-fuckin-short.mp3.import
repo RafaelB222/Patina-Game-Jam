@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://72pb7sbo3o8t"
+path="res://.godot/imported/mouse-click-really-fuckin-short.mp3-0875ee989e1f91bc6c50c24c1fa7be60.mp3str"
+
+[deps]
+
+source_file="res://Graphics/Ear Graphics/mouse-click-really-fuckin-short.mp3"
+dest_files=["res://.godot/imported/mouse-click-really-fuckin-short.mp3-0875ee989e1f91bc6c50c24c1fa7be60.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

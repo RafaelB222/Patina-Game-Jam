@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://crh57r2mj37dy" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Resource" uid="uid://ceoc227akgwo6" path="res://Player/player_stats_resource.tres" id="2_btcbx"]
-[ext_resource type="Texture2D" uid="uid://chwcji4qkd1kv" path="res://Graphics/Virus/Green5.png" id="3_k53q1"]
 [ext_resource type="PackedScene" uid="uid://dshjxf6hsnstq" path="res://Player/player_movement_component.tscn" id="4_gwnis"]
 [ext_resource type="PackedScene" uid="uid://bomi3f1oe3gpj" path="res://Player/input_component.tscn" id="5_k53q1"]
-[ext_resource type="Script" uid="uid://b2tnsrww3gj88" path="res://Player/uv_light_component.gd" id="6_uvcomp"]
+[ext_resource type="Texture2D" uid="uid://bs6u2edw7ifdp" path="res://Graphics/Virus/Green4.png" id="6_b1ygp"]
+[ext_resource type="Script" path="res://Player/uv_light_component.gd" id="6_uvcomp"]
 [ext_resource type="PackedScene" uid="uid://cty2blcten5rk" path="res://Player/action_component.tscn" id="7_vtle1"]
 [ext_resource type="Script" uid="uid://dybshqt0u5lix" path="res://Player/top_down_movement_component.gd" id="8_tdmc"]
 
@@ -17,16 +17,16 @@ script = ExtResource("1_l8h54")
 player_stats = ExtResource("2_btcbx")
 input_component = NodePath("InputComponent")
 player_collision_shape = NodePath("CollisionShape2D")
-uv_light_offset = 60.0
 side_scroll_movement = NodePath("PlayerMovementComponent")
 top_down_movement = NodePath("TopDownMovementComponent")
+uv_light_offset = 60.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173643046]
 shape = SubResource("CircleShape2D_k53q1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=250020712]
+[node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=1740804528]
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("3_k53q1")
+texture = ExtResource("6_b1ygp")
 
 [node name="PlayerMovementComponent" parent="." unique_id=550559937 node_paths=PackedStringArray("player", "input_component") instance=ExtResource("4_gwnis")]
 player = NodePath("..")

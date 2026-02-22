@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://tre45n4um0np"]
+
+[ext_resource type="Theme" uid="uid://b04unr2qrkngo" path="res://UI/win_95_theme.tres" id="1_ng86p"]
+[ext_resource type="Texture2D" path="res://Graphics/win95 Icons/Sound program-1.png" id="2_n6yp6"]
+[ext_resource type="Texture2D" uid="uid://cwi0s472iidvm" path="res://Graphics/win95 Icons/PNGs/Mail text-1.png" id="3_5a0oy"]
+[ext_resource type="Texture2D" uid="uid://cp84ck3lm7pit" path="res://Graphics/win95 Icons/PNGs/Gray briefcase.png" id="4_rvgrq"]
+[ext_resource type="Texture2D" uid="uid://76v4j14828ty" path="res://Graphics/RetroWindowsGUI/Windows_Button_Inactive.png" id="5_rvgrq"]
+[ext_resource type="Texture2D" uid="uid://cnydipdno0g4p" path="res://Graphics/RetroWindowsGUI/Windows_Cross.png" id="6_jur18"]
+[ext_resource type="Script" uid="uid://cjfxy51g0nail" path="res://Level/button_tets.gd" id="7_n250d"]
+[ext_resource type="AudioStream" uid="uid://72pb7sbo3o8t" path="res://Graphics/Ear Graphics/mouse-click-really-fuckin-short.mp3" id="8_n250d"]
+
+[node name="InventoryUI" type="Control" unique_id=1920487921]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ng86p")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=58684410]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 167.0
+
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=1914941520]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel" unique_id=2136710506]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -52.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioFileSprite" type="TextureRect" parent="PanelContainer/Panel/VBoxContainer" unique_id=579803812]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_n6yp6")
+
+[node name="TextFileSprite" type="TextureRect" parent="PanelContainer/Panel/VBoxContainer" unique_id=1894840932]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_5a0oy")
+
+[node name="TopSecretSprite" type="TextureRect" parent="PanelContainer/Panel/VBoxContainer" unique_id=1064637433]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_rvgrq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1126830164]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1083.0
+offset_top = 6.0
+offset_right = -1067.0
+offset_bottom = 22.0
+grow_horizontal = 0
+texture = ExtResource("5_rvgrq")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect" unique_id=1612560180]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_jur18")
+
+[node name="Label" type="Label" parent="." unique_id=831090984]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Inv."
+
+[node name="Button" type="Button" parent="." unique_id=1670181297]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 83.0
+offset_right = 247.0
+offset_bottom = 135.0
+script = ExtResource("7_n250d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button" unique_id=136458536]
+stream = ExtResource("8_n250d")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
